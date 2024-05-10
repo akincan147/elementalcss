@@ -1,10 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="author" content="Akin Can" />
+	<title>INDEX</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+
 <body>
+	<h1>Typography</h1>
 
-<h1>My First Heading</h1>
+	<hr>
 
-<p>My first paragraph.</p>
+	<h1>H1 Title</h1>
+	<h2>H2 Title</h2>
+	<h3>H3 Title</h3>
+	<h4>H4 Title</h4>
+	<h5>H5 Title</h5>
+	<h6>H6 Title</h6>
 
+	<p>You can use the mark tag to <mark>highlight</mark> text.</p>
+    <p><del>This line of text is meant to be treated as deleted text.</del></p>
+    <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+    <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+    <p><u>This line of text will render as underlined.</u></p>
+    <p><small>This line of text is meant to be treated as fine print.</small></p>
+    <p><strong>This line rendered as bold text.</strong></p>
+    <p><em>This line rendered as italicized text.</em></p>
+    <p>This text contains <sub>subscript</sub> text.</p>
+	<p>This text contains <sup>superscript</sup> text.</p>
+	<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+    <blockquote>
+		<p>A well-known quote, contained in a blockquote element.</p>
+		<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+
+    <address>
+		Written by <a href="#">Jon Doe</a>.<br> 
+		Visit us at:<br>
+		Example.com<br>
+		Box 564, Disneyland<br>
+		USA
+	</address>
+
+    <ul class="list-unstyled">
+		<li>This is a list.</li>
+		<li>It appears completely unstyled.</li>
+		<li>Structurally, it's still a list.</li>
+		<li>However, this style only applies to immediate child elements.</li>
+		<li>Nested lists:
+			<ul>
+				<li>are unaffected by this style</li>
+				<li>will still show a bullet</li>
+				<li>and have appropriate left margin</li>
+			</ul>
+		</li>
+		<li>This may still come in handy in some situations.</li>
+	</ul>
+
+	<ul class="list-inline">
+		<li>This is a list item.</li>
+		<li>And another one.</li>
+		<li>But they're displayed inline.</li>
+    </ul>
+
+    <pre>
+		Text in a pre element
+		is displayed in a fixed-width
+		font, and it preserves
+		both      spaces and
+		line breaks
+	</pre>
+
+	<p>The CSS <code>background-color</code> property defines the background color of an element.</p>
+
+	<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy text (Windows).</p>
+
+	<p><samp>This a samp text: File not found.<br>Press F1 to continue</samp></p>
+
+	<figure>
+		<img src="bliss.png" alt="Image" style="width:300px; height:241px">
+		<figcaption>A caption for the above image.</figcaption>
+	</figure>
+
+	<table>
+		<caption>Monthly savings</caption>
+		<thead>
+			<tr>
+				<th>Month</th>
+				<th>Savings</th>
+			</tr>
+		</thead>
+		<tbody class="striped">
+			<tr class="active">
+				<td>January</td>
+				<td>$100</td>
+			</tr>
+			<tr>
+				<td>February</td>
+				<td>$50</td>
+			</tr>
+			<tr>
+				<td>March</td>
+				<td>$150</td>
+			</tr>
+			<tr>
+				<td>April</td>
+				<td>$250</td>
+			</tr>
+		</tbody>		
+	</table>
+
+	<form action="/action_page.php" style="width: 450px">
+		<fieldset>
+			<legend>Form Elements</legend>
+
+			<label for="text">Text</label>
+			<input type="text" id="text" name="text">
+
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password">
+
+			<label for="number">Number</label>
+			<input type="number" id="number" name="number" min="1" max="50">
+
+			<label for="select">Select</label>
+			<select name="select" id="select">
+				<option value="option1">Option 1</option>
+				<option value="option2">Option 2</option>
+				<option value="option3">Option 3</option>
+			</select>
+
+			<label for="date">Date</label>
+			<input type="date" id="date" name="date">
+
+			<label for="time">Date</label>
+			<input type="time" id="time" name="time">
+
+			<label for="textarea">Textarea</label>
+			<textarea id="textarea" name="textarea"></textarea>
+
+			<label for="range">Range</label>
+			<input type="range" id="range" name="range" min="0" max="50">
+
+			<label for="file">File</label>
+			<input type="file" id="file" name="file">
+
+			<label for="color">Color</label>
+			<input type="color" id="color" name="color" value="#ff0000">	
+
+			<input type="submit" value="Submit">
+		</fieldset>
+	</form>
+
+    <a href="#">Link</a>
 </body>
+
 </html>
