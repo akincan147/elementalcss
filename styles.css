@@ -561,6 +561,12 @@ input[type="button"] {
     background-color: var(--input-bg);   
 }
 
+button:focus {
+	background-color: var(--input-focus-bg);
+ border-color: var(--input-focus-border);
+
+} 
+
 button:focus:not(:focus-visible) {
 	outline: 0;
 }
