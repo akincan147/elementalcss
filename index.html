@@ -114,18 +114,24 @@
 		</tbody>		
 	</table>
 
-	<form action="/action_page.php" style="width: 240px">
+	<form action="/action_page.php" style="width: 450px">
 		<fieldset>
 			<legend>Form Elements</legend>
 
 			<label for="text">Text</label>
 			<input type="text" id="text" name="text">
 
+			<br>
+
 			<label for="password">Password</label>
 			<input type="password" id="password" name="password">
 
+			<br>
+
 			<label for="number">Number</label>
 			<input type="number" id="number" name="number" min="1" max="50">
+
+			<br>
 
 			<label for="select">Select</label>
 			<select name="select" id="select">
@@ -134,29 +140,79 @@
 				<option value="option3">Option 3</option>
 			</select>
 
+			<br>
+
 			<label for="date">Date</label>
 			<input type="date" id="date" name="date">
 
-			<label for="time">Date</label>
+			<br>
+
+			<label for="time">Time</label>
 			<input type="time" id="time" name="time">
+
+			<br>
 
 			<label for="textarea">Textarea</label>
 			<textarea id="textarea" name="textarea"></textarea>
 
+			<br>
+
 			<label for="range">Range</label>
 			<input type="range" id="range" name="range" min="0" max="50">
 
+			<br>
+
+			<label for="progress">Progress</label>	
+			<label progress-value="32"></label>		
+			<progress id="progress" value="32" max="100"></progress>
+
+			<br>
+
+			<label for="meter">Meter - Even/Less/Good</label>
+			<meter value="2" min="0" low="3" optimum="8" high="7" max="10"></meter>
+
+			<br>
+
+			<label for="meter">Meter - Suboptimum</label>
+			<meter value="3" min="0" low="3" optimum="8" high="7" max="10"></meter>
+
+			<br>
+
+			<label for="meter">Meter - Optimum</label>
+			<meter value="7" min="0" low="3" optimum="8" high="7" max="10"></meter>
+
+			<br>
+			
 			<label for="file">File</label>
 			<input type="file" id="file" name="file">
+
+			<br>
 
 			<label for="color">Color</label>
 			<input type="color" id="color" name="color" value="#ff0000">	
 
+			<br>
+			
+			<input type="checkbox" id="checkbox" name="checkbox" value="checkbox">  
+			<label for="checkbox">Checkbox</label>			
+
+  			<br>
+
+  			<input type="radio" id="radio" name="radio" value="radio">
+			<label for="radio">Radio</label>
+
+  			<br>
+			
 			<input type="submit" value="Submit">
 		</fieldset>
 	</form>
 
     <a href="#">Link</a>
+
+    <script type="text/javascript">
+    	var checkbox = document.getElementById("checkbox");
+		checkbox.indeterminate = true;
+    </script>
 </body>
 
 </html>
