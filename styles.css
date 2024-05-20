@@ -452,10 +452,7 @@ select {
 	word-wrap: normal;
 	text-transform: none;
 	--arrow-bg: rgba(0, 0, 0, 0.3);
- 
-  --option-bg: white;
-  --select-bg: rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    background: linear-gradient(to left, var(--arrow-bg) 3em, #000000 3em);
 }
 
 textarea {
