@@ -451,7 +451,7 @@ input[type="hidden"]:focus {
 select {
 	word-wrap: normal;
 	text-transform: none;
-    background: linear-gradient(to left, #000000 3em, #000000 3em);
+    background: linear-gradient(to left, #000000 3em, #ffffff 3em);
 }
 
 textarea {
