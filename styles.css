@@ -452,10 +452,10 @@ select {
 	word-wrap: normal;
 	text-transform: none;
 	--arrow-bg: rgba(0, 0, 0, 0.3);
-  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+ 
   --option-bg: white;
   --select-bg: rgba(0, 0, 0, 0.2);
-    background: var(--arrow-icon) no-repeat right 0.8em center/1.4em, linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    background: linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
 }
 
 textarea {
