@@ -385,6 +385,15 @@ textarea {
 	line-height: inherit;	
 }
 
+input:disabled,
+button:disabled,
+select:disabled,
+optgroup:disabled,
+textarea:disabled {
+	opacity: .5;
+	cursor: not-allowed;	
+}
+
 select,
 textarea,
 input[type="text"],
@@ -440,15 +449,13 @@ input[type="hidden"]:focus {
 }
 
 select {
-	text-transform: none;
-}
-
-select {
 	word-wrap: normal;
-}
-
-select:disabled {
-	opacity: 1;
+	text-transform: none;
+	--arrow-bg: rgba(0, 0, 0, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(0, 0, 0, 0.2);
+    background: var(--arrow-icon) no-repeat right 0.8em center/1.4em, linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
 }
 
 textarea {
@@ -657,12 +664,12 @@ input[type="range"]:focus::-moz-range-thumb {
 	box-shadow: none;
 }
 
-input[type="range"]:disabled::-webkit-slider-runnable-track {	
-	opacity: .5;
+input[type="range"]:disabled::-webkit-slider-thumb {	
+	cursor: not-allowed;
 }
 
-input[type="range"]:disabled::-moz-range-track {	
-	opacity: .5;
+input[type="range"]:disabled::-moz-range-thumb {	
+	cursor: not-allowed;
 }
 
 input[type="color"] {
@@ -695,6 +702,10 @@ input[type="color"]::-moz-color-swatch {
 	height: calc(1.5 * 1em);
 	border-radius: var(--border-radius);
 	border: none;
+}
+
+input[type="color"]:disabled {
+	cursor: not-allowed;
 }
 
 
@@ -767,7 +778,12 @@ input[type="radio"]:checked:focus {
 }
 
 input[type="checkbox"]:disabled,
-input[type="radio"]:disabled {
+input[type="radio"]:disabled {	
+	cursor: not-allowed;
+}
+
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label{
 	opacity: .5;
 	cursor: not-allowed;
 }
@@ -778,17 +794,22 @@ input[type="radio"] + label {
 }
 
 input[type="checkbox"]:indeterminate {
-    background-color: transparent;
-    border-color: #0d6efd; /* Adjust border color as needed */
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+input[type="checkbox"]:indeterminate:focus {
+    border-color: var(--input-focus-border);
+	outline: 0;
 }
 
 input[type="checkbox"]:indeterminate::before {
     content: "";
     display: block;
-    width: 8px; /* Adjust width as needed */
-    height: 8px; /* Adjust height as needed */
-    background-color: #0d6efd; /* Adjust background color as needed */
-    border-radius: 2px; /* Adjust border radius as needed */
+    width: 10px;
+    height: 3px; 
+    background-color: #ffffff; 
+    border-radius: var(--border-radius);
 }
 
 
@@ -889,12 +910,17 @@ button:focus:not(:focus-visible) {
 	outline: 0;
 }
 
-button:disabled,
-[type="button"]:disabled,
-[type="reset"]:disabled,
-[type="submit"]:disabled {
-	opacity: .5;
-	cursor: not-allowed;
+button:disabled:hover,
+button:disabled:active,
+[type="button"]:disabled:hover,
+[type="button"]:disabled:active,
+[type="reset"]:disabled:hover,
+[type="reset"]:disabled:active,
+[type="submit"]:disabled:hover,
+[type="submit"]:disabled:active {
+	background-color: var(--btn-bg);
+ 	border: var(--btn-border);
+ 	color: var(--btn-color);
 }
 
 [role="button"] {
