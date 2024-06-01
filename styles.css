@@ -646,12 +646,6 @@ input[type="radio"]:active {
 	background-color: var(--input-focus-bg);
 }
 
-input[type="checkbox"]:focus,
-input[type="radio"]:focus {
-	border-color: var(--input-focus-border);
-	outline: 0;
-}
-
 input[type="checkbox"]::before,
 input[type="radio"]:before {	
 	content: "";
@@ -682,11 +676,6 @@ input[type="radio"]:checked::before {
 	border-radius: var(--border-radius);
 }
 
-input[type="checkbox"]:checked:focus,
-input[type="radio"]:checked:focus {
-	border-color: var(--input-focus-border);
-}
-
 input[type="checkbox"]:disabled,
 input[type="radio"]:disabled {	
 	cursor: not-allowed;
@@ -708,11 +697,6 @@ input[type="checkbox"]:indeterminate {
     border-color: #0d6efd;
 }
 
-input[type="checkbox"]:indeterminate:focus {
-    border-color: var(--input-focus-border);
-	outline: 0;
-}
-
 input[type="checkbox"]:indeterminate::before {
     content: "";
     display: block;
@@ -723,13 +707,13 @@ input[type="checkbox"]:indeterminate::before {
 }
 
 
-input:read-only,
+input:read-only:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]),
 textarea:read-only {
 	border-color: transparent;
 	background-color: transparent;
 }
 
-input:read-only:focus,
+input:read-only:focus:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]),
 textarea:read-only:focus {
 	border-color: transparent;
 	background-color: transparent;
@@ -1002,8 +986,6 @@ tbody.striped>tr:not(.active):nth-of-type(odd)>* {
     background-color: var(--table-striped-bg);
     color: var(--table-striped-color);
 }
-
-
 
 
 input.is-valid:valid,
