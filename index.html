@@ -114,12 +114,12 @@
 		</tbody>		
 	</table>
 
-	<form action="/action_page.php" style="width: 450px">
+	<form action="/action_page.php" style="width: 450px" class="needs-validation" novalidate>
 		<fieldset>
 			<legend>Form Elements</legend>
 
 			<label for="text">Text</label>
-			<input type="text" id="text" name="text">
+			<input type="text" id="text" name="text" required>
 
 			<br>
 
@@ -222,6 +222,29 @@
     <script type="text/javascript">
     	var checkbox = document.getElementById("indeterminate-checkbox");
 		checkbox.indeterminate = true;
+    </script>
+    <script type="text/javascript">
+    	document.addEventListener('DOMContentLoaded', function() {
+	    var forms = document.querySelectorAll('form.needs-validation');
+
+	    forms.forEach(function(form) {
+	        form.addEventListener('submit', function(event) {
+	            event.preventDefault(); // Prevent the default form submission
+
+	            var inputs = form.querySelectorAll('input'); // Select all input elements within the form
+
+	            inputs.forEach(function(input) {
+	                if (input.checkValidity()) {
+	                    input.classList.remove('is-invalid');
+	                    input.classList.add('is-valid');
+	                } else {
+	                    input.classList.remove('is-valid');
+	                    input.classList.add('is-invalid');
+	                }
+	            });
+	        });
+	    });
+	});
     </script>
 </body>
 
