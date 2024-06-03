@@ -1059,3 +1059,17 @@ select.is-invalid:focus {
 
 
 
+:-moz-meter-optimum::-moz-meter-bar {
+    background: none; 
+    background-color: rgb(154, 255, 77);
+}
+
+:-moz-meter-sub-optimum::-moz-meter-bar{
+    background: none; 
+    background-color: rgb(70, 40, 222);
+}
+
+:-moz-meter-sub-sub-optimum::-moz-meter-bar{
+    background: none;
+    background-color: rgb(194, 36, 62);
+}
