@@ -6,12 +6,19 @@
 }
 
 [data-theme=light] {
+	--font-family: system-ui;
 	--font-monospace: monospace;
 	--line-height: 1.2;
 
 	--body-bg: #ffffff;
 	--body-color: #000000;
 	--body-color-rgb: 0,0,0;
+	--body-secondary-bg: #dddddd;
+	--body-secondary-color: #000000;
+	--body-secondary-color-rgb: 0,0,0;
+	--body-tertiary-bg: #aaaaaa;
+	--body-tertiary-color: #000000;
+	--body-tertiary-color-rgb: 0,0,0;
 
 	--mark-bg: #fae49e;
 	--mark-color: #000000;
@@ -69,10 +76,10 @@ body {
 	/* margin: 0; */
 	background-color: var(--body-bg);
 	color: var(--body-color);
-	font-family: system-ui;
+	font-family: var(--font-family);
 	line-height: var(--line-height);
-	 -webkit-text-size-adjust: 100%;
-	 -webkit-tap-highlight-color: rgba(0,0,0, 0);
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0,0,0, 0);
 }
 
 /* TYPOGRAPHY */
@@ -315,7 +322,7 @@ table>:not(caption)>*>* {
 caption {
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
-	color: var(--bs-secondary-color);
+	color: rgba(var(--body-color-rgb), 0.5);
 	text-align: left;
 }
 
@@ -461,6 +468,10 @@ output {
 	display: inline-block;
 }
 
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
 input[type="file"] {
 	overflow: hidden;
 }
@@ -470,8 +481,8 @@ input[type="file"]::-webkit-file-upload-button {
 	margin: -0.375rem -0.75rem;
 	-webkit-margin-end: 0.75rem;
 	margin-inline-end: 0.75rem;
-	color: var(--bs-body-color);
-	background-color: var(--bs-tertiary-bg);
+	color: var(--input-color);
+	background-color: var(--input-bg);
 	pointer-events: none;
 	border-color: inherit;
 	border-style: solid;
@@ -485,8 +496,8 @@ input[type="file"]::file-selector-button {
 	margin: -0.375rem -0.75rem;
 	-webkit-margin-end: 0.75rem;
 	margin-inline-end: 0.75rem;
-	color: var(--body-color);
-	background-color: var(--bs-tertiary-bg);
+	color: var(--input-color);
+	background-color: var(--input-bg);
 	pointer-events: none;
 	border-color: inherit;
 	border-style: solid;
@@ -496,11 +507,23 @@ input[type="file"]::file-selector-button {
 }
 
 input[type="file"]:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-	background-color: var(--bs-secondary-bg);
+	background-color: var(--body-secondary-bg);
+	color: var(--body-secondary-color);
 }
 
 input[type="file"]:hover:not(:disabled):not([readonly])::file-selector-button {
-	background-color: var(--bs-secondary-bg);
+	background-color: var(--body-secondary-bg);
+	color: var(--body-secondary-color);
+}
+
+input[type="file"]:active:not(:disabled):not([readonly])::-webkit-file-upload-button {
+	background-color: var(--body-tertiary-bg);
+	color: var(--body-tertiary-color);
+}
+
+input[type="file"]:active:not(:disabled):not([readonly])::file-selector-button {
+	background-color: var(--body-tertiary-bg);
+	color: var(--body-tertiary-color);
 }
 
 input[type=file]:not(:disabled):not([readonly]) {
@@ -524,7 +547,9 @@ input[type="range"]::-webkit-slider-runnable-track {
 input[type="range"]::-moz-range-track {
 	background-color: var(--input-bg);
 	border: var(--border-width) solid var(--input-border-color);
-	border-radius: var(--border-radius);	
+	border-radius: var(--border-radius);
+	/*Firefox needs height of thumb*/
+	height: 15px;	
 }
 
 input[type="range"]:focus::-webkit-slider-runnable-track {
@@ -570,7 +595,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 
 input[type="range"]:focus::-moz-range-thumb {
 	background-color: var(--input-color);
-	border: var(--border-width) solid var(--input-border-color);
+	border: none;
 	outline: 0;
 	box-shadow: none;
 }
@@ -738,10 +763,11 @@ progress {
     height: 1rem;
     overflow: hidden;
     font-size: 0.75rem;
+    position: relative;
     color: var(--input-color);
     background-color: var(--input-bg);
-    border-radius: var(--border-radius);
-    position: relative;
+    border: var(--border-width) solid var(--input-border-color);
+    border-radius: var(--border-radius);    
 }
 
 progress::after {
@@ -754,18 +780,24 @@ progress::after {
 progress[value] {  
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	appearance: none;
-	background-color: #eee;
+	appearance: none;	
 	width: 100%;
+    background-color: var(--input-bg);
 }
 
 progress[value]::-webkit-progress-bar {
-	background-color: #eee;
+	width: 100%;
+    background-color: var(--input-bg);
 }
 
 progress[value]::-webkit-progress-value {
-	background-color: green;
 	width: 100%;
+	background-color: green;
+}
+
+progress[value]::-moz-progress-bar {
+	width: 100%;
+	background-color: green;	
 }
 
 progress:not([value]) {
@@ -793,9 +825,15 @@ meter {
 	vertical-align: baseline;    
 	display: flex;
 	width: 100%;
+	height: 1rem;
+	background: none;
+	background-color: var(--input-bg);
+	color: var(--input-color);
+	border: var(--border-width) solid var(--input-border-color);
+	border-radius: var(--border-radius);
 }
 
-meter::-webkit-meter-bar {    
+meter::-webkit-meter-bar {  
 	height: 1rem;
 	background: none;
 	background-color: var(--input-bg);
