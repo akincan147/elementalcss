@@ -353,7 +353,7 @@ form br {
 	content: "";
 	display: block;
 	width: 100%;
-	height: 2rem;
+	margin-bottom: 2rem;
 }
 
 label {
@@ -854,6 +854,20 @@ meter::-webkit-meter-optimum-value {
  	background-color: green;
 }
 
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar{
+    background: none;
+    background-color: red;
+}
+
+meter:-moz-meter-sub-optimum::-moz-meter-bar{
+    background: none; 
+    background-color: yellow;
+}
+
+meter:-moz-meter-optimum::-moz-meter-bar {
+    background: none; 
+    background-color: green;
+}
 
 [list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
 	display: none !important;
@@ -1059,17 +1073,3 @@ select.is-invalid:focus {
 
 
 
-:-moz-meter-optimum::-moz-meter-bar {
-    background: none; 
-    background-color: rgb(154, 255, 77);
-}
-
-:-moz-meter-sub-optimum::-moz-meter-bar{
-    background: none; 
-    background-color: rgb(70, 40, 222);
-}
-
-:-moz-meter-sub-sub-optimum::-moz-meter-bar{
-    background: none;
-    background-color: rgb(194, 36, 62);
-}
