@@ -942,6 +942,11 @@ button,
     background-color: var(--btn-bg);   
 }
 
+button[type="reset"]::before {
+	content: '⭯';
+	margin-right: .5rem;
+}
+
 button:hover,
 [type="submit"]:hover,
 [type="reset"]:hover,
