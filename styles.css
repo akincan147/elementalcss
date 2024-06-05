@@ -56,8 +56,8 @@
 
 	--table-striped-bg: #dddddd;
 	--table-striped-color: #000000;
-	--table-hover-bg: #aaaaaa;
-	--table-hover-color: #000000;
+	--table-hover-bg: #444444;
+	--table-hover-color: #ffffff;
 	--table-active-bg: #aaaaaa;
 	--table-active-color: #000000;
 }
@@ -363,14 +363,12 @@ label {
 
 fieldset {
 	min-width: 0;
-	padding: 0;
+	padding: 1rem;
 	margin: 0;
-	border: 0;
+	border: var(--border-width) solid var(--border-color);
 }
 
 legend {
-	float: left;
-	width: 100%;
 	padding: 0;
 	margin-bottom: 0.5rem;
 	font-size: calc(1.275rem + 0.3vw);
@@ -530,34 +528,21 @@ input[type=file]:not(:disabled):not([readonly]) {
     cursor: pointer;
 }
 
+
 input[type="range"] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	display: block;
-	width: 100%;	
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-	background-color: var(--input-bg);
-	border: var(--border-width) solid var(--input-border-color);
-	border-radius: var(--border-radius);	
-}
- 
-input[type="range"]::-moz-range-track {
-	background-color: var(--input-bg);
+	width: 100%;
+	height: 1rem;
+	padding: 2px;
+	background-color: var(--input-bg);	
 	border: var(--border-width) solid var(--input-border-color);
 	border-radius: var(--border-radius);
-	/*Firefox needs height of thumb*/
-	height: 15px;	
 }
 
-input[type="range"]:focus::-webkit-slider-runnable-track {
-	background-color: var(--input-focus-bg);
-	border-color: var(--input-focus-border);
-}
-
-input[type="range"]:focus::-moz-range-track {
+input[type="range"]:focus {
 	background-color: var(--input-focus-bg);
 	border-color: var(--input-focus-border);
 }
@@ -570,8 +555,8 @@ input[type="range"]::-webkit-slider-thumb {
 	background-color: var(--input-color);
 	border: none;
 	border-radius: var(--border-radius);
-	height: 15px;
-	width: 15px;
+	height: .7rem;
+	width: .7rem;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -582,8 +567,8 @@ input[type="range"]::-moz-range-thumb {
 	background-color: var(--input-color);
 	border: none;
 	border-radius: var(--border-radius);
-	height: 15px;
-	width: 15px;
+	height: .7rem;
+	width: .7rem;
 }
 
 input[type="range"]:focus::-webkit-slider-thumb {
@@ -663,7 +648,7 @@ input[type="radio"] {
 	font: inherit;	
 	background-color: var(--input-bg);
 	border: var(--border-width) solid var(--input-border-color);
-	border-radius: var(--border-radius);	
+	border-radius: var(--border-radius);
 }
 
 input[type="checkbox"]:active,
@@ -729,16 +714,20 @@ input[type="checkbox"]:indeterminate::before {
     height: 2px; 
     background-color: #ffffff; 
     border-radius: var(--border-radius);
+    -webkit-transform: none;
+	-ms-transform: none;
+	transform: none;
+	margin-top: 0;
 }
 
 
-input:read-only:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]),
+input:read-only:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
 textarea:read-only {
 	border-color: transparent;
 	background-color: transparent;
 }
 
-input:read-only:focus:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]),
+input:read-only:focus:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
 textarea:read-only:focus {
 	border-color: transparent;
 	background-color: transparent;
@@ -992,9 +981,16 @@ button:disabled:active,
 	cursor: pointer;
 }
 
+section {
+	margin-bottom: 2rem;
+}
 
 iframe {
 	border: 0;
+}
+
+details {
+  	display: block;
 }
 
 summary {
@@ -1002,13 +998,17 @@ summary {
 	cursor: pointer;
 }
 
+template {
+  	display: none;
+}
 
 
 
 
-
-
-
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
 
 .list-unstyled {
 	padding-left: 0;
@@ -1028,7 +1028,6 @@ summary {
 	margin-right: .5rem;
 }
 
-
 tbody>tr.active>* {
 	background-color: var(--table-active-bg);
 	color: var(--table-active-color);
@@ -1047,7 +1046,6 @@ select.is-valid {
 	border-color: green;
 }
 
-
 input.is-invalid:invalid,
 input.is-invalid,
 textarea.is-invalid,
@@ -1055,14 +1053,12 @@ select.is-invalid {
 	border-color: red;
 }
 
-
 input.is-valid:valid:focus,
 input.is-valid:focus,
 textarea.is-valid:focus,
 select.is-valid:focus {
 	box-shadow: 0 0 0 .25rem rgba(var(--success-rgb),.25);
 }
-
 
 input.is-invalid:invalid:focus,
 input.is-invalid:focus,
