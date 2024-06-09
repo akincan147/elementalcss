@@ -129,16 +129,16 @@
     --danger-color-prominent:;
     --warning-color-prominent:;
 
-	--table-border: #afafaf;
+	--table-border: #dedede;
 	--table-bg: #ffffff;
 	--table-color: #222222;
-	--table-thead-bg: #d0d0d0;
+	--table-thead-bg: #ececec;
 	--table-thead-color: #222222;
 	--table-striped-bg: #f9f9f9;
 	--table-striped-color: #222222;  
-	--table-hover-bg: #dddddd;
+	--table-hover-bg: #e5e5e5;
 	--table-hover-color: #000000;
-	--table-active-bg: #e7e7e7;
+	--table-active-bg: #f0f0f0;
 	--table-active-color: #000000;
 	
 }
