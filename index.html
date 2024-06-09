@@ -133,24 +133,76 @@
 					<tr>
 						<th>Table Head</th>
 						<th>Table Head</th>
+						<th>Table Head</th>
+						<th>Table Head</th>
+						<th>Table Head</th>
+						<th>Table Head</th>
 					</tr>
 				</thead>
 				<tbody class="striped">
 					<tr class="active">
 						<td>This is an active table row</td>
 						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
 					</tr>
 					<tr>
 						<td>Row 1</td>
 						<td>001</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
 					</tr>
 					<tr>
 						<td>Striped table row</td>
 						<td>002</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
 					</tr>
 					<tr>
 						<td>Row 3</td>
 						<td>003</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+					</tr>
+					<tr>
+						<td>Row 3</td>
+						<td>003</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+					</tr>
+					<tr>
+						<td>Row 3</td>
+						<td>003</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+					</tr>
+					<tr>
+						<td>Row 3</td>
+						<td>003</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+					</tr>
+					<tr>
+						<td>Row 3</td>
+						<td>003</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
+						<td>000</td>
 					</tr>
 				</tbody>		
 			</table>
@@ -275,6 +327,7 @@
 			<h1>Details</h1>
 			<hr>	
 			<p>The default details are styled as separate, but you can create accordion-like details by using <code>.stacked-details</code> in a wrapper.</p>
+			<p>To make details automatically collapsible, use: <code>.auto-collapse</code> in a wrapper.</p>
 			<div class="stacked-details">	
 				<details>
 					<summary>Stacked details. accordion-like.</summary>
@@ -284,6 +337,16 @@
 					<summary>This is a summary. Click to collapse details.</summary>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 				</details>
+			</div>
+			<div class="stacked-details auto-collapse">
+				<details>
+					<summary>Auto collapsible details.</summary>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</details>
+				<details>
+					<summary>This is a summary. Click to collapse details.</summary>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</details>			
 			</div>		
 			<details>
 				<summary>Default seperated details.</summary>
@@ -295,6 +358,23 @@
 			</details>		
 		</section>
 	</div>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+		    const details = document.querySelectorAll('.auto-collapse details');
+
+		    details.forEach((detail) => {
+		        detail.addEventListener('toggle', function() {
+		            if (detail.open) {
+		                details.forEach((detailToClose) => {
+		                    if (detailToClose !== detail) {
+		                        detailToClose.open = false;
+		                    }
+		                });
+		            }
+		        });
+		    });
+		});
+	</script>
     <script type="text/javascript">
     	var checkbox = document.getElementById("indeterminate-checkbox");
 		checkbox.indeterminate = true;
