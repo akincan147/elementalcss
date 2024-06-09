@@ -34,13 +34,13 @@
 
 	--border-width: 1px;
 	--border-style: solid;
-	--border-color: #adb5bd;
+	--border-color: #dedede;
 	--border-radius: 0px;	
 	--border-color-translucent: rgba(222, 226, 230, 0.175);
 
 	--input-bg: #ffffff;
 	--input-color: #222222;
-	--input-border-color: #adb5bd;
+	--input-border-color: #dedede;
 	--input-focus-bg: #ffffff;
 	--input-focus-color: #000000;
 	--input-focus-border: #0073e5;
@@ -129,16 +129,16 @@
     --danger-color-prominent:;
     --warning-color-prominent:;
 
-	--table-border: #909BA6;
+	--table-border: #dedede;
 	--table-bg: #ffffff;
 	--table-color: #222222;
-	--table-thead-bg: #B9C0C7;
+	--table-thead-bg: #eeeeee;
 	--table-thead-color: #222222;
-	--table-striped-bg: #e9ecef;
+	--table-striped-bg: #fafafa;
 	--table-striped-color: #222222;  
 	--table-hover-bg: #c2c8cf;
 	--table-hover-color: #000000;
-	--table-active-bg: #CCD1D7;
+	--table-active-bg: #f1f1f1;
 	--table-active-color: #000000;
 	
 }
