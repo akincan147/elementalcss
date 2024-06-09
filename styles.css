@@ -1,7 +1,5 @@
 /* ROOT AND VARIABLES */
 
-/*_*/
-
 @font-face {
 	font-display: block;
 	font-family: "bootstrap-icons";
@@ -131,16 +129,16 @@
     --danger-color-prominent:;
     --warning-color-prominent:;
 
-	--table-border: #dedede;
+	--table-border: #afafaf;
 	--table-bg: #ffffff;
 	--table-color: #222222;
-	--table-thead-bg: #eeeeee;
+	--table-thead-bg: #d0d0d0;
 	--table-thead-color: #222222;
-	--table-striped-bg: #fafafa;
+	--table-striped-bg: #f9f9f9;
 	--table-striped-color: #222222;  
-	--table-hover-bg: #c2c8cf;
+	--table-hover-bg: #dddddd;
 	--table-hover-color: #000000;
-	--table-active-bg: #f1f1f1;
+	--table-active-bg: #e7e7e7;
 	--table-active-color: #000000;
 	
 }
