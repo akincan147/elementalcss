@@ -19,15 +19,15 @@
 	--body-text-color-rgb: 34, 34, 34;
 	--body-secondary-bg-color: #f9f9f9;
 	--body-secondary-text-color: #222222;
-	--body-secondary-text-color-rgb: 0,0,0;
+	--body-secondary-text-color-rgb: 34, 34, 34;
 	--body-tertiary-bg-color: #e9ecef;
 	--body-tertiary-text-color: #222222;
-	--body-tertiary-text-color-rgb: 0,0,0;
+	--body-tertiary-text-color-rgb: 34, 34, 34;
 
-	--mark-bg-color: #fae49e;
+	--mark-bg-color: #fff09c;
 	--mark-text-color: #000000;
-	--link-text-color: #0070ff;
-	--link-text-hover-color: #0080ff;
+	--link-text-color: #0073e5;
+	--link-text-hover-color: #0a58ca;
 	--link-text-decoration: underline;
 	--heading-text-color: #000000;
 	--code-text-color: #ff0000;
@@ -36,7 +36,7 @@
 	--border-width: 1px;
 	--border-style: solid;
 	--border-color: #dedede;		
-	--border-color-translucent: rgba(222, 226, 230, 0.175);
+	--border-color-translucent: rgba(222, 222, 222, 0.175);
 
 	--form-bg-color: #ffffff;
 	--form-text-color: #222222;
@@ -64,84 +64,98 @@
 	--success-bg-color-rgb: 0, 128, 0;
     --danger-bg-color-rgb: 255, 0, 0;
     --warning-bg-color-rgb: 255, 215, 0;
+    --info-bg-color-rgb:;
 
     --primary-bg-color: #0073e5;
-    --secondary-bg-color:;
+    --secondary-bg-color: #e7e7e7;
     --success-bg-color: green;
     --danger-bg-color: red;
     --warning-bg-color: yellow;	
+    --info-bg-color:;
 
     --primary-text-color: #ffffff;
-    --secondary-text-color:;
+    --secondary-text-color: #222222;
     --success-text-color: #ffffff;
     --danger-text-color: #ffffff;
-    --warning-text-color: #000000;	
+    --warning-text-color: #000000;
+    --info-text-color: ;	
 
     --primary-border-color: #0073e5;
-    --secondary-border-color:;
+    --secondary-border-color: #e7e7e7;
     --success-border-color:;
     --danger-border-color:;
     --warning-border-color:;
+    --info-border-color:;
 
-    --primary-hover-bg-color:;
-    --secondary-hover-bg-color:;
+    --primary-hover-bg-color: #006bd5;
+    --secondary-hover-bg-color: #dedede;
     --success-hover-bg-color:;
     --danger-hover-bg-color:;
     --warning-hover-bg-color:;
+    --info-hover-bg-color:;
 
-    --primary-hover-text-color:;
-    --secondary-hover-text-color:;
+    --primary-hover-text-color: #ffffff;
+    --secondary-hover-text-color: #222222;
     --success-hover-text-color:;
     --danger-hover-text-color:;
     --warning-hover-text-color:;
+    --info-hover-text-color:;
 
-    --primary-hover-border-color:;
-    --secondary-hover-border-color:;
+    --primary-hover-border-color: #006bd5;
+    --secondary-hover-border-color: #dedede;
     --success-hover-border-color:;
     --danger-hover-border-color:;
     --warning-hover-border-color:;
+    --info-hover-border-color:;
 
-    --primary-active-bg-color:;
-    --secondary-active-bg-color:;
+    --primary-active-bg-color: #0060b0;
+    --secondary-active-bg-color: #c1c1c1;
     --success-active-bg-color:;
     --danger-active-bg-color:;
     --warning-active-bg-color:;
+    --info-active-bg-color:;
 
-    --primary-active-text-color:;
-    --secondary-active-text-color:;
+    --primary-active-text-color: #ffffff;
+    --secondary-active-text-color: #222222;
     --success-active-text-color:;
     --danger-active-text-color:;
     --warning-active-text-color:;
+    --info-active-text-color:;
 
-    --primary-active-border-color:;
-    --secondary-active-border-color:;
+    --primary-active-border-color: #0060b0;
+    --secondary-active-border-color: #c1c1c1;
     --success-active-border-color:;
     --danger-active-border-color:;
     --warning-active-border-color:; 
+    --info-active-border-color:;
 
-    --primary-bg-color-subtle:;
-    --secondary-bg-color-subtle:;
+    --primary-bg-color-subtle: #1e8eff;
+    --secondary-bg-color-subtle: #d5d5d5;
     --success-bg-color-subtle:;
     --danger-bg-color-subtle:;
     --warning-bg-color-subtle:;
+    --info-bg-color-subtle:;
 
-    --primary-border-color-subtle:;
-    --secondary-border-color-subtle:;
+    --primary-border-color-subtle: #00448c;
+    --secondary-border-color-subtle: #a8a8a8;
     --success-border-color-subtle:;
     --danger-border-color-subtle:;
     --warning-border-color-subtle:;
+    --info-border-color-subtle:;
 
     --primary-bg-color-prominent:;
     --secondary-bg-color-prominent:;
     --success-bg-color-prominent:;
     --danger-bg-color-prominent:;
     --warning-bg-color-prominent:;
+    --info-bg-color-prominent:;
     
-    --primary-text-color-prominent:;
-    --secondary-text-color-prominent:;
+    --primary-text-color-prominent: #ffffff;
+    --secondary-text-color-prominent: #ffffff;
     --success-text-color-prominent:;
     --danger-text-color-prominent:;
     --warning-text-color-prominent:;
+    --info-text-color-prominent:;
 
     --select-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23222222' %3e%3cpath d='M6.343 9.059L12 3.402l5.657 5.657 1.414-1.414L12 .573 4.929 7.644 6.343 9.059zM17.657 14.941l-5.657 5.657-5.657-5.657-1.414 1.414 7.071 7.071 7.071-7.071-1.414-1.414z' /%3e%3c/svg%3e");	
 }
@@ -238,12 +252,12 @@ a {
 	color: var(--link-text-color);
 }
 
-a:hover {
-	color: var(--link-text-hover-color);
-}
-
 a:visited {
 	color: var(--link-text-color);
+}
+
+a:hover {
+	color: var(--link-text-hover-color);
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -909,18 +923,14 @@ progress::-moz-progress-bar {
 progress[value]::-webkit-progress-value {
 	width: 100%;
 	background-color: var(--primary-bg-color);
-	transition: width 0.6s ease;
+	transition: width 0.6s linear;
 }
 
 progress[value]::-moz-progress-bar {
 	width: 100%;
 	background-color: var(--primary-bg-color);	
-	-moz-transition: width 0.6s ease;
-	transition: width 0.6s ease;
-}
-
-progress:not([value]) {
-	background-color: var(--body-tertiary-bg-color);
+	-moz-transition: width 0.6s linear;
+	transition: width 0.6s linear;
 }
 
 progress:not([value])::before {
@@ -929,10 +939,18 @@ progress:not([value])::before {
     top: 50%;    
     transform: translateY(-50%);
     width: 50%; 
-    height: 100%;
-    left: -100%;        
+    height: 100%;       
     background-color: var(--primary-bg-color); 
-    animation: progressAnimation 2s linear infinite;
+    animation: progressAnimation 1s linear infinite;
+}
+
+progress:not([value])::-webkit-progress-bar {
+	background-color: var(--body-tertiary-bg-color);
+}
+
+progress:not([value])::-moz-progress-bar {
+	/* Firefox does not support animation, so the default progress background is set. */	      
+    background-color: var(--body-tertiary-bg-color); 
 }
 
 @keyframes progressAnimation {
@@ -943,16 +961,6 @@ progress:not([value])::before {
     left: 100%; /* Move to the right of the container */
   }
 }
-
-
-progress:not([value])::-webkit-progress-bar {
-	background-color: var(--body-tertiary-bg-color);
-}
-
-progress:not([value])::-webkit-progress-value {  
-	background-color: var(--body-tertiary-bg-color);
-}
-
 
 meter {
 	-webkit-appearance: meter;
