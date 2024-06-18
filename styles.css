@@ -828,8 +828,13 @@ table {
 	background-color: var(--table-bg-color);	
 }
 
-table>:not(caption)>*>* {
+table > :not(caption) > * > * {
 	padding: .5rem .5rem;
+	border-bottom: var(--border-width) var(--border-style) var(--border-color);
+}
+
+table > tfoot > * > * {	
+	border-bottom: none;
 }
 
 caption {
@@ -842,16 +847,6 @@ caption {
 th {
 	text-align: inherit;
 	text-align: -webkit-match-parent;
-}
-
-
-thead,
-tbody,
-tfoot,
-tr,
-td,
-th {
-	border: var(--border-width) var(--border-style) var(--table-border-color);
 }
 
 table > thead {
@@ -872,10 +867,11 @@ table > tbody {
 	vertical-align: inherit;
 }
 
-tbody>tr:hover>* {
+tbody > tr:hover > * {
 	color: var(--table-hover-text-color) !important;
     background-color: var(--table-hover-bg-color) !important;    
 }
+
 
 /* FORM ELEMENTS */
 
@@ -1637,20 +1633,36 @@ summary::-webkit-details-marker {
 	margin-right: .5rem;
 }
 
+
+.table-bordered > :not(caption) > * > * {
+    border: var(--border-width) var(--border-style) var(--border-color) !important;
+}
+
+.table-borderless > :not(caption) > * > * {
+    border: none !important;
+}
+
+.table-borderless > thead,
+.table-borderless > tfoot {
+	border: none !important;
+}
+
 .table-responsive {
 	overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
 
-tbody>tr.active>* {
+tbody > tr.active > * {
 	color: var(--table-active-text-color);
 	background-color: var(--table-active-bg-color);	
 }
 
-tbody.striped>tr:not(.active):nth-of-type(odd)>* {
+.table-striped > tbody > tr:not(.active):nth-of-type(odd) > * {
 	color: var(--table-striped-text-color);
     background-color: var(--table-striped-bg-color);    
 }
+
+
 
 input.is-valid:valid,
 input.is-valid,
@@ -1909,3 +1921,4 @@ select.is-invalid:focus {
 	color: var(--info-text-color) !important;
 	background-color: var(--info-bg-color) !important;
 }
+

@@ -125,12 +125,14 @@
 
 		<section>
 			<h1>Table</h1>
-			<hr>		
+			<hr>	
+			<p>You can put the table in a wrapper and use <code>.table-responsive</code> for this wrapper to make the table scrollable on smaller screen sizes.</p>	
 			<p>To make a table row active, you can simply add the <code>.active</code> class to the tr tag. This will apply the desired styling to the row.</p>
-			<p>To make a table rows striped, you can simply add the <code>.striped</code> class to the tbody tag. This will apply the desired styling to the row.</p>
-			<p>You can put the table in a wrapper and use <code>.table-responsive</code> to make the table scrollable on smaller screen sizes.</p>
+			<p>To make a table rows striped, you can simply add the <code>.table-striped</code> class to the table tag. This will apply the desired styling to the row.</p>			
+			<p>For bordered table add the <code>.table-bordered</code> class to the table tag.</p>
+			<p>For borderless table add the <code>.table-borderless</code> class to the table tag.</p>
 			<div class="table-responsive">
-				<table>
+				<table class="table-striped">
 					<caption>Monthly savings (Table Caption)</caption>
 					<thead>
 						<tr>
@@ -142,7 +144,7 @@
 							<th>Table Head</th>
 						</tr>
 					</thead>
-					<tbody class="striped">
+					<tbody>
 						<tr>
 							<td>Table row</td>
 							<td>000</td>
