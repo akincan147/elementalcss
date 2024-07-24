@@ -705,6 +705,7 @@ fieldset {
 	padding: 1rem;
 	margin: 0;
 	border: var(--border-width) var(--border-style) var(--border-color-translucent);
+	border-radius: var(--border-radius);
 }
 
 legend {
@@ -1567,7 +1568,7 @@ summary::-webkit-details-marker {
 
 tbody > tr.active > * {
 	color: var(--table-active-text-color);
-	background-color: var(--table-active-bg-color);	
+	background-color: var(--table-active-bg-color);
 }
 
 .table-striped > tbody > tr:not(.active):nth-of-type(odd) > * {
@@ -2551,3 +2552,8 @@ select.is-invalid:focus {
 
 
 
+.sm {
+	font-size: 14px;
+    line-height: 20px;
+    padding: .175rem .45rem;
+}
