@@ -69,21 +69,21 @@
 	
 	--body-bg-color: #ffffff;
 	--body-bg-color-rgb: 255, 255, 255;
-	--body-text-color: #222222;	
-	--body-text-color-rgb: 34, 34, 34;	
+	--body-text-color: #1f2328;	
+	--body-text-color-rgb: 31, 35, 40;	
 
-	--body-secondary-bg-color: #f9f9f9;
-	--body-secondary-bg-color-rgb: 249, 249, 249;
-	--body-secondary-text-color: #222222;
-	--body-secondary-text-color-rgb: 34, 34, 34;
+	--body-secondary-bg-color: #f6f8fa;
+	--body-secondary-bg-color-rgb: 246, 248, 250;
+	--body-secondary-text-color: #1f2328;
+	--body-secondary-text-color-rgb: 31, 35, 40;
 
-	--body-tertiary-bg-color: #e9ecef;
-	--body-tertiary-bg-color-rgb: 233, 236, 239;
-	--body-tertiary-text-color: #222222;
-	--body-tertiary-text-color-rgb: 34, 34, 34;			
+	--body-tertiary-bg-color: #eceff2;
+	--body-tertiary-bg-color-rgb: 236, 239, 242;
+	--body-tertiary-text-color: #1f2328;
+	--body-tertiary-text-color-rgb: 31, 35, 40;			
 
 	--body-scrollbar-bg: rgba(0, 0, 0, 0);
-	--body-scrollbar-thumb-bg: #222222;
+	--body-scrollbar-thumb-bg: #8a8a8a;
 
 	--heading-text-color: #000000;
 	--heading-text-color-rgb: 0, 0, 0;
@@ -95,33 +95,34 @@
 	--mark-bg-color: #fff09c;
 	--mark-text-color: #000000;		
 	--code-text-color: #ff0000;
+	--muted-text-color: #636c76;
 
 	--border-radius: 0px;
 	--border-width: 1px;
 	--border-style: solid;
-	--border-color: #dedede;
-	--border-color-rgb: 222, 222, 222;		
-	--border-color-translucent: rgba(222, 222, 222, 0.7);
+	--border-color: #d0d7de;
+	--border-color-rgb: 208, 215, 222;		
+	--border-color-translucent: rgba(208, 215, 222, 0.7);	
 
-	--form-bg-color: #ffffff;
-	--form-text-color: #222222;
-	--form-border-color: #dedede;
+	--form-bg-color: #fcfcfc;
+	--form-text-color: #000000;
+	--form-border-color: #e5e5e5;
 	--form-focus-bg-color: #ffffff;
 	--form-focus-text-color: #000000;
 	--form-focus-border-color: #0073e5;
 
 	--table-bg-color: #ffffff;
-	--table-text-color: #222222;
-	--table-border-color: #bbbbbb;	
-	--table-header-bg-color: #cccccc;
-	--table-header-text-color: #222222;
-	--table-footer-bg-color: #cccccc;
-	--table-footer-text-color: #222222;
-	--table-striped-bg-color: #f9f9f9;	
-	--table-striped-text-color: #222222; 	
-	--table-hover-bg-color: #dddddd;
+	--table-text-color: #1f2328;
+	--table-border-color: #d0d7de;	
+	--table-header-bg-color: #eceff2;
+	--table-header-text-color: #000000;
+	--table-footer-bg-color: #eceff2;
+	--table-footer-text-color: #000000;
+	--table-striped-bg-color: #fcfcfc;	
+	--table-striped-text-color: #1f2328; 	
+	--table-hover-bg-color: #eceff2;
 	--table-hover-text-color: #000000;
-	--table-active-bg-color: #e7e7e7;	
+	--table-active-bg-color: #f6f8fa;	
 	--table-active-text-color: #000000;
 
     --primary-bg-color: #0073e5;
@@ -139,20 +140,20 @@
     --primary-active-border-color: #0062c5;
     --primary-active-text-color: #ffffff;
     
-    --secondary-bg-color: #e7e7e7;
-    --secondary-bg-color-rgb: 231, 231, 231;
-    --secondary-bg-color-subtle: #f0f0f0;
-    --secondary-border-color: #e7e7e7;
-    --secondary-border-color-subtle: #e7e7e7;
-    --secondary-text-color: #222222; 
-    --secondary-text-color-emphasis: #111111;   
-    --secondary-hover-bg-color: #d7d7d7;
-    --secondary-hover-bg-color-rgb: 215, 215, 215;
-    --secondary-hover-border-color: #d7d7d7;
-    --secondary-hover-text-color: #222222;
-    --secondary-active-bg-color: #c7c7c7;
-    --secondary-active-border-color: #c7c7c7;
-    --secondary-active-text-color: #222222;
+    --secondary-bg-color: #fbfbfb;
+    --secondary-bg-color-rgb: 251, 251, 251;
+    --secondary-bg-color-subtle: #ffffff;
+    --secondary-border-color: #d2d2d2;
+    --secondary-border-color-subtle: #e5e5e5;
+    --secondary-text-color: #000000; 
+    --secondary-text-color-emphasis: #000000;   
+    --secondary-hover-bg-color: #e0eef9;
+    --secondary-hover-bg-color-rgb: 224, 238, 249;
+    --secondary-hover-border-color: #0078d4;
+    --secondary-hover-text-color: #000000;
+    --secondary-active-bg-color: #cce4f7;
+    --secondary-active-border-color: #005499;
+    --secondary-active-text-color: #000000;
     
     --success-bg-color: #28a745;
     --success-bg-color-rgb: 40, 167, 69;
@@ -244,7 +245,7 @@
 	--body-tertiary-text-color-rgb: 255, 255, 255;		
 
 	--body-scrollbar-bg: rgba(0, 0, 0, 0);
-	--body-scrollbar-thumb-bg: #333333;
+	--body-scrollbar-thumb-bg: #9f9f9f;
 
 	--heading-text-color: #ffffff;
 	--heading-text-color-rgb: 255, 255, 255;
@@ -271,18 +272,18 @@
 	--form-focus-text-color: #ffffff;
 	--form-focus-border-color: #0073e5;
 
-	--table-bg-color: #191919;
-	--table-text-color: #dee2e6;
-	--table-border-color: #333333;	
-	--table-header-bg-color: #000000;
+	--table-bg-color: #272727;
+	--table-text-color: #ffffff;
+	--table-border-color: #000000;	
+	--table-header-bg-color: #161616;
 	--table-header-text-color: #ffffff;
-	--table-footer-bg-color: #000000;
+	--table-footer-bg-color: #161616;
 	--table-footer-text-color: #ffffff;
-	--table-striped-bg-color: #202020;	
-	--table-striped-text-color: #dee2e6; 	
+	--table-striped-bg-color: #2c2c2c;	
+	--table-striped-text-color: #ffffff; 	
 	--table-hover-bg-color: rgba(0, 0, 0, 0.6);
 	--table-hover-text-color: #ffffff;
-	--table-active-bg-color: #131313;	
+	--table-active-bg-color: #181818;	
 	--table-active-text-color: #ffffff;	
 		
 	--secondary-bg-color: #2d2d2d;
@@ -532,7 +533,7 @@ blockquote>:last-child {
 	margin-top: -1rem;
     margin-bottom: 0;
     font-size: .875em;
-    color: rgba(var(--body-text-color-rgb), 0.5);
+    color: var(--muted-text-color);
 }
 
 blockquote>:last-child::before {
@@ -621,7 +622,7 @@ figure {
 }
 
 figcaption {
-	color: rgba(var(--body-text-color-rgb), 0.5);
+	color: var(--muted-text-color);
 }
 
 img,
@@ -642,7 +643,7 @@ table {
 
 table > :not(caption) > * > * {
 	padding: .5rem .5rem;
-	border-bottom: var(--border-width) var(--border-style) var(--border-color);
+	border-bottom: var(--border-width) var(--border-style) var(--table-border-color);
 }
 
 table > tfoot > * > * {	
@@ -653,7 +654,7 @@ caption {
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	text-align: left;
-	color: rgba(var(--body-text-color-rgb), 0.5);	
+	color: var(--muted-text-color);	
 }
 
 th {
@@ -886,13 +887,13 @@ input[type="range"] {
 	height: 1rem;
 	padding: 2px;
 	background-color: var(--form-bg-color);	
-	border: var(--border-width) var(--border-style) var(--body-tertiary-bg-color);
+	border: var(--border-width) var(--border-style) var(--form-border-color);
 	border-radius: var(--border-radius);
 }
 
 input[type="range"]:active {
-	background-color: var(--body-tertiary-bg-color);
-	border-color: var(--body-tertiary-bg-color);
+	background-color: var(--form-bg-color);
+	border-color: var(--form-border-color);
 }
 
 input[type="range"]:focus {
@@ -918,7 +919,7 @@ input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	-moz-appearance: none;	
   	cursor: grab;
-	background-color: var(--body-tertiary-text-color);
+	background-color: var(--form-text-color);
 	border: none;
 	border-radius: var(--border-radius);
 	height: .7rem;
@@ -930,7 +931,7 @@ input[type="range"]::-moz-range-thumb {
 	-webkit-appearance: none;
 	-moz-appearance: none;	
   	cursor: grab;
-	background-color: var(--body-tertiary-text-color);
+	background-color: var(--form-text-color);
 	border: none;
 	border-radius: var(--border-radius);
 	height: .7rem;
@@ -938,7 +939,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 input[type="range"]:active::-webkit-slider-thumb {
-	background-color: var(--body-tertiary-text-color);
+	background-color: var(--form-focus-text-color);
 	border: none;
 	outline: 0;
 	box-shadow: none;
@@ -946,7 +947,7 @@ input[type="range"]:active::-webkit-slider-thumb {
 }
 
 input[type="range"]:active::-moz-range-thumb {
-	background-color: var(--body-tertiary-text-color);
+	background-color: var(--form-focus-text-color);
 	border: none;
 	outline: 0;
 	box-shadow: none;
@@ -1544,7 +1545,7 @@ summary::-webkit-details-marker {
 
 
 .table-bordered > :not(caption) > * > * {
-    border: var(--border-width) var(--border-style) var(--border-color) !important;
+    border: var(--border-width) var(--border-style) var(--table-border-color) !important;
 }
 
 .table-borderless > :not(caption) > * > * {
