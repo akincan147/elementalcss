@@ -120,9 +120,9 @@
 	--table-footer-text-color: #000000;
 	--table-striped-bg-color: #fafbfd;	
 	--table-striped-text-color: #1f2328; 	
-	--table-hover-bg-color: red;
+	--table-hover-bg-color: #eceff2;
 	--table-hover-text-color: #000000;
-	--table-active-bg-color: #eceff2;	
+	--table-active-bg-color: #e0e5ea;	
 	--table-active-text-color: #000000;
 
     --primary-bg-color: #0073e5;
