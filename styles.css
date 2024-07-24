@@ -122,7 +122,7 @@
 	--table-striped-text-color: #1f2328; 	
 	--table-hover-bg-color: #eceff2;
 	--table-hover-text-color: #000000;
-	--table-active-bg-color: #eceff2;	
+	--table-active-bg-color: #e7ebef;	
 	--table-active-text-color: #000000;
 
     --primary-bg-color: #0073e5;
@@ -140,20 +140,20 @@
     --primary-active-border-color: #0062c5;
     --primary-active-text-color: #ffffff;
     
-    --secondary-bg-color: #fbfbfb;
+    --secondary-bg-color: #f6f8fa;
     --secondary-bg-color-rgb: 251, 251, 251;
     --secondary-bg-color-subtle: #ffffff;
-    --secondary-border-color: #d2d2d2;
+    --secondary-border-color: #d0d7de;
     --secondary-border-color-subtle: #e5e5e5;
-    --secondary-text-color: #000000; 
+    --secondary-text-color: #24292f; 
     --secondary-text-color-emphasis: #000000;   
-    --secondary-hover-bg-color: #e0eef9;
-    --secondary-hover-bg-color-rgb: 224, 238, 249;
-    --secondary-hover-border-color: #0078d4;
-    --secondary-hover-text-color: #000000;
-    --secondary-active-bg-color: #cce4f7;
-    --secondary-active-border-color: #005499;
-    --secondary-active-text-color: #000000;
+    --secondary-hover-bg-color: #eef1f4;
+    --secondary-hover-bg-color-rgb: 238, 241, 244;
+    --secondary-hover-border-color: #d0d7de;
+    --secondary-hover-text-color: #24292f;
+    --secondary-active-bg-color: #e7ebef;
+    --secondary-active-border-color: #d0d7de;
+    --secondary-active-text-color: #24292f;
     
     --success-bg-color: #28a745;
     --success-bg-color-rgb: 40, 167, 69;
