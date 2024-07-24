@@ -114,15 +114,15 @@
 	--table-bg-color: #ffffff;
 	--table-text-color: #1f2328;
 	--table-border-color: #d0d7de;	
-	--table-header-bg-color: #eceff2;
+	--table-header-bg-color: #f6f8fa;
 	--table-header-text-color: #000000;
-	--table-footer-bg-color: #eceff2;
+	--table-footer-bg-color: #f6f8fa;
 	--table-footer-text-color: #000000;
 	--table-striped-bg-color: #fafbfd;	
 	--table-striped-text-color: #1f2328; 	
-	--table-hover-bg-color: #eceff2;
+	--table-hover-bg-color: #eef1f4;
 	--table-hover-text-color: #000000;
-	--table-active-bg-color: #e0e5ea;	
+	--table-active-bg-color: #e7ebef;	
 	--table-active-text-color: #000000;
 
     --primary-bg-color: #0073e5;
@@ -683,6 +683,11 @@ table > tbody {
 tbody > tr:hover > * {
 	color: var(--table-hover-text-color) !important;
     background-color: var(--table-hover-bg-color) !important;    
+}
+
+tbody > tr:active > * {
+	color: var(--table-active-text-color) !important;
+    background-color: var(--table-active-bg-color) !important;    
 }
 
 
@@ -1566,14 +1571,19 @@ summary::-webkit-details-marker {
     -webkit-overflow-scrolling: touch;
 }
 
+.table-striped > tbody > tr:not(.active):nth-of-type(odd) > * {
+	color: var(--table-striped-text-color);
+    background-color: var(--table-striped-bg-color);    
+}
+
 tbody > tr.active > * {
 	color: var(--table-active-text-color);
 	background-color: var(--table-active-bg-color);
 }
 
-.table-striped > tbody > tr:not(.active):nth-of-type(odd) > * {
-	color: var(--table-striped-text-color);
-    background-color: var(--table-striped-bg-color);    
+tbody > tr.active:hover > * {
+	color: var(--table-active-text-color) !important;
+	background-color: var(--table-active-bg-color) !important;
 }
 
 
