@@ -7,55 +7,6 @@
 	url("bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
 }
 
-
-.primary-subtle {
-	margin-top: 10px;
-	padding: 10px;
-	background-color: var(--primary-bg-color-subtle);
-	border: 1px solid var(--primary-border-color-subtle);
-	color: var(--primary-text-color-emphasis);
-}
-
-.secondary-subtle {
-	margin-top: 10px;
-	padding: 10px;
-	background-color: var(--secondary-bg-color-subtle);
-	border: 1px solid var(--secondary-border-color-subtle);
-	color: var(--secondary-text-color-emphasis);
-}
-
-.success-subtle {
-	margin-top: 10px;
-	padding: 10px;
-	background-color: var(--success-bg-color-subtle);
-	border: 1px solid var(--success-border-color-subtle);
-	color: var(--success-text-color-emphasis);
-}
-
-.danger-subtle {
-	margin-top: 10px;
-	padding: 10px;
-	background-color: var(--danger-bg-color-subtle);
-	border: 1px solid var(--danger-border-color-subtle);
-	color: var(--danger-text-color-emphasis);
-}
-
-.warning-subtle {
-	margin-top: 10px;
-	padding: 10px;
-	background-color: var(--warning-bg-color-subtle);
-	border: 1px solid var(--warning-border-color-subtle);
-	color: var(--warning-text-color-emphasis);
-}
-
-.info-subtle {
-	margin-top: 10px;
-	padding: 10px;
-	background-color: var(--info-bg-color-subtle);
-	border: 1px solid var(--info-border-color-subtle);
-	color: var(--info-text-color-emphasis);
-}
-
 :root, [data-theme=light] {
 	color-scheme: light;
 
@@ -67,23 +18,23 @@
 	--font-weight: 400;
 	--line-height: 1.5;
 	
-	--body-bg-color: #ffffff;
-	--body-bg-color-rgb: 255, 255, 255;
+	--body-bg-color: #f5f7fa;
+	--body-bg-color-rgb: 245, 247, 250;
 	--body-text-color: #1f2328;	
 	--body-text-color-rgb: 31, 35, 40;	
 
-	--body-secondary-bg-color: #f6f8fa;
-	--body-secondary-bg-color-rgb: 246, 248, 250;
+	--body-secondary-bg-color: #ffffff;
+	--body-secondary-bg-color-rgb: 255, 255, 255;
 	--body-secondary-text-color: #1f2328;
 	--body-secondary-text-color-rgb: 31, 35, 40;
 
-	--body-tertiary-bg-color: #eceff2;
-	--body-tertiary-bg-color-rgb: 236, 239, 242;
+	--body-tertiary-bg-color: #e7ebef;
+	--body-tertiary-bg-color-rgb: 231, 235, 239;
 	--body-tertiary-text-color: #1f2328;
 	--body-tertiary-text-color-rgb: 31, 35, 40;			
 
 	--body-scrollbar-bg: rgba(0, 0, 0, 0);
-	--body-scrollbar-thumb-bg: #8a8a8a;
+	--body-scrollbar-thumb-bg: #caceda;
 
 	--heading-text-color: #000000;
 	--heading-text-color-rgb: 0, 0, 0;
@@ -100,29 +51,29 @@
 	--border-radius: 6px;
 	--border-width: 1px;
 	--border-style: solid;
-	--border-color: #d0d7de;
-	--border-color-rgb: 208, 215, 222;		
-	--border-color-translucent: rgba(208, 215, 222, 0.7);	
+	--border-color: #cbd0dd;
+	--border-color-rgb: 203, 208, 221;		
+	--border-color-translucent: rgba(203, 208, 221, 0.7);	
 
-	--form-bg-color: #f6f8fa;
+	--form-bg-color: #ffffff;
 	--form-text-color: #1f2328;
-	--form-border-color: #d0d7de;
+	--form-border-color: #cbd0dd;
 	--form-focus-bg-color: #ffffff;
 	--form-focus-text-color: #000000;
 	--form-focus-border-color: #0073e5;
 
-	--table-bg-color: #ffffff;
+	--table-bg-color: #f5f7fa;
 	--table-text-color: #1f2328;
-	--table-border-color: #d0d7de;	
-	--table-header-bg-color: #f6f8fa;
+	--table-border-color: #cbd0dd;	
+	--table-header-bg-color: #e7ebef;
 	--table-header-text-color: #000000;
-	--table-footer-bg-color: #f6f8fa;
+	--table-footer-bg-color: #e7ebef;
 	--table-footer-text-color: #000000;
-	--table-striped-bg-color: #fafbfd;	
+	--table-striped-bg-color: #ffffff;	
 	--table-striped-text-color: #1f2328; 	
-	--table-hover-bg-color: #eef1f4;
+	--table-hover-bg-color: #e7ebef;
 	--table-hover-text-color: #000000;
-	--table-active-bg-color: #e7ebef;	
+	--table-active-bg-color: #E0E5E9;	
 	--table-active-text-color: #000000;
 
     --primary-bg-color: #0073e5;
@@ -140,20 +91,20 @@
     --primary-active-border-color: #0062c5;
     --primary-active-text-color: #ffffff;
     
-    --secondary-bg-color: #f6f8fa;
-    --secondary-bg-color-rgb: 251, 251, 251;
+    --secondary-bg-color: #ffffff;
+    --secondary-bg-color-rgb: 255, 255, 255;
     --secondary-bg-color-subtle: #ffffff;
-    --secondary-border-color: #d0d7de;
-    --secondary-border-color-subtle: #e5e5e5;
-    --secondary-text-color: #24292f; 
+    --secondary-border-color: #cbd0dd;
+    --secondary-border-color-subtle: #cbd0dd;
+    --secondary-text-color: #1f2328; 
     --secondary-text-color-emphasis: #000000;   
-    --secondary-hover-bg-color: #eef1f4;
-    --secondary-hover-bg-color-rgb: 238, 241, 244;
-    --secondary-hover-border-color: #d0d7de;
-    --secondary-hover-text-color: #24292f;
-    --secondary-active-bg-color: #e7ebef;
-    --secondary-active-border-color: #d0d7de;
-    --secondary-active-text-color: #24292f;
+    --secondary-hover-bg-color: #e7ebef;
+    --secondary-hover-bg-color-rgb: 231, 235, 239;
+    --secondary-hover-border-color: #cbd0dd;
+    --secondary-hover-text-color: #000000;
+    --secondary-active-bg-color: #dbe1e6;
+    --secondary-active-border-color: #cbd0dd;
+    --secondary-active-text-color: #000000;
     
     --success-bg-color: #28a745;
     --success-bg-color-rgb: 40, 167, 69;
@@ -257,13 +208,14 @@
 	--mark-bg-color: #ffffff;
 	--mark-text-color: #000000;
 	--code-text-color: #ff0000;
+	--muted-text-color: #636c76;
 
 	--border-radius: 0px;
 	--border-width: 1px;
 	--border-style: solid;
 	--border-color: #000000;
 	--border-color-rgb: 0, 0, 0;
-	--border-color-translucent: rgba(0, 0, 0, 0.7);
+	--border-color-translucent: rgba(0, 0, 0, 1);
 
 	--form-bg-color: #2c2c2c;
 	--form-text-color: #ffffff;
@@ -279,26 +231,26 @@
 	--table-header-text-color: #ffffff;
 	--table-footer-bg-color: #161616;
 	--table-footer-text-color: #ffffff;
-	--table-striped-bg-color: #2c2c2c;	
+	--table-striped-bg-color: #2c2c2c;
 	--table-striped-text-color: #ffffff; 	
-	--table-hover-bg-color: rgba(0, 0, 0, 0.6);
+	--table-hover-bg-color: #101010;
 	--table-hover-text-color: #ffffff;
 	--table-active-bg-color: #181818;	
 	--table-active-text-color: #ffffff;	
 		
-	--secondary-bg-color: #2d2d2d;
-	--secondary-bg-color-rgb: 45, 45, 45;
-	--secondary-bg-color-subtle: #101010;
-	--secondary-border-color: #323232;
-	--secondary-border-color-subtle: #888888;
+	--secondary-bg-color: #333333;
+	--secondary-bg-color-rgb: 51, 51, 51;
+	--secondary-bg-color-subtle: #121212;
+	--secondary-border-color: #000000;
+	--secondary-border-color-subtle: #8a8a8a;
 	--secondary-text-color: #ffffff;
-	--secondary-text-color-emphasis: #c3c3c3;	
-	--secondary-hover-bg-color: #323232;
-	--secondary-hover-bg-color-rgb: 50, 50, 50;
-    --secondary-hover-border-color: #323232;
+	--secondary-text-color-emphasis: #c5c5c5;	
+	--secondary-hover-bg-color: #282828;
+	--secondary-hover-bg-color-rgb: 40, 40, 40;
+    --secondary-hover-border-color: #000000;
 	--secondary-hover-text-color: #ffffff;     
-    --secondary-active-bg-color: #272727;
-    --secondary-active-border-color: #323232;
+    --secondary-active-bg-color: #161616;
+    --secondary-active-border-color: #000000;
     --secondary-active-text-color: #ffffff;
 
     --primary-bg-color-subtle: #002952;
@@ -643,7 +595,7 @@ table {
 
 table > :not(caption) > * > * {
 	padding: .5rem .5rem;
-	border-bottom: var(--border-width) var(--border-style) var(--table-border-color);
+	border-bottom: var(--border-width) var(--border-style) var(--table-border-color);	
 }
 
 table > tfoot > * > * {	
@@ -684,12 +636,6 @@ tbody > tr:hover > * {
 	color: var(--table-hover-text-color) !important;
     background-color: var(--table-hover-bg-color) !important;    
 }
-
-tbody > tr:active > * {
-	color: var(--table-active-text-color) !important;
-    background-color: var(--table-active-bg-color) !important;    
-}
-
 
 /* FORM ELEMENTS */
 
@@ -1400,8 +1346,8 @@ details {
 	display: block;
 	width: 100%;
 	margin-bottom: 1rem;
-	color: var(--body-text-color);
-	background: var(--body-bg-color);
+	color: var(--body-secondary-text-color);
+	background: var(--body-secondary-bg-color);
 	border: var(--border-width) var(--border-style) var(--border-color);
 	border-radius: var(--border-radius);	
 }
@@ -1413,8 +1359,8 @@ details > *:not(summary) {
 }
 
 details[open] > summary {
-	color: var(--primary-text-color);
-	background-color: var(--primary-bg-color);		
+	color: var(--body-tertiary-text-color);
+	background-color: var(--body-tertiary-bg-color);		
 	border-bottom: var(--border-width) var(--border-style) var(--border-color);
 	border-top-left-radius: var(--border-radius);
 	border-top-right-radius: var(--border-radius);
@@ -1431,7 +1377,9 @@ summary {
 	cursor: pointer;
 	list-style: none;		
 	padding: .625rem .938rem;	
-	color: var(--body-text-color);
+	background: var(--body-secondary-bg-color);
+	color: var(--body-secondary-text-color);
+	border-radius: var(--border-radius);
 }
 
 summary:focus:not(:focus-visible) {
@@ -1580,12 +1528,6 @@ tbody > tr.active > * {
 	color: var(--table-active-text-color);
 	background-color: var(--table-active-bg-color);
 }
-
-tbody > tr.active:hover > * {
-	color: var(--table-active-text-color) !important;
-	background-color: var(--table-active-bg-color) !important;
-}
-
 
 
 input.is-valid:valid,
