@@ -412,8 +412,14 @@ a:visited {
 	color: var(--link-text-color);
 }
 
+a:focus,
 a:hover {
 	color: var(--link-text-hover-color);
+}
+
+a:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
+	outline-offset: var(--focus-outline-offset);
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -1607,6 +1613,10 @@ select.is-invalid:focus {
 	border-color: var(--primary-active-border-color) !important;
 }
 
+.btn-primary:focus {
+	outline-color: var(--primary-bg-color);
+}
+
 .btn-primary:disabled {
 	border-color: var(--primary-border-color) !important;
 }
@@ -1634,6 +1644,10 @@ select.is-invalid:focus {
 	color: var(--secondary-active-text-color) !important;
 	background-color: var(--secondary-active-bg-color) !important;	
 	border-color: var(--secondary-active-border-color) !important;
+}
+
+.btn-secondary:focus {
+	outline-color: var(--secondary-bg-color) !important;
 }
 
 .btn-secondary:disabled {
@@ -1665,6 +1679,10 @@ select.is-invalid:focus {
 	border-color: var(--success-active-border-color) !important;
 }
 
+.btn-success:focus {
+	outline-color: var(--success-bg-color) !important;
+}
+
 .btn-success:disabled {
 	border-color: var(--success-border-color) !important;
 }
@@ -1692,6 +1710,10 @@ select.is-invalid:focus {
 	color: var(--danger-active-text-color) !important;
 	background-color: var(--danger-active-bg-color) !important;
 	border-color: var(--danger-active-border-color) !important;
+}
+
+.btn-danger:focus {
+	outline-color: var(--danger-bg-color) !important;
 }
 
 .btn-danger:disabled {
@@ -1723,6 +1745,10 @@ select.is-invalid:focus {
 	border-color: var(--warning-active-border-color) !important;
 }
 
+.btn-warning:focus {
+	outline-color: var(--warning-bg-color) !important;
+}
+
 .btn-warning:disabled {
 	border-color: var(--warning-border-color) !important;
 }
@@ -1750,6 +1776,10 @@ select.is-invalid:focus {
 	color: var(--info-active-text-color) !important;
 	background-color: var(--info-active-bg-color) !important;
 	border-color: var(--info-active-border-color) !important;
+}
+
+.btn-info:focus {
+	outline-color: var(--info-bg-color) !important;
 }
 
 .btn-info:disabled {
@@ -1781,6 +1811,10 @@ select.is-invalid:focus {
 	border-color: #dddddd !important;
 }
 
+.btn-white:focus {
+	outline-color: #ffffff !important;
+}
+
 .btn-white:disabled {
 	border-color: #ffffff !important;
 }
@@ -1808,6 +1842,10 @@ select.is-invalid:focus {
 	color: #ffffff !important;
 	background-color: #000000 !important;
 	border-color: #000000 !important;
+}
+
+.btn-black:focus {
+	outline-color: #000000 !important;
 }
 
 .btn-black:disabled {
@@ -1874,7 +1912,12 @@ select.is-invalid:focus {
 .link-primary:hover {
 	color: color-mix(in srgb, var(--primary-hover-bg-color), transparent var(--link-alpha,0%)) !important;
 	text-decoration-color: color-mix(in srgb, var(--primary-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important;
-	-webkit-text-decoration-color: color-mix(in srgb, var(--primary-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important; 
+	-webkit-text-decoration-color: color-mix(in srgb, var(--primary-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important;	
+}
+
+.link-primary:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--primary-bg-color);
+    outline-offset: var(--focus-outline-offset);
 }
 
 .link-secondary {
@@ -1890,6 +1933,11 @@ select.is-invalid:focus {
 	-webkit-text-decoration-color: color-mix(in srgb, var(--secondary-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important; 
 }
 
+.link-secondary:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--secondary-bg-color);
+    outline-offset: var(--focus-outline-offset);
+}
+
 .link-success {
 	color: color-mix(in srgb, var(--success-bg-color), transparent var(--link-alpha,0%)) !important;
 	text-decoration-color: color-mix(in srgb, var(--success-bg-color), transparent var(--link-underline-alpha,0%)) !important;
@@ -1901,6 +1949,11 @@ select.is-invalid:focus {
 	color: color-mix(in srgb, var(--success-hover-bg-color), transparent var(--link-alpha,0%)) !important;
 	text-decoration-color: color-mix(in srgb, var(--success-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important;
 	-webkit-text-decoration-color: color-mix(in srgb, var(--success-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important; 
+}
+
+.link-success:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--success-bg-color);
+    outline-offset: var(--focus-outline-offset);
 }
 
 .link-danger {
@@ -1916,6 +1969,11 @@ select.is-invalid:focus {
 	-webkit-text-decoration-color: color-mix(in srgb, var(--danger-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important; 
 }
 
+.link-danger:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--danger-bg-color);
+    outline-offset: var(--focus-outline-offset);
+}
+
 .link-warning {
 	color: color-mix(in srgb, var(--warning-bg-color), transparent var(--link-alpha,0%)) !important;
 	text-decoration-color: color-mix(in srgb, var(--warning-bg-color), transparent var(--link-underline-alpha,0%)) !important;
@@ -1927,6 +1985,11 @@ select.is-invalid:focus {
 	color: color-mix(in srgb, var(--warning-hover-bg-color), transparent var(--link-alpha,0%)) !important;
 	text-decoration-color: color-mix(in srgb, var(--warning-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important;
 	-webkit-text-decoration-color: color-mix(in srgb, var(--warning-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important; 
+}
+
+.link-warning:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--warning-bg-color);
+    outline-offset: var(--focus-outline-offset);
 }
 
 .link-info {
@@ -1942,6 +2005,11 @@ select.is-invalid:focus {
 	-webkit-text-decoration-color: color-mix(in srgb, var(--info-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important; 
 }
 
+.link-info:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--info-bg-color);
+    outline-offset: var(--focus-outline-offset);
+}
+
 .link-white {
 	color: color-mix(in srgb, #ffffff, transparent var(--link-alpha,0%)) !important;
 	text-decoration-color: color-mix(in srgb, #ffffff, transparent var(--link-underline-alpha,0%)) !important;
@@ -1955,6 +2023,11 @@ select.is-invalid:focus {
 	-webkit-text-decoration-color: color-mix(in srgb, #dddddd, transparent var(--link-underline-alpha,0%)) !important; 
 }
 
+.link-white:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) #ffffff;
+    outline-offset: var(--focus-outline-offset);
+}
+
 .link-black {
 	color: color-mix(in srgb, #000000, transparent var(--link-alpha,0%)) !important;
 	text-decoration-color: color-mix(in srgb, #000000, transparent var(--link-underline-alpha,0%)) !important;
@@ -1966,6 +2039,11 @@ select.is-invalid:focus {
 	color: color-mix(in srgb, #121212, transparent var(--link-alpha,0%)) !important;
 	text-decoration-color: color-mix(in srgb, #121212, transparent var(--link-underline-alpha,0%)) !important;
 	-webkit-text-decoration-color: color-mix(in srgb, #121212, transparent var(--link-underline-alpha,0%)) !important; 
+}
+
+.link-black:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) #000000;
+    outline-offset: var(--focus-outline-offset);
 }
 
 .link-alpha-0 {
