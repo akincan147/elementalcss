@@ -1,9 +1,16 @@
-I'm undertaking a comprehensive optimization of Bootstrap styles, focusing on enhancing readability, stability, and consistency across variables. This involves restructuring the Sass architecture, revising and refining all styles to ensure a cohesive and organized framework. Additionally, I'm making color variables more intuitive and customizable, addressing any mixed or disorganized color assignments to achieve a streamlined and user-friendly design system.
+Bootstrap Styles Optimization
+I am undertaking a comprehensive optimization of Bootstrap styles with a focus on enhancing readability, stability, and consistency across all variables. This process includes:
 
-I am currently working on integrating everything within the style.css file. When everything is complete, the project directory will be finished and organized.
+Restructuring the structural comprehensibility of styles caused by Sass.
 
-Layout
-Content - Currently, this is being worked on
-Forms
-Components
-Utilities and Helpers - DONE
+Enhancing Color Variables: Making color variables more intuitive and customizable, while addressing any mixed or disorganized color assignments. The goal is to achieve a streamlined, user-friendly design system.
+
+Current Progress
+Layout: Pending
+Content: Currently in progress
+Forms: Pending
+Components: Pending
+Utilities and Helpers: Completed
+Next Steps
+
+I am currently working on integrating all components within the style.css file. Once this is complete, the project directory will be fully organized and ready for use.
