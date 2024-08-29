@@ -14,4 +14,4 @@ Enhancing Color Variables: Making color variables more intuitive and customizabl
   - **Utilities and Helpers:** Completed
 
 - **Next Steps**
-  -I am currently working on integrating all components within the style.css file. Once this is complete, the project directory will be fully organized and ready for use.
+  - I am currently working on integrating all components within the style.css file. Once this is complete, the project directory will be fully organized and ready for use.
