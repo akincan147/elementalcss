@@ -73,7 +73,7 @@
 	--tab-outline-color: #0073e5;
 	--tab-outline-offset: 2px;
 
-	--focus-outline-width: 0px;
+	--focus-outline-width: 1px;
 	--focus-outline-class-width: 1px;
 	--focus-outline-style: solid;
 	--focus-outline-color: #0073e5;
@@ -864,6 +864,8 @@ input[type="range"]:active {
 input[type="range"]:focus {
 	background-color: var(--form-focus-bg-color);
 	border: var(--border-width) var(--border-style) var(--form-focus-border-color);
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
 }
 
 input[type="range" i]::-webkit-slider-container {
@@ -952,6 +954,8 @@ input[type="color"] {
 input[type="color"]:focus {
 	background-color: var(--form-focus-bg-color);  
 	border-color: var(--form-focus-border-color);
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
 }
 
 input[type="color"]::-webkit-color-swatch {
@@ -1000,6 +1004,8 @@ input[type="radio"]:active {
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
 	border-color: var(--form-focus-border-color);
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
 }
 
 input[type="checkbox"]::before,
