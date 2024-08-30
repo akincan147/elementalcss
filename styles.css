@@ -485,13 +485,17 @@ blockquote {
 }
 
 blockquote>:last-child {
-	margin-top: -1rem;
+    margin-bottom: 0
+}
+
+figure:has(blockquote) > figcaption {
+    margin-top: -1rem;
     margin-bottom: 0;
     font-size: .875em;
     color: var(--muted-text-color);
 }
 
-blockquote>:last-child::before {
+figure:has(blockquote) > figcaption::before {
     content: "— ";
 }
 
@@ -574,9 +578,16 @@ kbd kbd {
 
 figure {
 	margin: 0 0 1rem;
+	display: inline-block;
+}
+
+figure > img {
+	margin-bottom: .5rem;
+    line-height: 1;
 }
 
 figcaption {
+	font-size: 0.875em;
 	color: var(--muted-text-color);
 }
 
@@ -1503,6 +1514,15 @@ summary::-webkit-details-marker {
 .img-fluid {
     max-width: 100%;
     height: auto;
+}
+
+.img-thumbnail {
+    padding: .25rem;
+    background-color: var(--body-bg-color);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
+    max-width: 100%;
+    height: auto
 }
 
 .list-unstyled {
@@ -3139,6 +3159,16 @@ select.is-invalid:focus {
 }
 
 /* Text */
+
+.mark {
+    padding: .1875em;
+    color: var(--mark-text-color);
+    background-color: var(--mark-bg-color);
+}
+
+.small {
+    font-size: .875em
+}
 
 .text-left {
     text-align: left !important;
