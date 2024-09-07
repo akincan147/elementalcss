@@ -42,8 +42,19 @@
 	--body-link-hover-text-color: #006bd5;
 	--body-link-hover-text-decoration-color: #006bd5;
 
-	--heading-text-color: #000000;	
+	--body-table-bg-color: #f5f7fa;
+	--body-table-text-color: #1f2328;
+	--body-table-border-color: #cbd0dd;	
+	--body-table-section-bg-color: #e7ebef;
+	--body-table-section-text-color: #000000;
+	--body-table-striped-bg-color: #ffffff;	
+	--body-table-striped-text-color: #1f2328; 	
+	--body-table-hover-bg-color: #e7ebef;
+	--body-table-hover-text-color: #000000;
+	--body-table-active-bg-color: #e0e5e9;	
+	--body-table-active-text-color: #000000;
 
+	--heading-text-color: #000000;
 	--mark-bg-color: #fff09c;
 	--mark-text-color: #000000;		
 	--code-text-color: #ff0000;
@@ -85,21 +96,7 @@
 	--form-border-color: #cbd0dd;
 	--form-focus-bg-color: #ffffff;
 	--form-focus-text-color: #000000;
-	--form-focus-border-color: #0073e5;
-
-	--table-bg-color: #f5f7fa;
-	--table-text-color: #1f2328;
-	--table-border-color: #cbd0dd;	
-	--table-header-bg-color: #e7ebef;
-	--table-header-text-color: #000000;
-	--table-footer-bg-color: #e7ebef;
-	--table-footer-text-color: #000000;
-	--table-striped-bg-color: #ffffff;	
-	--table-striped-text-color: #1f2328; 	
-	--table-hover-bg-color: #e7ebef;
-	--table-hover-text-color: #000000;
-	--table-active-bg-color: #e0e5e9;	
-	--table-active-text-color: #000000;
+	--form-focus-border-color: #0073e5;	
 
     --primary-bg-color: #0073e5;
     --primary-bg-color-subtle: #afd7ff;
@@ -113,6 +110,11 @@
     --primary-active-bg-color: #0062c5;
     --primary-active-border-color: #0062c5;
     --primary-active-text-color: #ffffff;
+	--primary-section-bg-color:#0062c5;
+	--primary-section-text-color: #ffffff;
+	--primary-striped-bg-color: #0f87ff;
+	--primary-striped-text-color: #ffffff;
+	--primary-border-color-prominent: #0052a4;
     
     --secondary-bg-color: #ffffff;
     --secondary-bg-color-subtle: #ffffff;
@@ -126,6 +128,11 @@
     --secondary-active-bg-color: #dbe1e6;
     --secondary-active-border-color: #cbd0dd;
     --secondary-active-text-color: #000000;
+    --secondary-section-bg-color: #e7ebef;
+	--secondary-section-text-color: #000000;
+	--secondary-striped-bg-color: #f5f7fa;
+	--secondary-striped-text-color: #1f2328;
+	--secondary-border-color-prominent: #cbd0dd;
     
     --success-bg-color: #28a745;
     --success-bg-color-subtle: #baeec6;
@@ -139,6 +146,11 @@
     --success-active-bg-color: #23903c;
     --success-active-border-color: #23903c;
     --success-active-text-color: #ffffff;
+    --success-section-bg-color: #23903c;
+	--success-section-text-color: #ffffff;
+	--success-striped-bg-color: #2dba4e;
+	--success-striped-text-color: #ffffff;
+	--success-border-color-prominent: #1d7832;
 
     --danger-bg-color: #dc3545;
     --danger-bg-color-subtle: #f5c6cb;
@@ -152,6 +164,11 @@
     --danger-active-bg-color: #c92334;
     --danger-active-border-color: #c92334;
     --danger-active-text-color: #ffffff;
+    --danger-section-bg-color: #c92334;
+	--danger-section-text-color: #ffffff;
+	--danger-striped-bg-color: #de4655;
+	--danger-striped-text-color: #ffffff;
+	--danger-border-color-prominent:#a71e2b;
     
     --warning-bg-color: #ffc107;
     --warning-bg-color-subtle: #ffedb8;
@@ -165,6 +182,11 @@
     --warning-active-bg-color: #dfa700;
     --warning-active-border-color: #dfa700;
     --warning-active-text-color: #000000;
+    --warning-section-bg-color: #dfa700;
+	--warning-section-text-color: #000000;
+	--warning-striped-bg-color: #ffc929;
+	--warning-striped-text-color: #000000;
+	--warning-border-color-prominent: #ba8b00;
 	    	
     --info-bg-color: #0dcaf0;
     --info-bg-color-subtle: #baf0fb;
@@ -177,7 +199,12 @@
     --info-hover-text-color: #000000;
     --info-active-bg-color: #0bafd0;
     --info-active-border-color: #0bafd0;
-    --info-active-text-color: #000000;        
+    --info-active-text-color: #000000;
+    --info-section-bg-color: #0aa0be;
+	--info-section-text-color: #000000;
+	--info-striped-bg-color: #2fd3f4;
+	--info-striped-text-color: #000000;
+	--info-border-color-prominent: #08839c;        
 
     --select-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23222222' %3e%3cpath d='M6.343 9.059L12 3.402l5.657 5.657 1.414-1.414L12 .573 4.929 7.644 6.343 9.059zM17.657 14.941l-5.657 5.657-5.657-5.657-1.414 1.414 7.071 7.071 7.071-7.071-1.414-1.414z' /%3e%3c/svg%3e");	
 }
@@ -205,8 +232,19 @@
 	--body-scrollbar-bg: rgba(0, 0, 0, 0);
 	--body-scrollbar-thumb-bg: #9f9f9f;
 
-	--heading-text-color: #ffffff;			
+	--body-table-bg-color: #272727;
+	--body-table-text-color: #ffffff;
+	--body-table-border-color: #000000;	
+	--body-table-section-bg-color: #161616;
+	--body-table-section-text-color: #ffffff;
+	--body-table-striped-bg-color: #2c2c2c;
+	--body-table-striped-text-color: #ffffff; 	
+	--body-table-hover-bg-color: #101010;
+	--body-table-hover-text-color: #ffffff;
+	--body-table-active-bg-color: #181818;	
+	--body-table-active-text-color: #ffffff;
 
+	--heading-text-color: #ffffff;
 	--mark-bg-color: #ffffff;
 	--mark-text-color: #000000;
 	--code-text-color: #ff0000;
@@ -223,21 +261,7 @@
 	--form-border-color: #000000;
 	--form-focus-bg-color: #1a1a1a;
 	--form-focus-text-color: #ffffff;
-	--form-focus-border-color: #0073e5;
-
-	--table-bg-color: #272727;
-	--table-text-color: #ffffff;
-	--table-border-color: #000000;	
-	--table-header-bg-color: #161616;
-	--table-header-text-color: #ffffff;
-	--table-footer-bg-color: #161616;
-	--table-footer-text-color: #ffffff;
-	--table-striped-bg-color: #2c2c2c;
-	--table-striped-text-color: #ffffff; 	
-	--table-hover-bg-color: #101010;
-	--table-hover-text-color: #ffffff;
-	--table-active-bg-color: #181818;	
-	--table-active-text-color: #ffffff;	
+	--form-focus-border-color: #0073e5;		
 		
 	--secondary-bg-color: #333333;
 	--secondary-bg-color-subtle: #121212;
@@ -251,6 +275,11 @@
     --secondary-active-bg-color: #161616;
     --secondary-active-border-color: #000000;
     --secondary-active-text-color: #ffffff;
+    --secondary-section-bg-color: #222222;
+	--secondary-section-text-color: #ffffff;
+	--secondary-striped-bg-color: #404040;
+	--secondary-striped-text-color: #ffffff;
+	--secondary-border-color-prominent: #000000;
 
     --primary-bg-color-subtle: #002952;
     --primary-text-color-emphasis: #afd7ff;
@@ -597,6 +626,18 @@ svg {
 }
 
 table {
+	--table-bg-color: var(--body-table-bg-color);
+	--table-text-color: var(--body-table-text-color);
+	--table-border-color: var(--body-table-border-color);
+	--table-section-bg-color: var(--body-table-section-bg-color);
+	--table-section-text-color: var(--body-table-section-text-color);
+	--table-striped-bg-color: var(--body-table-striped-bg-color);
+	--table-striped-text-color: var(--body-table-striped-text-color);
+	--table-hover-bg-color: var(--body-table-hover-bg-color);
+	--table-hover-text-color: var(--body-table-hover-text-color);
+	--table-active-bg-color: var(--body-table-active-bg-color);	
+	--table-active-text-color: var(--body-table-active-text-color);
+
 	vertical-align: top;
 	caption-side: bottom;
 	border-collapse: collapse;
@@ -604,16 +645,12 @@ table {
 	margin-bottom: 1rem;
 	width: 100%;  
 	color: var(--table-text-color); 
-	background-color: var(--table-bg-color);	
+	background-color: var(--table-bg-color);
 }
 
 table > :not(caption) > * > * {
 	padding: .5rem .5rem;
-	border-bottom: var(--border-width) var(--border-style) var(--table-border-color);	
-}
-
-table > tfoot > * > * {	
-	border-bottom: none;
+	border-bottom: var(--border-width) var(--border-style) var(--table-border-color);		
 }
 
 caption {
@@ -628,18 +665,22 @@ th {
 	text-align: -webkit-match-parent;
 }
 
-table > thead {
-	vertical-align: bottom;
-	color: var(--table-header-text-color);
-	background-color: var(--table-header-bg-color);	
-	border-bottom: 2px var(--border-style) var(--table-border-color);
+thead,
+tbody,
+tfoot,
+tr, 
+th,
+td {
+    border-color: inherit;
+    border-style: var(--border-style);
+    border-width: 0
 }
 
-table > tfoot {
+table > thead {
 	vertical-align: bottom;
-	color: var(--table-footer-text-color);
-	background-color: var(--table-footer-bg-color);	
-	border-top: 2px var(--border-style) var(--table-border-color);
+	color: var(--table-section-text-color);
+	background-color: var(--table-section-bg-color);	
+	border-bottom: 2px var(--border-style) var(--table-border-color);
 }
 
 table > tbody {
@@ -649,6 +690,17 @@ table > tbody {
 tbody > tr:hover > * {
 	color: var(--table-hover-text-color) !important;
     background-color: var(--table-hover-bg-color) !important;    
+}
+
+table > tfoot {
+	vertical-align: bottom;
+	color: var(--table-section-text-color);
+	background-color: var(--table-section-bg-color);	
+	border-top: 2px var(--border-style) var(--table-border-color);
+}
+
+table > tfoot > * > * {	
+	border-bottom: none;
 }
 
 /* FORM ELEMENTS */
@@ -1288,6 +1340,7 @@ button,
     --btn-active-bg-color: var(--primary-active-bg-color);
     --btn-active-border-color: var(--primary-active-border-color);
     --btn-active-text-color: var(--primary-active-text-color);
+    --btn-outline-color: var(--primary-bg-color);
 	appearance: button;  
 	-webkit-appearance: button;
 	user-select: none;
@@ -1331,7 +1384,7 @@ button:focus,
 [type="submit"]:focus,
 [type="reset"]:focus,
 [type="button"]:focus {
-	outline-color: var(--btn-bg-color);
+	outline-color: var(--btn-outline-color);
 }
 
 button:focus:not(:focus-visible),
@@ -1645,6 +1698,7 @@ select.is-invalid:focus {
     --btn-active-bg-color: var(--primary-active-bg-color);
     --btn-active-border-color: var(--primary-active-border-color);
     --btn-active-text-color: var(--primary-active-text-color);
+    --btn-outline-color: var(--primary-bg-color);
 }
 
 .btn-secondary {
@@ -1657,6 +1711,7 @@ select.is-invalid:focus {
     --btn-active-bg-color: var(--secondary-active-bg-color);
     --btn-active-border-color: var(--secondary-active-border-color);
     --btn-active-text-color: var(--secondary-active-text-color);
+    --btn-outline-color: var(--secondary-bg-color);
 }
 
 .btn-success {
@@ -1669,6 +1724,7 @@ select.is-invalid:focus {
     --btn-active-bg-color: var(--success-active-bg-color);
     --btn-active-border-color: var(--success-active-border-color);
     --btn-active-text-color: var(--success-active-text-color);
+    --btn-outline-color: var(--success-bg-color);
 }
 
 .btn-danger {
@@ -1681,6 +1737,7 @@ select.is-invalid:focus {
     --btn-active-bg-color: var(--danger-active-bg-color);
     --btn-active-border-color: var(--danger-active-border-color);
     --btn-active-text-color: var(--danger-active-text-color);
+    --btn-outline-color: var(--danger-bg-color);
 }
 
 .btn-warning {
@@ -1693,6 +1750,7 @@ select.is-invalid:focus {
     --btn-active-bg-color: var(--warning-active-bg-color);
     --btn-active-border-color: var(--warning-active-border-color);
     --btn-active-text-color: var(--warning-active-text-color);
+    --btn-outline-color: var(--warning-bg-color);
 }
 
 .btn-info {
@@ -1705,6 +1763,7 @@ select.is-invalid:focus {
     --btn-active-bg-color: var(--info-active-bg-color);
     --btn-active-border-color: var(--info-active-border-color);
     --btn-active-text-color: var(--info-active-text-color);
+    --btn-outline-color: var(--info-bg-color);
 }
 
 .btn-white {
@@ -1717,6 +1776,7 @@ select.is-invalid:focus {
     --btn-active-bg-color: #dddddd;
     --btn-active-border-color: #dddddd;
     --btn-active-text-color: #000000;
+    --btn-outline-color: #ffffff;
 }
 
 .btn-black {
@@ -1729,6 +1789,7 @@ select.is-invalid:focus {
     --btn-active-bg-color: #000000;
     --btn-active-border-color: #000000;
     --btn-active-text-color: #ffffff;
+    --btn-outline-color: #202020;
 }
 
 .btn-link {
@@ -1741,6 +1802,148 @@ select.is-invalid:focus {
     --btn-active-bg-color: transparent;
     --btn-active-border-color: transparent;
     --btn-active-text-color: var(--body-link-hover-text-color);
+    --btn-outline-color: var(--body-link-text-color);
+}
+
+
+.table-primary {
+	--table-bg-color: var(--primary-bg-color);
+	--table-text-color: var(--primary-text-color);
+	--table-border-color: var(--primary-border-color-prominent);
+	--table-section-bg-color: var(--primary-section-bg-color);
+	--table-section-text-color: var(--primary-section-text-color);
+	--table-striped-bg-color: var(--primary-striped-bg-color);
+	--table-striped-text-color: var(--primary-striped-text-color);
+	--table-hover-bg-color: var(--primary-hover-bg-color);
+	--table-hover-text-color: var(--primary-hover-text-color);
+	--table-active-bg-color: var(--primary-active-bg-color);
+	--table-active-text-color: var(--primary-active-text-color);
+}
+
+.table-secondary {
+	--table-bg-color: var(--secondary-bg-color);
+	--table-text-color: var(--secondary-text-color);
+	--table-border-color: var(--secondary-border-color-prominent);
+	--table-section-bg-color: var(--secondary-section-bg-color);
+	--table-section-text-color: var(--secondary-section-text-color);
+	--table-striped-bg-color: var(--secondary-striped-bg-color);
+	--table-striped-text-color: var(--secondary-striped-text-color);
+	--table-hover-bg-color: var(--secondary-hover-bg-color);
+	--table-hover-text-color: var(--secondary-hover-text-color);
+	--table-active-bg-color: var(--secondary-active-bg-color);
+	--table-active-text-color: var(--secondary-active-text-color);
+}
+
+.table-success {
+	--table-bg-color: var(--success-bg-color);
+	--table-text-color: var(--success-text-color);
+	--table-border-color: var(--success-border-color-prominent);
+	--table-section-bg-color: var(--success-section-bg-color);
+	--table-section-text-color: var(--success-section-text-color);
+	--table-striped-bg-color: var(--success-striped-bg-color);
+	--table-striped-text-color: var(--success-striped-text-color);
+	--table-hover-bg-color: var(--success-hover-bg-color);
+	--table-hover-text-color: var(--success-hover-text-color);
+	--table-active-bg-color: var(--success-active-bg-color);
+	--table-active-text-color: var(--success-active-text-color);
+}
+
+.table-success .btn-success {
+	--btn-border-color: var(--success-text-color);
+	--btn-hover-border-color: var(--success-hover-text-color);
+	--btn-active-border-color: var(--success-active-text-color);
+	--btn-outline-color: var(--success-text-color);
+}
+
+.table-danger {
+	--table-bg-color: var(--danger-bg-color);
+	--table-text-color: var(--danger-text-color);
+	--table-border-color: var(--danger-border-color-prominent);
+	--table-section-bg-color: var(--danger-section-bg-color);
+	--table-section-text-color: var(--danger-section-text-color);
+	--table-striped-bg-color: var(--danger-striped-bg-color);
+	--table-striped-text-color: var(--danger-striped-text-color);
+	--table-hover-bg-color: var(--danger-hover-bg-color);
+	--table-hover-text-color: var(--danger-hover-text-color);
+	--table-active-bg-color: var(--danger-active-bg-color);
+	--table-active-text-color: var(--danger-active-text-color);
+}
+
+.table-danger .btn-danger {
+	--btn-border-color: var(--danger-text-color);
+	--btn-hover-border-color: var(--danger-hover-text-color);
+	--btn-active-border-color: var(--danger-active-text-color);
+	--btn-outline-color: var(--danger-text-color);
+}
+
+.table-warning {
+	--table-bg-color: var(--warning-bg-color);
+	--table-text-color: var(--warning-text-color);
+	--table-border-color: var(--warning-border-color-prominent);
+	--table-section-bg-color: var(--warning-section-bg-color);
+	--table-section-text-color: var(--warning-section-text-color);
+	--table-striped-bg-color: var(--warning-striped-bg-color);
+	--table-striped-text-color: var(--warning-striped-text-color);
+	--table-hover-bg-color: var(--warning-hover-bg-color);
+	--table-hover-text-color: var(--warning-hover-text-color);
+	--table-active-bg-color: var(--warning-active-bg-color);
+	--table-active-text-color: var(--warning-active-text-color);
+}
+
+.table-warning .btn-warning {
+	--btn-border-color: var(--warning-text-color);
+	--btn-hover-border-color: var(--warning-hover-text-color);
+	--btn-active-border-color: var(--warning-active-text-color);
+	--btn-outline-color: var(--warning-text-color);
+}
+
+.table-info {
+	--table-bg-color: var(--info-bg-color);
+	--table-text-color: var(--info-text-color);
+	--table-border-color: var(--info-border-color-prominent);
+	--table-section-bg-color: var(--info-section-bg-color);
+	--table-section-text-color: var(--info-section-text-color);
+	--table-striped-bg-color: var(--info-striped-bg-color);
+	--table-striped-text-color: var(--info-striped-text-color);
+	--table-hover-bg-color: var(--info-hover-bg-color);
+	--table-hover-text-color: var(--info-hover-text-color);
+	--table-active-bg-color: var(--info-active-bg-color);
+	--table-active-text-color: var(--info-active-text-color);
+}
+
+.table-info .btn-info {
+	--btn-border-color: var(--info-text-color);
+	--btn-hover-border-color: var(--info-hover-text-color);
+	--btn-active-border-color: var(--info-active-text-color);
+	--btn-outline-color: var(--info-text-color);
+}
+
+.table-white {
+	--table-bg-color: var(--primary-bg-color);
+	--table-text-color: var(--primary-text-color);
+	--table-border-color: var(--primary-border-color);
+	--table-section-bg-color: var(--primary-section-bg-color);
+	--table-section-text-color: var(--primary-section-text-color);
+	--table-striped-bg-color: var(--primary-striped-bg-color);
+	--table-striped-text-color: var(--primary-striped-text-color);
+	--table-hover-bg-color: var(--primary-hover-bg-color);
+	--table-hover-text-color: var(--primary-hover-text-color);
+	--table-active-bg-color: var(--primary-active-bg-color);
+	--table-active-text-color: var(--primary-active-text-color);
+}
+
+.table-black {
+	--table-bg-color: var(--primary-bg-color);
+	--table-text-color: var(--primary-text-color);
+	--table-border-color: var(--primary-border-color);
+	--table-section-bg-color: var(--primary-section-bg-color);
+	--table-section-text-color: var(--primary-section-text-color);
+	--table-striped-bg-color: var(--primary-striped-bg-color);
+	--table-striped-text-color: var(--primary-striped-text-color);
+	--table-hover-bg-color: var(--primary-hover-bg-color);
+	--table-hover-text-color: var(--primary-hover-text-color);
+	--table-active-bg-color: var(--primary-active-bg-color);
+	--table-active-text-color: var(--primary-active-text-color);
 }
 
 
