@@ -224,17 +224,17 @@
 	--white-striped-text-color: #;
 	--white-border-color-prominent: #;
 
-	--black-bg-color: #202020;
+	--black-bg-color: #000000;
     --black-bg-color-subtle: #;
-    --black-border-color: #202020;
+    --black-border-color: #000000;
     --black-border-color-subtle: #;
     --black-text-color: #ffffff;    
     --black-text-color-emphasis: #;
     --black-hover-bg-color: #161616;
     --black-hover-border-color: #161616;
     --black-hover-text-color: #ffffff;
-    --black-active-bg-color: #000000;
-    --black-active-border-color: #000000;
+    --black-active-bg-color: #202020;
+    --black-active-border-color: #202020;
     --black-active-text-color: #ffffff;
     --black-section-bg-color: #;
 	--black-section-text-color: #;
@@ -1983,12 +1983,22 @@ select.is-invalid:focus {
 	--table-active-bg-color: var(--primary-active-bg-color);
 	--table-active-text-color: var(--primary-active-text-color);
 }
-
 .table-primary .btn-primary {
 	--btn-border-color: var(--primary-text-color);
 	--btn-hover-border-color: var(--primary-hover-text-color);
 	--btn-active-border-color: var(--primary-active-text-color);
 	--btn-outline-color: var(--primary-text-color);
+}
+.table-primary .btn-primary.btn-link {
+	--btn-text-color: var(--primary-text-color);
+	--btn-border-color: transparent;
+	--btn-hover-text-color: var(--primary-hover-text-color);
+	--btn-hover-border-color: transparent;
+	--btn-active-text-color: var(--primary-active-text-color);
+	--btn-active-border-color: transparent;
+}
+.table-primary .btn-primary.btn-outline {
+	--btn-text-color: var(--primary-text-color);
 }
 
 .table-secondary {
@@ -2004,12 +2014,22 @@ select.is-invalid:focus {
 	--table-active-bg-color: var(--secondary-active-bg-color);
 	--table-active-text-color: var(--secondary-active-text-color);
 }
-
 .table-secondary .btn-secondary {
 	--btn-border-color: var(--secondary-text-color);
 	--btn-hover-border-color: var(--secondary-hover-text-color);
 	--btn-active-border-color: var(--secondary-active-text-color);
 	--btn-outline-color: var(--secondary-text-color);
+}
+.table-secondary .btn-secondary.btn-link {
+	--btn-text-color: var(--secondary-text-color);
+	--btn-border-color: transparent;
+	--btn-hover-text-color: var(--secondary-hover-text-color);
+	--btn-hover-border-color: transparent;
+	--btn-active-text-color: var(--secondary-active-text-color);
+	--btn-active-border-color: transparent;
+}
+.table-secondary .btn-secondary.btn-outline {
+	--btn-text-color: var(--secondary-text-color);
 }
 
 .table-success {
@@ -2025,12 +2045,22 @@ select.is-invalid:focus {
 	--table-active-bg-color: var(--success-active-bg-color);
 	--table-active-text-color: var(--success-active-text-color);
 }
-
 .table-success .btn-success {
 	--btn-border-color: var(--success-text-color);
 	--btn-hover-border-color: var(--success-hover-text-color);
 	--btn-active-border-color: var(--success-active-text-color);
 	--btn-outline-color: var(--success-text-color);
+}
+.table-success .btn-success.btn-link {
+	--btn-text-color: var(--success-text-color);
+	--btn-border-color: transparent;
+	--btn-hover-text-color: var(--success-hover-text-color);
+	--btn-hover-border-color: transparent;
+	--btn-active-text-color: var(--success-active-text-color);
+	--btn-active-border-color: transparent;
+}
+.table-success .btn-success.btn-outline {
+	--btn-text-color: var(--success-text-color);
 }
 
 .table-danger {
@@ -2046,12 +2076,22 @@ select.is-invalid:focus {
 	--table-active-bg-color: var(--danger-active-bg-color);
 	--table-active-text-color: var(--danger-active-text-color);
 }
-
 .table-danger .btn-danger {
 	--btn-border-color: var(--danger-text-color);
 	--btn-hover-border-color: var(--danger-hover-text-color);
 	--btn-active-border-color: var(--danger-active-text-color);
 	--btn-outline-color: var(--danger-text-color);
+}
+.table-danger .btn-danger.btn-link {
+	--btn-text-color: var(--danger-text-color);
+	--btn-border-color: transparent;
+	--btn-hover-text-color: var(--danger-hover-text-color);
+	--btn-hover-border-color: transparent;
+	--btn-active-text-color: var(--danger-active-text-color);
+	--btn-active-border-color: transparent;
+}
+.table-danger .btn-danger.btn-outline {
+	--btn-text-color: var(--danger-text-color);
 }
 
 .table-warning {
@@ -2067,12 +2107,22 @@ select.is-invalid:focus {
 	--table-active-bg-color: var(--warning-active-bg-color);
 	--table-active-text-color: var(--warning-active-text-color);
 }
-
 .table-warning .btn-warning {
 	--btn-border-color: var(--warning-text-color);
 	--btn-hover-border-color: var(--warning-hover-text-color);
 	--btn-active-border-color: var(--warning-active-text-color);
 	--btn-outline-color: var(--warning-text-color);
+}
+.table-warning .btn-warning.btn-link {
+	--btn-text-color: var(--warning-text-color);
+	--btn-border-color: transparent;
+	--btn-hover-text-color: var(--warning-hover-text-color);
+	--btn-hover-border-color: transparent;
+	--btn-active-text-color: var(--warning-active-text-color);
+	--btn-active-border-color: transparent;
+}
+.table-warning .btn-warning.btn-outline {
+	--btn-text-color: var(--warning-text-color);
 }
 
 .table-info {
@@ -2088,54 +2138,84 @@ select.is-invalid:focus {
 	--table-active-bg-color: var(--info-active-bg-color);
 	--table-active-text-color: var(--info-active-text-color);
 }
-
 .table-info .btn-info {
 	--btn-border-color: var(--info-text-color);
 	--btn-hover-border-color: var(--info-hover-text-color);
 	--btn-active-border-color: var(--info-active-text-color);
 	--btn-outline-color: var(--info-text-color);
 }
-
-.table-white {
-	--table-bg-color: var(--primary-bg-color);
-	--table-text-color: var(--primary-text-color);
-	--table-border-color: var(--primary-border-color);
-	--table-section-bg-color: var(--primary-section-bg-color);
-	--table-section-text-color: var(--primary-section-text-color);
-	--table-striped-bg-color: var(--primary-striped-bg-color);
-	--table-striped-text-color: var(--primary-striped-text-color);
-	--table-hover-bg-color: var(--primary-hover-bg-color);
-	--table-hover-text-color: var(--primary-hover-text-color);
-	--table-active-bg-color: var(--primary-active-bg-color);
-	--table-active-text-color: var(--primary-active-text-color);
+.table-info .btn-info.btn-link {
+	--btn-text-color: var(--info-text-color);
+	--btn-border-color: transparent;
+	--btn-hover-text-color: var(--info-hover-text-color);
+	--btn-hover-border-color: transparent;
+	--btn-active-text-color: var(--info-active-text-color);
+	--btn-active-border-color: transparent;
+}
+.table-info .btn-info.btn-outline {
+	--btn-text-color: var(--info-text-color);
 }
 
+.table-white {
+	--table-bg-color: var(--white-bg-color);
+	--table-text-color: var(--white-text-color);
+	--table-border-color: var(--white-border-color);
+	--table-section-bg-color: var(--white-section-bg-color);
+	--table-section-text-color: var(--white-section-text-color);
+	--table-striped-bg-color: var(--white-striped-bg-color);
+	--table-striped-text-color: var(--white-striped-text-color);
+	--table-hover-bg-color: var(--white-hover-bg-color);
+	--table-hover-text-color: var(--white-hover-text-color);
+	--table-active-bg-color: var(--white-active-bg-color);
+	--table-active-text-color: var(--white-active-text-color);
+}
 .table-white .btn-white {
-	--btn-border-color: var(--info-text-color);
-	--btn-hover-border-color: var(--info-hover-text-color);
-	--btn-active-border-color: var(--info-active-text-color);
-	--btn-outline-color: var(--info-text-color);
+	--btn-border-color: var(--white-text-color);
+	--btn-hover-border-color: var(--white-hover-text-color);
+	--btn-active-border-color: var(--white-active-text-color);
+	--btn-outline-color: var(--white-text-color);
+}
+.table-white .btn-white.btn-link {
+	--btn-text-color: var(--white-text-color);
+	--btn-border-color: transparent;
+	--btn-hover-text-color: var(--white-hover-text-color);
+	--btn-hover-border-color: transparent;
+	--btn-active-text-color: var(--white-active-text-color);
+	--btn-active-border-color: transparent;
+}
+.table-white .btn-white.btn-outline {
+	--btn-text-color: var(--white-text-color);
 }
 
 .table-black {
-	--table-bg-color: var(--primary-bg-color);
-	--table-text-color: var(--primary-text-color);
-	--table-border-color: var(--primary-border-color);
-	--table-section-bg-color: var(--primary-section-bg-color);
-	--table-section-text-color: var(--primary-section-text-color);
-	--table-striped-bg-color: var(--primary-striped-bg-color);
-	--table-striped-text-color: var(--primary-striped-text-color);
-	--table-hover-bg-color: var(--primary-hover-bg-color);
-	--table-hover-text-color: var(--primary-hover-text-color);
-	--table-active-bg-color: var(--primary-active-bg-color);
-	--table-active-text-color: var(--primary-active-text-color);
+	--table-bg-color: var(--black-bg-color);
+	--table-text-color: var(--black-text-color);
+	--table-border-color: var(--black-border-color);
+	--table-section-bg-color: var(--black-section-bg-color);
+	--table-section-text-color: var(--black-section-text-color);
+	--table-striped-bg-color: var(--black-striped-bg-color);
+	--table-striped-text-color: var(--black-striped-text-color);
+	--table-hover-bg-color: var(--black-hover-bg-color);
+	--table-hover-text-color: var(--black-hover-text-color);
+	--table-active-bg-color: var(--black-active-bg-color);
+	--table-active-text-color: var(--black-active-text-color);
 }
-
 .table-black .btn-black {
-	--btn-border-color: var(--info-text-color);
-	--btn-hover-border-color: var(--info-hover-text-color);
-	--btn-active-border-color: var(--info-active-text-color);
-	--btn-outline-color: var(--info-text-color);
+	--btn-border-color: var(--black-text-color);
+	--btn-hover-border-color: var(--black-hover-text-color);
+	--btn-active-border-color: var(--black-active-text-color);
+	--btn-outline-color: var(--black-text-color);
+}
+.table-black .btn-black.btn-link {
+	--btn-text-color: var(--black-text-color);
+	--btn-border-color: transparent;
+	--btn-hover-text-color: var(--black-hover-text-color);
+	--btn-hover-border-color: transparent;
+	--btn-active-text-color: var(--black-active-text-color);
+	--btn-active-border-color: transparent;
+}
+.table-black .btn-black.btn-outline {
+	--btn-text-color: var(--black-text-color);
 }
 
 
