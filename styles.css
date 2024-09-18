@@ -204,7 +204,43 @@
 	--info-section-text-color: #000000;
 	--info-striped-bg-color: #2fd3f4;
 	--info-striped-text-color: #000000;
-	--info-border-color-prominent: #08839c;        
+	--info-border-color-prominent: #08839c; 
+
+	--white-bg-color: #ffffff;
+    --white-bg-color-subtle: #;
+    --white-border-color: #ffffff;
+    --white-border-color-subtle: #;
+    --white-text-color: #000000;    
+    --white-text-color-emphasis: #;
+    --white-hover-bg-color: #f0f0f0;
+    --white-hover-border-color: #f0f0f0;
+    --white-hover-text-color: #000000;
+    --white-active-bg-color: #dddddd;
+    --white-active-border-color: #dddddd;
+    --white-active-text-color: #000000;
+    --white-section-bg-color: #;
+	--white-section-text-color: #;
+	--white-striped-bg-color: #;
+	--white-striped-text-color: #;
+	--white-border-color-prominent: #;
+
+	--black-bg-color: #202020;
+    --black-bg-color-subtle: #;
+    --black-border-color: #202020;
+    --black-border-color-subtle: #;
+    --black-text-color: #ffffff;    
+    --black-text-color-emphasis: #;
+    --black-hover-bg-color: #161616;
+    --black-hover-border-color: #161616;
+    --black-hover-text-color: #ffffff;
+    --black-active-bg-color: #000000;
+    --black-active-border-color: #000000;
+    --black-active-text-color: #ffffff;
+    --black-section-bg-color: #;
+	--black-section-text-color: #;
+	--black-striped-bg-color: #;
+	--black-striped-text-color: #;
+	--black-border-color-prominent: #;       
 
     --select-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23222222' %3e%3cpath d='M6.343 9.059L12 3.402l5.657 5.657 1.414-1.414L12 .573 4.929 7.644 6.343 9.059zM17.657 14.941l-5.657 5.657-5.657-5.657-1.414 1.414 7.071 7.071 7.071-7.071-1.414-1.414z' /%3e%3c/svg%3e");	
 }
@@ -1700,6 +1736,22 @@ select.is-invalid:focus {
     --btn-active-text-color: var(--primary-active-text-color);
     --btn-outline-color: var(--primary-bg-color);
 }
+.btn-primary.btn-link {
+	--btn-bg-color: transparent;
+	--btn-border-color: transparent;
+	--btn-text-color: var(--primary-bg-color);
+	--btn-hover-bg-color: transparent;
+    --btn-hover-border-color: transparent;
+    --btn-hover-text-color: var(--primary-hover-bg-color);
+    --btn-active-bg-color: transparent;
+    --btn-active-border-color: transparent;
+    --btn-active-text-color: var(--primary-active-bg-color);
+    --btn-outline-color: var(--primary-bg-color);
+}
+.btn-primary.btn-outline {
+	--btn-bg-color: transparent;;
+	--btn-text-color: var(--primary-bg-color);
+}
 
 .btn-secondary {
 	--btn-bg-color: var(--secondary-bg-color);
@@ -1712,6 +1764,22 @@ select.is-invalid:focus {
     --btn-active-border-color: var(--secondary-active-border-color);
     --btn-active-text-color: var(--secondary-active-text-color);
     --btn-outline-color: var(--secondary-bg-color);
+}
+.btn-secondary.btn-link {
+	--btn-bg-color: transparent;
+	--btn-border-color: transparent;
+	--btn-text-color: var(--secondary-bg-color);
+	--btn-hover-bg-color: transparent;
+    --btn-hover-border-color: transparent;
+    --btn-hover-text-color: var(--secondary-hover-bg-color);
+    --btn-active-bg-color: transparent;
+    --btn-active-border-color: transparent;
+    --btn-active-text-color: var(--secondary-active-bg-color);
+    --btn-outline-color: var(--secondary-bg-color);
+}
+.btn-secondary.btn-outline {
+	--btn-bg-color: transparent;;
+	--btn-text-color: var(--secondary-bg-color);
 }
 
 .btn-success {
@@ -1726,6 +1794,22 @@ select.is-invalid:focus {
     --btn-active-text-color: var(--success-active-text-color);
     --btn-outline-color: var(--success-bg-color);
 }
+.btn-success.btn-link {
+	--btn-bg-color: transparent;
+	--btn-border-color: transparent;
+	--btn-text-color: var(--success-bg-color);
+	--btn-hover-bg-color: transparent;
+    --btn-hover-border-color: transparent;
+    --btn-hover-text-color: var(--success-hover-bg-color);
+    --btn-active-bg-color: transparent;
+    --btn-active-border-color: transparent;
+    --btn-active-text-color: var(--success-active-bg-color);
+    --btn-outline-color: var(--success-bg-color);
+}
+.btn-success.btn-outline {
+	--btn-bg-color: transparent;;
+	--btn-text-color: var(--success-bg-color);
+}
 
 .btn-danger {
 	--btn-bg-color: var(--danger-bg-color);
@@ -1738,6 +1822,22 @@ select.is-invalid:focus {
     --btn-active-border-color: var(--danger-active-border-color);
     --btn-active-text-color: var(--danger-active-text-color);
     --btn-outline-color: var(--danger-bg-color);
+}
+.btn-danger.btn-link {
+	--btn-bg-color: transparent;
+	--btn-border-color: transparent;
+	--btn-text-color: var(--danger-bg-color);
+	--btn-hover-bg-color: transparent;
+    --btn-hover-border-color: transparent;
+    --btn-hover-text-color: var(--danger-hover-bg-color);
+    --btn-active-bg-color: transparent;
+    --btn-active-border-color: transparent;
+    --btn-active-text-color: var(--danger-active-bg-color);
+    --btn-outline-color: var(--danger-bg-color);
+}
+.btn-danger.btn-outline {
+	--btn-bg-color: transparent;;
+	--btn-text-color: var(--danger-bg-color);
 }
 
 .btn-warning {
@@ -1752,6 +1852,22 @@ select.is-invalid:focus {
     --btn-active-text-color: var(--warning-active-text-color);
     --btn-outline-color: var(--warning-bg-color);
 }
+.btn-warning.btn-link {
+	--btn-bg-color: transparent;
+	--btn-border-color: transparent;
+	--btn-text-color: var(--warning-bg-color);
+	--btn-hover-bg-color: transparent;
+    --btn-hover-border-color: transparent;
+    --btn-hover-text-color: var(--warning-hover-bg-color);
+    --btn-active-bg-color: transparent;
+    --btn-active-border-color: transparent;
+    --btn-active-text-color: var(--warning-active-bg-color);
+    --btn-outline-color: var(--warning-bg-color);
+}
+.btn-warning.btn-outline {
+	--btn-bg-color: transparent;;
+	--btn-text-color: var(--warning-bg-color);
+}
 
 .btn-info {
 	--btn-bg-color: var(--info-bg-color);
@@ -1765,31 +1881,79 @@ select.is-invalid:focus {
     --btn-active-text-color: var(--info-active-text-color);
     --btn-outline-color: var(--info-bg-color);
 }
+.btn-info.btn-link {
+	--btn-bg-color: transparent;
+	--btn-border-color: transparent;
+	--btn-text-color: var(--info-bg-color);
+	--btn-hover-bg-color: transparent;
+    --btn-hover-border-color: transparent;
+    --btn-hover-text-color: var(--info-hover-bg-color);
+    --btn-active-bg-color: transparent;
+    --btn-active-border-color: transparent;
+    --btn-active-text-color: var(--info-active-bg-color);
+    --btn-outline-color: var(--info-bg-color);
+}
+.btn-info.btn-outline {
+	--btn-bg-color: transparent;;
+	--btn-text-color: var(--info-bg-color);
+}
 
 .btn-white {
-	--btn-bg-color: #ffffff;
-    --btn-border-color: #ffffff;
-    --btn-text-color: #000000;
-    --btn-hover-bg-color: #f0f0f0;
-    --btn-hover-border-color: #f0f0f0;
-    --btn-hover-text-color: #000000;
-    --btn-active-bg-color: #dddddd;
-    --btn-active-border-color: #dddddd;
-    --btn-active-text-color: #000000;
-    --btn-outline-color: #ffffff;
+	--btn-bg-color: var(--white-bg-color);
+    --btn-border-color: var(--white-border-color);
+    --btn-text-color: var(--white-text-color);
+    --btn-hover-bg-color: var(--white-hover-bg-color);
+    --btn-hover-border-color: var(--white-hover-border-color);
+    --btn-hover-text-color: var(--white-hover-text-color);
+    --btn-active-bg-color: var(--white-active-bg-color);
+    --btn-active-border-color: var(--white-active-border-color);
+    --btn-active-text-color: var(--white-active-text-color);
+    --btn-outline-color: var(--white-bg-color);
+}
+.btn-white.btn-link {
+	--btn-bg-color: transparent;
+	--btn-border-color: transparent;
+	--btn-text-color: var(--white-bg-color);
+	--btn-hover-bg-color: transparent;
+    --btn-hover-border-color: transparent;
+    --btn-hover-text-color: var(--white-hover-bg-color);
+    --btn-active-bg-color: transparent;
+    --btn-active-border-color: transparent;
+    --btn-active-text-color: var(--white-active-bg-color);
+    --btn-outline-color: var(--white-bg-color);
+}
+.btn-white.btn-outline {
+	--btn-bg-color: transparent;;
+	--btn-text-color: var(--white-bg-color);
 }
 
 .btn-black {
-	--btn-bg-color: #202020;
-    --btn-border-color: #202020;
-    --btn-text-color: #ffffff;
-    --btn-hover-bg-color: #161616;
-    --btn-hover-border-color: #161616;
-    --btn-hover-text-color: #ffffff;
-    --btn-active-bg-color: #000000;
-    --btn-active-border-color: #000000;
-    --btn-active-text-color: #ffffff;
-    --btn-outline-color: #202020;
+	--btn-bg-color: var(--black-bg-color);
+    --btn-border-color: var(--black-border-color);
+    --btn-text-color: var(--black-text-color);
+    --btn-hover-bg-color: var(--black-hover-bg-color);
+    --btn-hover-border-color: var(--black-hover-border-color);
+    --btn-hover-text-color: var(--black-hover-text-color);
+    --btn-active-bg-color: var(--black-active-bg-color);
+    --btn-active-border-color: var(--black-active-border-color);
+    --btn-active-text-color: var(--black-active-text-color);
+    --btn-outline-color: var(--black-bg-color);
+}
+.btn-black.btn-link {
+	--btn-bg-color: transparent;
+	--btn-border-color: transparent;
+	--btn-text-color: var(--black-bg-color);
+	--btn-hover-bg-color: transparent;
+    --btn-hover-border-color: transparent;
+    --btn-hover-text-color: var(--black-hover-bg-color);
+    --btn-active-bg-color: transparent;
+    --btn-active-border-color: transparent;
+    --btn-active-text-color: var(--black-active-bg-color);
+    --btn-outline-color: var(--black-bg-color);
+}
+.btn-black.btn-outline {
+	--btn-bg-color: transparent;;
+	--btn-text-color: var(--black-bg-color);
 }
 
 .btn-link {
@@ -1820,6 +1984,13 @@ select.is-invalid:focus {
 	--table-active-text-color: var(--primary-active-text-color);
 }
 
+.table-primary .btn-primary {
+	--btn-border-color: var(--primary-text-color);
+	--btn-hover-border-color: var(--primary-hover-text-color);
+	--btn-active-border-color: var(--primary-active-text-color);
+	--btn-outline-color: var(--primary-text-color);
+}
+
 .table-secondary {
 	--table-bg-color: var(--secondary-bg-color);
 	--table-text-color: var(--secondary-text-color);
@@ -1832,6 +2003,13 @@ select.is-invalid:focus {
 	--table-hover-text-color: var(--secondary-hover-text-color);
 	--table-active-bg-color: var(--secondary-active-bg-color);
 	--table-active-text-color: var(--secondary-active-text-color);
+}
+
+.table-secondary .btn-secondary {
+	--btn-border-color: var(--secondary-text-color);
+	--btn-hover-border-color: var(--secondary-hover-text-color);
+	--btn-active-border-color: var(--secondary-active-text-color);
+	--btn-outline-color: var(--secondary-text-color);
 }
 
 .table-success {
@@ -1932,6 +2110,13 @@ select.is-invalid:focus {
 	--table-active-text-color: var(--primary-active-text-color);
 }
 
+.table-white .btn-white {
+	--btn-border-color: var(--info-text-color);
+	--btn-hover-border-color: var(--info-hover-text-color);
+	--btn-active-border-color: var(--info-active-text-color);
+	--btn-outline-color: var(--info-text-color);
+}
+
 .table-black {
 	--table-bg-color: var(--primary-bg-color);
 	--table-text-color: var(--primary-text-color);
@@ -1946,6 +2131,12 @@ select.is-invalid:focus {
 	--table-active-text-color: var(--primary-active-text-color);
 }
 
+.table-black .btn-black {
+	--btn-border-color: var(--info-text-color);
+	--btn-hover-border-color: var(--info-hover-text-color);
+	--btn-active-border-color: var(--info-active-text-color);
+	--btn-outline-color: var(--info-text-color);
+}
 
 
 
@@ -2046,11 +2237,19 @@ select.is-invalid:focus {
 }
 
 .border-white {    
-    border-color: color-mix(in srgb, #ffffff, transparent var(--border-alpha,0%)) !important;
+    border-color: color-mix(in srgb, var(--white-border-color), transparent var(--border-alpha,0%)) !important;
+}
+
+.border-white-subtle {    
+    border-color: color-mix(in srgb, var(--white-border-color-subtle), transparent var(--border-alpha,0%)) !important;
 }
 
 .border-black {    
-    border-color: color-mix(in srgb, #000000, transparent var(--border-alpha,0%)) !important;
+    border-color: color-mix(in srgb, var(--black-border-color), transparent var(--border-alpha,0%)) !important;
+}
+
+.border-black-subtle {    
+    border-color: color-mix(in srgb, var(--black-border-color-subtle), transparent var(--border-alpha,0%)) !important;
 }
 
 .border-alpha-0 {
@@ -2399,13 +2598,23 @@ select.is-invalid:focus {
 }
 
 .text-bg-white {
-    color: color-mix(in srgb, #000000, transparent var(--text-alpha,0%)) !important;
-    background-color: color-mix(in srgb, #ffffff, transparent var(--bg-alpha,0%)) !important;
+    color: color-mix(in srgb, var(--white-text-color), transparent var(--text-alpha,0%)) !important;
+    background-color: color-mix(in srgb, var(--white-bg-color), transparent var(--bg-alpha,0%)) !important;
+}
+
+.text-bg-white-subtle {
+    color: color-mix(in srgb, var(--white-text-color-emphasis), transparent var(--text-alpha,0%)) !important;
+    background-color: color-mix(in srgb, var(--white-bg-color-subtle), transparent var(--bg-alpha,0%)) !important;
 }
 
 .text-bg-black {
-    color: color-mix(in srgb, #ffffff, transparent var(--text-alpha,0%)) !important;
-    background-color: color-mix(in srgb, #000000, transparent var(--bg-alpha,0%)) !important;
+    color: color-mix(in srgb, var(--black-text-color), transparent var(--text-alpha,0%)) !important;
+    background-color: color-mix(in srgb, var(--black-bg-color), transparent var(--bg-alpha,0%)) !important;
+}
+
+.text-bg-black-subtle {
+    color: color-mix(in srgb, var(--black-text-color-emphasis), transparent var(--text-alpha,0%)) !important;
+    background-color: color-mix(in srgb, var(--black-bg-color-subtle), transparent var(--bg-alpha,0%)) !important;
 }
 
 /* Text colors */
@@ -2475,11 +2684,19 @@ select.is-invalid:focus {
 }
 
 .text-white {
-	color: color-mix(in srgb, #ffffff, transparent var(--text-alpha,0%)) !important;
+	color: color-mix(in srgb, var(--white-text-color), transparent var(--text-alpha,0%)) !important;
+}
+
+.text-white-emphasis {
+	color: color-mix(in srgb, var(--white-text-color-emphasis), transparent var(--text-alpha,0%)) !important;
 }
 
 .text-black {
-	color: color-mix(in srgb, #000000, transparent var(--text-alpha,0%)) !important;
+	color: color-mix(in srgb, var(--black-text-color), transparent var(--text-alpha,0%)) !important;
+}
+
+.text-black-emphasis {
+	color: color-mix(in srgb, var(--black-text-color-emphasis), transparent var(--text-alpha,0%)) !important;
 }
 
 .text-reset {
@@ -2570,11 +2787,19 @@ select.is-invalid:focus {
 }
 
 .color-white {
-	color: color-mix(in srgb, #ffffff, transparent var(--color-alpha,0%)) !important;
+	color: color-mix(in srgb, var(--white-bg-color), transparent var(--color-alpha,0%)) !important;
+}
+
+.color-white-subtle {
+	color: color-mix(in srgb, var(--white-bg-color-subtle), transparent var(--color-alpha,0%)) !important;
 }
 
 .color-black {
-	color: color-mix(in srgb, #000000, transparent var(--color-alpha,0%)) !important;
+	color: color-mix(in srgb, var(--black-bg-color), transparent var(--color-alpha,0%)) !important;
+}
+
+.color-black-subtle {
+	color: color-mix(in srgb, var(--black-bg-color-subtle), transparent var(--color-alpha,0%)) !important;
 }
 
 .color-reset {
@@ -2665,11 +2890,19 @@ select.is-invalid:focus {
 }
 
 .bg-white {
-	background-color: color-mix(in srgb, #ffffff, transparent var(--bg-alpha,0%)) !important;
+	background-color: color-mix(in srgb, var(--white-bg-color), transparent var(--bg-alpha,0%)) !important;
+}
+
+.bg-white-subtle {
+	background-color: color-mix(in srgb, var(--white-bg-color-subtle), transparent var(--bg-alpha,0%)) !important;
 }
 
 .bg-black {
-	background-color: color-mix(in srgb, #000000, transparent var(--bg-alpha,0%)) !important;
+	background-color: color-mix(in srgb, var(--black-bg-color), transparent var(--bg-alpha,0%)) !important;
+}
+
+.bg-black-subtle {
+	background-color: color-mix(in srgb, var(--black-bg-color-subtle), transparent var(--bg-alpha,0%)) !important;
 }
 
 .bg-transparent {
@@ -2751,11 +2984,11 @@ select.is-invalid:focus {
 }
 
 .focus-outline-white {
-    --focus-outline-color: #ffffff;
+    --focus-outline-color: var(--white-bg-color);
 }
 
 .focus-outline-black {
-    --focus-outline-color: #000000;
+    --focus-outline-color: var(--black-bg-color);
 }
 
 /* Interactions */
@@ -2837,19 +3070,19 @@ select.is-invalid:focus {
 }
 
 .link-white {
-	--link-text-color: color-mix(in srgb, #ffffff, transparent var(--link-alpha,0%)) !important;
-	--link-text-decoration-color: color-mix(in srgb, #ffffff, transparent var(--link-underline-alpha,0%)) !important;
-	--link-hover-text-color: color-mix(in srgb, #dddddd, transparent var(--link-alpha,0%)) !important;
-	--link-hover-text-decoration-color: color-mix(in srgb, #dddddd, transparent var(--link-underline-alpha,0%)) !important;
-	--link-outline-color: #ffffff !important;	   
+	--link-text-color: color-mix(in srgb, var(--white-bg-color), transparent var(--link-alpha,0%)) !important;
+	--link-text-decoration-color: color-mix(in srgb, var(--white-bg-color), transparent var(--link-underline-alpha,0%)) !important;
+	--link-hover-text-color: color-mix(in srgb, var(--white-hover-bg-color), transparent var(--link-alpha,0%)) !important;
+	--link-hover-text-decoration-color: color-mix(in srgb, var(--white-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important;
+	--link-outline-color: var(--white-hover-bg-color) !important;	   
 }
 
 .link-black {
-	--link-text-color: color-mix(in srgb, #000000, transparent var(--link-alpha,0%)) !important;
-	--link-text-decoration-color: color-mix(in srgb, #000000, transparent var(--link-underline-alpha,0%)) !important;
-	--link-hover-text-color: color-mix(in srgb, #121212, transparent var(--link-alpha,0%)) !important;
-	--link-hover-text-decoration-color: color-mix(in srgb, #121212, transparent var(--link-underline-alpha,0%)) !important;
-	--link-outline-color: #000000 !important;   
+	--link-text-color: color-mix(in srgb, var(--black-bg-color), transparent var(--link-alpha,0%)) !important;
+	--link-text-decoration-color: color-mix(in srgb, var(--black-bg-color), transparent var(--link-underline-alpha,0%)) !important;
+	--link-hover-text-color: color-mix(in srgb, var(--black-hover-bg-color), transparent var(--link-alpha,0%)) !important;
+	--link-hover-text-decoration-color: color-mix(in srgb, var(--black-hover-bg-color), transparent var(--link-underline-alpha,0%)) !important;
+	--link-outline-color: var(--black-hover-bg-color) !important;   
 }
 
 .link-alpha-0 {
