@@ -1216,14 +1216,14 @@ input[type="checkbox"]:indeterminate::before {
 	-ms-transform: none;	
 }
 
-input:read-only:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
-textarea:read-only {
+input:read-only:not(:disabled):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+textarea:read-only:not(:disabled) {
 	background-color: transparent;
 	border-color: transparent;	
 }
 
-input:read-only:focus:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
-textarea:read-only:focus {
+input:read-only:not(:disabled):focus:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+textarea:read-only:not(:disabled):focus {
 	background-color: transparent;
 	border-color: transparent;	
 }
@@ -1233,8 +1233,7 @@ select:disabled,
 optgroup:disabled,
 textarea:disabled {
 	opacity: .5;
-	cursor: not-allowed;	
-	border: var(--border-width) var(--border-style) var(--form-border-color) !important;
+	cursor: not-allowed;
 }
 
 progress {
@@ -1321,23 +1320,22 @@ meter {
 
 meter::-webkit-meter-bar {  
 	height: 1rem;
-	color: var(--body-tertiary-text-color);
-	background: none;
-	background-color: var(--body-tertiary-bg-color);	
+	color: var(--body-tertiary-text-color);	
+	background: var(--body-tertiary-bg-color);	
 	border: 0;
 	border-radius: var(--border-radius);
 }
 
 meter::-webkit-meter-optimum-value {
- 	background-color: var(--success-bg-color);
+ 	background: var(--success-bg-color);
 }
 
 meter::-webkit-meter-even-less-good-value {
-	background-color: var(--danger-bg-color);
+	background: var(--danger-bg-color);
 }
 
 meter::-webkit-meter-suboptimum-value {
-	background-color: var(--warning-bg-color);
+	background: var(--warning-bg-color);
 }
 
 meter:-moz-meter-optimum::-moz-meter-bar {
