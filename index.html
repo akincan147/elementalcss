@@ -12,24 +12,58 @@
 </head>
 
 <body>	
-	<div class="container-fluid">		
+	<div class="container-fluid">	
+
+		<section class="alert-primary mt-4">
+			<p class="p-3 m-0">This is a alert</p>
+		</section>	
+
+		<section class="alert-secondary mt-4">
+			<p class="p-3 m-0">This is a alert</p>
+		</section>
+
+		<section class="alert-success mt-4">
+			<p class="p-3 m-0">This is a alert</p>
+		</section>
+
+		<section class="alert-danger mt-4">
+			<p class="p-3 m-0">This is a alert</p>
+		</section>
+
+		<section class="alert-warning mt-4">
+			<p class="p-3 m-0">This is a alert</p>
+		</section>
+
+		<section class="alert-info mt-4">
+			<p class="p-3 m-0">This is a alert</p>
+		</section>
+
+		<section class="alert-white mt-4">
+			<p class="p-3 m-0">This is a alert</p>
+		</section>
+
+		<section class="alert-black mt-4">
+			<p class="p-3 m-0">This is a alert</p>
+		</section>
 		
 		<section>
 			<h1>Titles</h1>
-			<hr>
+			<hr>			
 			<h1>H1 Title</h1>
 			<h2>H2 Title</h2>
 			<h3>H3 Title</h3>
 			<h4>H4 Title</h4>
 			<h5>H5 Title</h5>
 			<h6>H6 Title</h6>		
-		</section>
+		</section>	
 
 		<section>
 			<h1>Links</h1>
 			<hr>
 			<p>
-				<a href="#" class="link-primary">Primary link</a>
+				<a href="#" class="link-primary icon-link icon-link-hover">Primary link
+					<i class="bi bi-box-seam"></i>
+				</a>
 			</p>
 			<p>
 				<a href="#" class="link-secondary">Secondary link</a>
@@ -75,10 +109,14 @@
 		<section>
 			<h1>Blockquote</h1>
 			<hr>
-		    <blockquote>
-				<p>A well-known quote, contained in a blockquote element.</p>
-				<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-		    </blockquote>		
+		    <figure>
+				<blockquote>
+					<p>A well-known quote, contained in a blockquote element.</p>
+				</blockquote>
+				<figcaption>
+					Someone famous in <cite title="Source Title">Source Title</cite>
+				</figcaption>
+			</figure>		
 		</section>	  
 
 	    <section>
@@ -198,7 +236,7 @@
 							<td>000</td>
 							<td>000</td>
 							<td>000</td>
-							<td><button class="btn-warning sm">Delete</button></td>
+							<td><button class="btn-warning sm">Disable</button></td>
 						</tr>
 						<tr>
 							<td>Table row</td>
@@ -206,7 +244,7 @@
 							<td>000</td>
 							<td>000</td>
 							<td>000</td>
-							<td><button class="btn-warning sm">Delete</button></td>
+							<td><button class="btn-warning sm">Disable</button></td>
 						</tr>
 						<tr>
 							<td>Striped table row</td>
@@ -214,7 +252,7 @@
 							<td>000</td>
 							<td>000</td>
 							<td>000</td>
-							<td><button class="btn-success sm">Delete</button></td>
+							<td><button class="btn-success sm">Accept</button></td>
 						</tr>
 						<tr>
 							<td>Table row</td>
@@ -222,7 +260,7 @@
 							<td>000</td>
 							<td>000</td>
 							<td>000</td>
-							<td><button class="btn-success sm">Delete</button></td>
+							<td><button class="btn-success sm">Accept</button></td>
 						</tr>
 						<tr>
 							<td>Striped table row</td>
@@ -230,7 +268,7 @@
 							<td>000</td>
 							<td>000</td>
 							<td>000</td>
-							<td><button class="btn-info sm">Delete</button></td>
+							<td><button class="btn-info sm">Info</button></td>
 						</tr>
 						<tr>
 							<td>Table row</td>
@@ -238,7 +276,7 @@
 							<td>000</td>
 							<td>000</td>
 							<td>000</td>
-							<td><button class="btn-info sm">Delete</button></td>
+							<td><button class="btn-info sm">Info</button></td>
 						</tr>
 						<tfoot>
 							<tr>
@@ -305,7 +343,7 @@
 
 					<label for="range">Range</label>
 					<output for="range" id="rangeValue">0</output>
-					<input type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">			
+					<input class="form-control" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 
 					<br>
 
@@ -316,7 +354,7 @@
 
 					<label for="progress">Progress</label>	
 					<output for="progress" id="progressValue"></output>		
-					<progress id="progress" name="progress" value="0" max="100"></progress>					
+					<progress id="progress" name="progress" value="0" max="100"></progress>			
 
 					<script>
 				        // Function to update progress value
@@ -369,7 +407,7 @@
 					<br>
 
 					<label for="color">Color</label>
-					<input type="color" id="color" name="color" value="#ff0000">	
+					<input class="form-control-lg" type="color" id="color" name="color" value="#ff0000">	
 
 					<br>
 					
@@ -392,6 +430,19 @@
 					<label for="radio1">Radio 1</label>	
 
 					<br>
+					
+					<input type="checkbox" role="switch" id="ms2" />
+					<label for="ms2">Custom Setting 2</label>						
+
+					<br>
+
+					
+				    <input class="form-control-lg" type="text" placeholder="large">
+				    <br>
+				    <input type="text" placeholder="default">
+				    <br>
+				    <input class="form-control-sm" type="text" placeholder="small">
+				    <br>
 								
 				</fieldset>
 			</form>
@@ -412,6 +463,8 @@
 			<button class="btn-danger" type="button" id="button" name="button">Danger</button>
 			<button class="btn-warning" type="button" id="button" name="button">Warning</button>
 			<button class="btn-info" type="button" id="button" name="button">Info</button>
+			<button class="btn-white" type="button" id="button" name="button">White</button>
+			<button class="btn-black" type="button" id="button" name="button">Black</button>
 		</section>	
 
 		<section>
