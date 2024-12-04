@@ -1,0 +1,118 @@
+
+LAYOUT
+------
+
+NOTE: SEARCH BOOTSTRAP "GAP" IN ITS CSS FILES
+Display (grid.css)
+Flex (grid.css)
+Spacing (grid.css)
+
+
+CONTENT (DONE)
+-------
+
+Reboot
+Typography
+Images
+Tables
+Figures
+
+
+UTILITIES AND HELPERS (DONE)
+---------------------
+
+Borders
+Clearfix
+Colors and backgrounds
+Float
+Focus outline
+Interactions
+Link, Colored links, Icon link, Stretched link
+Object fit
+Opacity
+Overflow
+Position
+Ratio
+Shadows
+Sizing
+Stacks
+Text, Text truncation
+Vertical align
+Vertical rule
+Visibility
+Visually hidden
+Z-index
+
+
+FORMS (PROGRESS)
+-----
+
+
+
+
+TO DOs
+------------------------------------------------
+
+
+
+
+
+THE FOLLOWING CHANGES HAVE BEEN MADE
+------------------------------------
+
+Bootstrap's color variables have been extended and optimized to be controlled from a single location.
+
+--bs removed from every variable
+
+end has been changed to right.
+start has been changed to left.
+
+Additionally, a .color- class has been added alongside the .text- class. 
+
+The .link-underline and underline colors have been removed as they are no longer necessary.
+
+--opacity variables changed as -alpha since color-mix mod
+
+.focus-ring changed as .focus-outline
+
+.initialism removed since they are same with .small
+
+legend default style bringed back
+
+.form-control removed because default form elements normalized and stylized together
+
+.blockquote class removed and default element uses styles and normalizes
+
+.list-inline-item removed because li is already define itself in this way
+
+.table-responsive at different media sizes has been removed since its not necessary to use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

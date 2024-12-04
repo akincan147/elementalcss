@@ -1193,18 +1193,21 @@ input[type="radio"]:checked::before {
 
 input[type="checkbox"]:disabled,
 input[type="radio"]:disabled {	
+	pointer-events: none;
 	cursor: not-allowed;
 }
 
 input[type="checkbox"]:disabled + label,
 input[type="radio"]:disabled + label {
 	opacity: .5;
+	pointer-events: none;
 	cursor: not-allowed;
 }
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
     cursor: pointer;
+    margin-bottom: 0;
 }
 
 input[type="checkbox"]:indeterminate {
@@ -1752,7 +1755,7 @@ input[type="checkbox"][role="switch"]::before {
 	width: 0.7em !important;
 	height: 0.7em !important;
 	margin: 0 !important;
-	background: var(--muted-text-color);
+	background: var(--muted-text-color) !important;
 	border: var(--border-width) solid var(--muted-text-color) !important;
 	border-radius: calc(var(--border-radius) / 2) !important;	
 	transition: left .15s ease-in-out;
@@ -1760,12 +1763,21 @@ input[type="checkbox"][role="switch"]::before {
 
 input[type="checkbox"][role="switch"]:checked::before {
 	left: calc(2.6em - 0.25em - 0.7em);
-	background: var(--primary-text-color);
+	background: var(--primary-text-color) !important;
 	border: var(--border-width) solid var(--primary-text-color) !important;
 }
 
+.form-check-reverse {
+    text-align: right;
+}
 
-
+.form-check-reverse input[type="checkbox"],
+.form-check-reverse input[type="checkbox"][role="switch"],
+.form-check-reverse input[type="radio"] {
+    float: right;
+    margin-left: .6em;
+    margin-right: 0;
+}
 
 
 .form-control-plaintext.form-control-lg,
