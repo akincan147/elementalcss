@@ -1791,7 +1791,7 @@ input[type="checkbox"][role="switch"]:checked::before {
 	opacity: 0;
 }
 
-.btn-check label[css-style="button"]:focus {
+.btn-check label[css-style="button"]:focus:not([class*="btn-"]) {
 	border-color: var(--form-focus-border-color);
 }
 
