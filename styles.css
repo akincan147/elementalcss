@@ -1797,15 +1797,7 @@ input[type="checkbox"][role="switch"]:checked::before {
 	border-color: var(--btn-border-color);
 }
 
-.btn-check label[css-style="button"]:active {
-	color: var(--btn-text-color);
-	background-color: var(--btn-bg-color);
-	border-color: var(--btn-border-color);
-}
 
-.btn-check label[css-style="button"]:focus {
-	border-color: var(--primary-border-color);
-}
 
 .btn-check input[type=checkbox]:checked + label[css-style="button"] {
 	color: var(--btn-active-text-color);
