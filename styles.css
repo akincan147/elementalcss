@@ -1803,14 +1803,14 @@ input[type="checkbox"][role="switch"]:checked::before {
 	border-color: var(--btn-border-color);
 }
 
+.btn-check label[css-style="button"]:focus {
+	border-color: var(--primary-border-color);
+}
+
 .btn-check input[type=checkbox]:checked + label[css-style="button"] {
 	color: var(--btn-active-text-color);
 	background-color: var(--btn-active-bg-color);
 	border-color: var(--btn-active-border-color);
-}
-
-.btn-check label[css-style="button"]:focus {
-	border-color: var(--btn-border-color);
 }
 
 .btn-check input[type=checkbox]:checked + label[css-style=button]:not([class*="btn-"]) {
