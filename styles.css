@@ -1432,16 +1432,16 @@ button,
 	--btn-padding-x: 0.75rem;
 	--btn-padding-y: 0.375rem;
 	--btn-font-size: 1rem;
-	--btn-bg-color: var(--primary-bg-color);
-    --btn-border-color: var(--primary-border-color);
-    --btn-text-color: var(--primary-text-color);
-    --btn-hover-bg-color: var(--primary-hover-bg-color);
-    --btn-hover-border-color: var(--primary-hover-border-color);
-    --btn-hover-text-color: var(--primary-hover-text-color);
-    --btn-active-bg-color: var(--primary-active-bg-color);
-    --btn-active-border-color: var(--primary-active-border-color);
-    --btn-active-text-color: var(--primary-active-text-color);
-    --btn-outline-color: var(--primary-bg-color);
+    --btn-bg-color: var(--form-bg-color);
+	--btn-border-color: var(--form-border-color);
+    --btn-text-color: var(--form-text-color);
+    --btn-hover-bg-color: var(--body-secondary-bg-color);
+    --btn-hover-border-color: var(--border-color);
+    --btn-hover-text-color: var(--body-secondary-text-color);   
+    --btn-active-bg-color: var(--body-tertiary-bg-color);
+    --btn-active-border-color: var(--border-color);
+    --btn-active-text-color: var(--body-tertiary-text-color);    
+    --btn-outline-color: currentColor;
 	appearance: button;  
 	-webkit-appearance: button;
 	user-select: none;
@@ -1785,14 +1785,26 @@ input[type="checkbox"][role="switch"]:checked::before {
 
 
 
-.btn-check {
+.btn-check input[type="checkbox"] {
 	position: absolute;
 	visibility: hidden;
 	opacity: 0;
 }
 
-input[type=checkbox]:checked + label {
-	color: #f00;
+.btn-check input[type=checkbox]:checked + label[css-style="button"] {
+	color: var(--btn-active-text-color);
+	background-color: var(--btn-active-bg-color);
+	border-color: var(--btn-active-border-color);
+}
+
+.btn-check label[css-style="button"]:focus {
+	border-color: var(--btn-border-color);
+}
+
+.btn-check input[type=checkbox]:checked + label[css-style=button]:not([class*="btn-"]) {
+  	color: var(--primary-text-color);
+	background-color: var(--primary-bg-color);
+	border-color: var(--primary-border-color);
 }
 
 
