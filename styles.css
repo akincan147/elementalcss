@@ -1494,14 +1494,16 @@ button:focus,
 button:focus:not(:focus-visible),
 [type="submit"]:focus:not(:focus-visible),
 [type="reset"]:focus:not(:focus-visible),
-[type="button"]:focus:not(:focus-visible) {
+[type="button"]:focus:not(:focus-visible),
+[css-style="button"]:focus:not(:focus-visible) {
 	/* No style */
 }
 
 button:disabled,
 [type="submit"]:disabled,
 [type="reset"]:disabled,
-[type="button"]:disabled {
+[type="button"]:disabled,
+[css-style="button"]:disabled {
 	opacity: .5;
 	cursor: not-allowed;
 	pointer-events: none;	
@@ -1515,7 +1517,9 @@ button:disabled:active,
 [type="reset"]:disabled:hover,
 [type="reset"]:disabled:active,
 [type="submit"]:disabled:hover,
-[type="submit"]:disabled:active {
+[type="submit"]:disabled:active,
+[css-style="button"]:disabled:hover,
+[css-style="button"]:disabled:active {
 	color: var(--btn-text-color);
 	background-color: var(--btn-bg-color);
  	border-color: var(--btn-border-color); 	
@@ -1785,31 +1789,31 @@ input[type="checkbox"][role="switch"]:checked::before {
 
 
 
-.btn-check input[type="checkbox"] {
+.btn-check {
 	position: absolute;
 	visibility: hidden;
 	opacity: 0;
 }
 
-.btn-check label[css-style="button"]:hover {
+.btn-check + label[css-style="button"]:hover {
 	color: var(--btn-text-color);
 	background-color: var(--btn-bg-color);
 	border-color: var(--btn-border-color);
 }
 
-.btn-check label[css-style="button"]:active {
+.btn-check + label[css-style="button"]:active {
 	color: var(--btn-text-color);
 	background-color: var(--btn-bg-color);
 	border-color: var(--btn-border-color);
 }
 
-.btn-check input[type=checkbox]:checked + label[css-style="button"] {
+.btn-check:checked + label[css-style="button"] {
 	color: var(--btn-active-text-color);
 	background-color: var(--btn-active-bg-color);
 	border-color: var(--btn-active-border-color);
 }
 
-.btn-check input[type=checkbox]:checked + label[css-style=button]:not([class*="btn-"]) {
+.btn-check:checked + label[css-style=button]:not([class*="btn-"]) {
   	color: var(--primary-text-color);
 	background-color: var(--primary-bg-color);
 	border-color: var(--primary-border-color);
