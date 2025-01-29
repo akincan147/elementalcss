@@ -303,7 +303,7 @@
 					<legend>Form legend</legend>
 
 					<label for="text">Text</label>
-					<input type="text" id="text" name="text" required>
+					<input type="text" id="text" name="text" placeholder="Here is the text" required>
 
 					<br>
 
@@ -326,6 +326,7 @@
 
 					<br>
 
+
 					<label for="date">Date</label>
 					<input type="date" id="date" name="date">
 
@@ -341,9 +342,9 @@
 
 					<br>
 
-					<label for="range">Range</label>
+					<label for="range">Range =</label>
 					<output for="range" id="rangeValue">0</output>
-					<input class="form-control" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
+					<input type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 
 					<br>
 
@@ -352,7 +353,7 @@
 
 					<br>
 
-					<label for="progress">Progress</label>	
+					<label for="progress">Progress =</label>	
 					<output for="progress" id="progressValue"></output>		
 					<progress id="progress" name="progress" value="0" max="100"></progress>			
 
@@ -407,39 +408,85 @@
 					<br>
 
 					<label for="color">Color</label>
-					<input class="form-control-lg" type="color" id="color" name="color" value="#ff0000">	
+					<input type="color" id="color" name="color" value="#ff0000">	
 
 					<br>
 					
 					<div>
 						<input class="btn-check" type="checkbox" id="checkbox" name="checkbox" value="checkbox">  
-						<label class="" for="checkbox" css-style="button" tabindex="0">Checkbox</label>
+						<label class="" for="checkbox" data-type="button" tabindex="0">Checkbox</label>
 					</div>
 					<br>
 					<div>
 						<input class="btn-check" type="checkbox" id="checkbox1" name="checkbox" value="checkbox">  
-						<label class="" for="checkbox1" css-style="button" tabindex="0">Checkbox</label>
+						<label class="" for="checkbox1" data-type="button" tabindex="0">Checkbox</label>
 					</div>
 					<br>
 					<div>
 						<input class="btn-check" type="checkbox" id="checkbox2" name="checkbox" value="checkbox">  
-						<label class="btn-danger" for="checkbox2" css-style="button" tabindex="0">Checkbox</label>
+						<label class="btn-danger" for="checkbox2" data-type="button" tabindex="0">Checkbox</label>
 					</div>
 					<br>
 					<div>
 						<input class="btn-check" type="checkbox" id="checkbox3" name="checkbox" value="checkbox">  
-						<label class="btn-danger" for="checkbox3" css-style="button" tabindex="0">Checkbox</label>
+						<label class="btn-danger" for="checkbox3" data-type="button" tabindex="0">Checkbox</label>
 					</div>
 
 					<br>
 
-					<input type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox" value="indeterminate-checkbox">  
-					<label for="indeterminate-checkbox">Indeterminate Checkbox</label>		
+
+
+
+
+					<input  class="form-control" type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox" value="indeterminate-checkbox">  
+					<label for="indeterminate-checkbox">Indeterminate Checkbox</label>		  			
+
 
 		  			<br>
 
-		  			<input type="radio" id="radio" name="radio" value="radio">
-		  			<label for="radio">Radio 0</label>
+
+
+
+		  			<input type="checkbox" id="checkbox4" disabled>  
+					<label class="option-label" for="checkbox4">Checkbox 1</label>		
+
+		  			<br>		  			
+
+		  			
+  					<div class="form-group form-group-horizontal mb-3">
+		  				<div class="form-option">		  					
+			  				<input type="radio" id="radio1" value="radio1">	
+			  				<label for="radio1">Radio 1</label>		  				 		  					
+		  				</div>	 
+		  				<div class="form-option">		  					 					
+			  				<input type="radio" id="radio2" value="radio2" disabled>
+			  				<label for="radio2">Radio 2</label>			  				
+		  				</div>
+		  				<div class="form-option">		  				
+			  				<input type="radio" id="radio3" value="radio3">	
+			  				<label for="radio3">Radio 3</label>
+		  				</div>	
+		  				<div class="form-option">  				
+							<input type="radio" id="radio4" value="radio4" disabled> 
+			  				<label for="radio4">Radio 4</label>	
+		  				</div>
+		  				<div class="form-option">
+			  				<input type="radio" id="radio5" value="radio5">
+			  				<label for="radio5">Radio 5</label>
+		  				</div>			  										 				
+		  			</div>
+		  				
+
+		  			<div class="form-group mb-3">
+		  				<label>Long Text Long Text Long Text LongTextLongTextLongText</label>			  					
+		  				<input type="text">  				 				
+		  			</div>
+
+		  			<div class="form-group form-group-horizontal">
+		  				<label>Long Text Long Text Long Text LongTextLongTextLongText</label>			  					
+		  				<input type="text">  				
+		  			</div>
+
 
 		  			<br>
 
@@ -448,12 +495,10 @@
 
 					<br>
 					
-					<input type="checkbox" role="switch" id="ms2" />
-					<label for="ms2">Custom Setting 2</label>						
+					<input class="form-control" type="checkbox" role="switch" id="ms2" />
+					<label for="ms2">Checkbox Switch</label>						
 
-					<br>
-
-					
+					<br>				
 
 					
 				    <input class="form-control-lg" type="text" placeholder="large">
@@ -462,6 +507,80 @@
 				    <br>
 				    <input class="form-control-sm" type="text" placeholder="small">
 				    <br>
+				    <br>
+
+
+
+				    
+				    <div class="input-group mb-3">
+						<span class="input-group-text">Group Text</span>
+						<input class="form-control" type="text" placeholder="Username">
+					</div>
+
+					
+
+					<div class="input-group mb-3">
+						<span class="input-group-text">With textarea</span>
+						<textarea class="form-control"></textarea>
+					</div>
+
+
+
+					<div class="input-group mb-3">
+						<label class="input-group-text" for="inputGroupSelect01">Options</label>
+						<select class="form-control" id="inputGroupSelect01">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</div>
+
+					
+						
+					<div class="input-group input-group mb-3">
+						<span class="input-group-text">
+							<input type="checkbox"/>
+						</span>
+						<input class="form-control" type="text">
+					</div>
+
+					<div class="input-group input-group mb-3">
+						<span class="input-group-text">							
+							<input type="checkbox"/>
+						</span>
+						<input class="form-control" type="text">
+					</div>	
+
+					<div class="input-group input-group mb-3">
+						<span class="input-group-text">
+							<input type="checkbox" role="switch"/>
+						</span>
+						<input class="form-control" type="text">
+					</div>	
+
+					<div class="input-group input-group mb-3">
+						<span class="input-group-text">
+							<input type="checkbox" role="switch"/>
+						</span>
+						<input class="form-control" type="text">
+					</div>						
+
+
+
+					<div class="input-group mb-3">
+						<label class="input-group-text" for="inputGroupFile01">Upload</label>
+						<input class="form-control" type="file" id="inputGroupFile01">
+					</div>
+
+
+
+					<div class="input-group mb-3">
+						<button class="" type="button">Button</button>
+						<input class="form-control" type="text">
+					</div>
+
+
 								
 				</fieldset>
 			</form>
