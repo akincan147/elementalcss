@@ -861,7 +861,8 @@ input[type="password"],
 input[type="number"],
 input[type="tel"],
 input[type="file"],
-input[type="color"], 
+input[type="color"],
+input[type="range"], 
 input[type="hidden"] {
 	appearance: none;
 	-webkit-appearance: none;
@@ -895,7 +896,8 @@ input[type="password"]:focus,
 input[type="number"]:focus,
 input[type="tel"]:focus,
 input[type="file"]:focus,
-input[type="color"]:focus, 
+input[type="color"]:focus,
+input[type="range"]:focus, 
 input[type="hidden"]:focus {
     color: var(--form-focus-text-color);
     background-color: var(--form-focus-bg-color);
@@ -992,31 +994,10 @@ input[type=file]:not(:disabled):not([readonly]) {
     cursor: pointer;
 }
 
-input[type="range"] {
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;	
-	cursor: default;
-	display: block;
-	width: 100%;
-	height: 1em;
-	font-size: 1rem;
+input[type="range"] {		
+	cursor: default;	
+	height: 1em;	
 	padding: 0.125em;
-	background-color: var(--form-bg-color);	
-	border: var(--border-width) var(--border-style) var(--form-border-color);
-	border-radius: var(--border-radius);
-}
-
-input[type="range"]:active {
-	background-color: var(--form-bg-color);
-	border-color: var(--form-border-color);
-}
-
-input[type="range"]:focus {
-	background-color: var(--form-focus-bg-color);
-	border: var(--border-width) var(--border-style) var(--form-focus-border-color);
-	outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
-    outline-offset: var(--focus-outline-offset);
 }
 
 input[type="range" i]::-webkit-slider-container {
@@ -1091,8 +1072,8 @@ input[type="color"] {
 	vertical-align: middle;		
 	cursor: pointer;	
 	width: 3em;
-    height: calc(1.5em + .75rem + calc(var(--border-width) * 2));
-    padding: .375rem;   
+    height: calc(1.5em + .75em + calc(var(--border-width) * 2));
+    padding: .375em;   
 }
 
 input[type="color"]::-webkit-color-swatch {
@@ -1135,7 +1116,7 @@ input[type="radio"] {
 	flex-direction: column;	
 	flex-wrap: wrap;
 	align-items: flex-start;
-	gap: 0.6em;
+	gap: 0.6rem;
 }
 
 .form-group input,
@@ -1183,7 +1164,7 @@ input[type="radio"] {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: 0.6em;
+	gap: 0.6rem;
 }
 
 .form-option label {
@@ -1196,8 +1177,8 @@ input[type="radio"] {
 }
 
 
-input[type="checkbox"]:active,
-input[type="radio"]:active {
+input[type="checkbox"]:active:not(:checked):not(:indeterminate):not(:disabled),
+input[type="radio"]:active:not(:checked):not(:disabled) {
 	background-color: var(--form-focus-bg-color);
 }
 
@@ -1262,21 +1243,17 @@ input[type="radio"]:checked::before {
 	border-radius: calc(var(--border-radius) / 2);
 }
 
-input[type="checkbox"]:disabled,
-input[type="radio"]:disabled {
-	cursor: not-allowed;
-	background-color: var(--form-bg-color);
-}
-
 input[type="checkbox"]:disabled + label,
 input[type="radio"]:disabled + label {
 	opacity: .5 !important;
 	cursor: not-allowed !important;
 }
 
-label:has(+ input[type="checkbox"]:disabled),
-label:has(+ input[type="radio"]:disabled) {
-    opacity: .5 !important;
+label:has(+ input:disabled:not([type="button"]):not([type="submit"]):not([type="reset"])), 
+label:has(+ select:disabled), 
+label:has(+ optgroup:disabled), 
+label:has(+ textarea:disabled) {
+	opacity: .5 !important;
     cursor: not-allowed !important;
 }
 
@@ -1284,7 +1261,7 @@ label:has(+ input[type="checkbox"]),
 label:has(+ input[type="radio"]) {
 	cursor: pointer;
     vertical-align: middle;
-    margin-right: 0.5em;
+    margin-right: 0.5rem;
     margin-bottom: 0;
 }
 
@@ -1292,8 +1269,8 @@ input[type="checkbox"] + label,
 input[type="radio"] + label {
     cursor: pointer;
 	vertical-align: middle;
-	margin-bottom: 0;
-	margin-left: 0.5em;
+	margin-left: 0.5rem;
+	margin-bottom: 0;	
 }
 
 input[type="checkbox"]:indeterminate {
@@ -1409,7 +1386,8 @@ meter {
 	vertical-align: baseline;    
 	display: flex;
 	width: 100%;
-	height: 1rem;
+	height: 1em;
+	font-size: 1rem;
 	color: var(--body-tertiary-text-color);
 	background: none;
 	background-color: var(--body-tertiary-bg-color);	
@@ -1418,7 +1396,7 @@ meter {
 }
 
 meter::-webkit-meter-bar {  
-	height: 1rem;
+	height: 1em;
 	color: var(--body-tertiary-text-color);	
 	background: var(--body-tertiary-bg-color);	
 	border: 0;
@@ -1977,12 +1955,12 @@ progress.form-control-sm {
 }
 
 meter.form-control-sm {	
-	height: .875rem !important;	
+	font-size: .875rem !important;	
 	border-radius: var(--border-radius-sm) !important;
 }
 
 meter.form-control-sm::-webkit-meter-bar {
-	height: .875rem !important;
+	font-size: .875rem !important;
 	border-radius: var(--border-radius-sm) !important;
 }
 
@@ -2079,12 +2057,12 @@ progress.form-control-lg {
 }
 
 meter.form-control-lg {	
-	height: 1.25rem !important;	
+	font-size: 1.25rem !important;
 	border-radius: var(--border-radius-lg) !important;
 }
 
 meter.form-control-lg::-webkit-meter-bar {
-	height: 1.25rem !important;
+	font-size: 1.25rem !important;
 	border-radius: var(--border-radius-lg) !important;
 }
 
