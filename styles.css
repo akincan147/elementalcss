@@ -861,8 +861,10 @@ input[type="password"],
 input[type="number"],
 input[type="tel"],
 input[type="file"],
+input[type="range"],
 input[type="color"],
-input[type="range"], 
+input[type="checkbox"],
+input[type="radio"], 
 input[type="hidden"] {
 	appearance: none;
 	-webkit-appearance: none;
@@ -896,8 +898,10 @@ input[type="password"]:focus,
 input[type="number"]:focus,
 input[type="tel"]:focus,
 input[type="file"]:focus,
+input[type="range"]:focus,
 input[type="color"]:focus,
-input[type="range"]:focus, 
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
 input[type="hidden"]:focus {
     color: var(--form-focus-text-color);
     background-color: var(--form-focus-bg-color);
@@ -1091,10 +1095,7 @@ input[type="color"]:disabled {
 }
 
 input[type="checkbox"],
-input[type="radio"] {
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;		
+input[type="radio"] {			
 	-webkit-print-color-adjust: exact;
     color-adjust: exact;
     print-color-adjust: exact;
@@ -1103,79 +1104,28 @@ input[type="radio"] {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	font: inherit;
 	width: 1.2em;
 	height: 1.2em;
-	font: inherit;
-	background-color: var(--form-bg-color);
-	border: var(--border-width) var(--border-style) var(--form-border-color);
-	border-radius: var(--border-radius);
+	margin: 0;
+	padding: 0;	
 }
 
-.form-group {
-	display: flex;
-	flex-direction: column;	
-	flex-wrap: wrap;
-	align-items: flex-start;
-	gap: 0.6rem;
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    cursor: pointer;
+	vertical-align: middle;
+	margin-left: 0.5rem;
+	margin-bottom: 0;	
 }
 
-.form-group input,
-.form-group label {
-	margin: 0 !important;
+label:has(+ input[type="checkbox"]),
+label:has(+ input[type="radio"]) {
+	cursor: pointer;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
 }
-
-.form-group label {
-	overflow-wrap: break-word !important;
-	word-break: break-word !important;
-}
-
-.form-group-vertical {
-	flex-direction: column !important;
-	align-items: flex-start !important;
-}
-
-.form-group-horizontal {
-	flex-direction: row !important;	
-	align-items: center !important;
-}
-
-.form-group-horizontal > input:not([type="checkbox"]):not([type="radio"]), 
-.form-group-horizontal > textarea, 
-.form-group-horizontal > select {
-    position: relative;
-    flex: 1 1 auto;
-    width: 1%;
-    min-width: 0;
-}
-
-.form-group-reverse {
-	flex-direction: column-reverse !important;
-}
-
-.form-group-horizontal.form-group-reverse {
-	flex-direction: row-reverse !important;
-}
-
-.form-group-vertical.form-group-reverse {
-	flex-direction: column-reverse !important;
-}
-
-.form-option {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.6rem;
-}
-
-.form-option label {
-	margin: 0 !important;
-	cursor: pointer !important;
-}
-
-.form-option-reverse {
-	flex-direction: row-reverse !important;
-}
-
 
 input[type="checkbox"]:active:not(:checked):not(:indeterminate):not(:disabled),
 input[type="radio"]:active:not(:checked):not(:disabled) {
@@ -1184,9 +1134,7 @@ input[type="radio"]:active:not(:checked):not(:disabled) {
 
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
-	border-color: var(--form-focus-border-color);
-	outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
-    outline-offset: var(--focus-outline-offset);
+	background-color: unset;
 }
 
 input[type="checkbox"]::before,
@@ -1243,36 +1191,6 @@ input[type="radio"]:checked::before {
 	border-radius: calc(var(--border-radius) / 2);
 }
 
-input[type="checkbox"]:disabled + label,
-input[type="radio"]:disabled + label {
-	opacity: .5 !important;
-	cursor: not-allowed !important;
-}
-
-label:has(+ input:disabled:not([type="button"]):not([type="submit"]):not([type="reset"])), 
-label:has(+ select:disabled), 
-label:has(+ optgroup:disabled), 
-label:has(+ textarea:disabled) {
-	opacity: .5 !important;
-    cursor: not-allowed !important;
-}
-
-label:has(+ input[type="checkbox"]),
-label:has(+ input[type="radio"]) {
-	cursor: pointer;
-    vertical-align: middle;
-    margin-right: 0.5rem;
-    margin-bottom: 0;
-}
-
-input[type="checkbox"] + label,
-input[type="radio"] + label {
-    cursor: pointer;
-	vertical-align: middle;
-	margin-left: 0.5rem;
-	margin-bottom: 0;	
-}
-
 input[type="checkbox"]:indeterminate {
     background-color: var(--primary-bg-color);
     border-color: var(--primary-border-color);
@@ -1289,6 +1207,12 @@ input[type="checkbox"]:indeterminate::before {
     transform: none;
     -webkit-transform: none;
 	-ms-transform: none;	
+}
+
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
+	opacity: .5 !important;
+	cursor: not-allowed !important;
 }
 
 input:read-only:not(:disabled):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
@@ -1311,6 +1235,14 @@ optgroup:disabled,
 textarea:disabled {
 	opacity: .5;
 	cursor: not-allowed;
+}
+
+label:has(+ input:disabled:not([type="button"]):not([type="submit"]):not([type="reset"])), 
+label:has(+ select:disabled), 
+label:has(+ optgroup:disabled), 
+label:has(+ textarea:disabled) {
+	opacity: .5 !important;
+    cursor: not-allowed !important;
 }
 
 progress {
@@ -2065,6 +1997,85 @@ meter.form-control-lg::-webkit-meter-bar {
 	font-size: 1.25rem !important;
 	border-radius: var(--border-radius-lg) !important;
 }
+
+
+
+
+
+
+
+
+
+.form-group {
+	display: flex;
+	flex-direction: column;	
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 0.6rem;
+}
+
+.form-group input,
+.form-group label {
+	margin: 0 !important;
+}
+
+.form-group label {
+	overflow-wrap: break-word !important;
+	word-break: break-word !important;
+}
+
+.form-group-vertical {
+	flex-direction: column !important;
+	align-items: flex-start !important;
+}
+
+.form-group-horizontal {
+	flex-direction: row !important;	
+	align-items: center !important;
+}
+
+.form-group-horizontal > input:not([type="checkbox"]):not([type="radio"]), 
+.form-group-horizontal > textarea, 
+.form-group-horizontal > select {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+
+.form-group-reverse {
+	flex-direction: column-reverse !important;
+}
+
+.form-group-horizontal.form-group-reverse {
+	flex-direction: row-reverse !important;
+}
+
+.form-group-vertical.form-group-reverse {
+	flex-direction: column-reverse !important;
+}
+
+.form-option {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.6rem;
+}
+
+.form-option label {
+	margin: 0 !important;
+	cursor: pointer !important;
+}
+
+.form-option-reverse {
+	flex-direction: row-reverse !important;
+}
+
+
+
+
+
+
 
 
 
