@@ -1,11 +1,21 @@
+TO DOs:
+------
+
+
+
+
 
 LAYOUT
 ------
 
 NOTE: SEARCH BOOTSTRAP "GAP" IN ITS CSS FILES
+NOTE: ADD PREFERRED REDUCED MOTION IN YOUR STYLES
+NOTE: ADD TRANSITION EFFECTS AFTER FORM COMPLETED
+
 Display (grid.css)
 Flex (grid.css)
 Spacing (grid.css)
+
 
 
 CONTENT (DONE)
@@ -50,8 +60,7 @@ FORMS (PROGRESS)
 
 
 
-TO DOs
-------------------------------------------------
+
 
 
 
@@ -86,31 +95,6 @@ legend default style bringed back
 .list-inline-item removed because li is already define itself in this way
 
 .table-responsive at different media sizes has been removed since its not necessary to use.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

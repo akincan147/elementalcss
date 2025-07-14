@@ -259,7 +259,7 @@
     --white-border-color: #ffffff;
     --white-border-color-subtle: #ededed;
     --white-border-color-prominent: #b6b6b6;
-    --white-text-color: #000000;    
+    --white-text-color: #000000;
     --white-text-color-emphasis: #000000;
     --white-hover-bg-color: #ededed;
     --white-hover-border-color: #ededed;
@@ -926,6 +926,23 @@ select[size]:not([size="1"]) {
     background-image: none;
 }
 
+select:after {
+	display: block;
+    position: absolute;
+    inset-block-start: calc(50% - .375em);
+    transform: rotate(-45deg);
+    width: .525em;
+    height: .525em;
+    transform-origin: 50%;
+    border: 1px solid var(--theme-text);
+    pointer-events: none;
+    content: " ";
+    z-index: 1;
+    border-block-start: 0;
+    border-inline-end: 0;
+    inset-inline-end: calc(.625em - 1px);
+}
+
 textarea {
 	resize: vertical;
 	min-height: calc(1.5em + .75rem + calc(var(--border-width) * 2));
@@ -1119,14 +1136,6 @@ input[type="radio"] + label {
 	margin-bottom: 0;	
 }
 
-label:has(+ input[type="checkbox"]),
-label:has(+ input[type="radio"]) {
-	cursor: pointer;
-    vertical-align: middle;
-    margin-right: 0.5rem;
-    margin-bottom: 0;
-}
-
 input[type="checkbox"]:active:not(:checked):not(:indeterminate):not(:disabled),
 input[type="radio"]:active:not(:checked):not(:disabled) {
 	background-color: var(--form-focus-bg-color);
@@ -1237,7 +1246,7 @@ textarea:disabled {
 	cursor: not-allowed;
 }
 
-label:has(+ input:disabled:not([type="button"]):not([type="submit"]):not([type="reset"])), 
+label:has(+ input:disabled:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"])), 
 label:has(+ select:disabled), 
 label:has(+ textarea:disabled) {
 	opacity: .5 !important;
@@ -1444,8 +1453,7 @@ meter:-moz-meter-sub-optimum::-moz-meter-bar{
 button,
 [type="submit"],
 [type="reset"],
-[type="button"],
-[data-type="button"] { 
+[type="button"] { 
 	--btn-padding-x: 0.75rem;
 	--btn-padding-y: 0.375rem;
 	--btn-font-size: 1rem;
@@ -1483,8 +1491,7 @@ button,
 button:hover,
 [type="submit"]:hover,
 [type="reset"]:hover,
-[type="button"]:hover,
-[data-type="button"]:hover {
+[type="button"]:hover {
 	color: var(--btn-hover-text-color);
 	background-color: var(--btn-hover-bg-color);
  	border-color: var(--btn-hover-border-color); 	
@@ -1493,8 +1500,7 @@ button:hover,
 button:active,
 [type="submit"]:active,
 [type="reset"]:active,
-[type="button"]:active,
-[data-type="button"]:active {
+[type="button"]:active {
 	color: var(--btn-active-text-color);
 	background-color: var(--btn-active-bg-color);
  	border-color: var(--btn-active-border-color); 	
@@ -1503,24 +1509,21 @@ button:active,
 button:focus,
 [type="submit"]:focus,
 [type="reset"]:focus,
-[type="button"]:focus,
-[data-type="button"]:focus {
+[type="button"]:focus {
 	outline-color: var(--btn-outline-color);
 }
 
 button:focus:not(:focus-visible),
 [type="submit"]:focus:not(:focus-visible),
 [type="reset"]:focus:not(:focus-visible),
-[type="button"]:focus:not(:focus-visible),
-[data-type="button"]:focus:not(:focus-visible) {
+[type="button"]:focus:not(:focus-visible) {
 	/* No style */
 }
 
 button:disabled,
 [type="submit"]:disabled,
 [type="reset"]:disabled,
-[type="button"]:disabled,
-[data-type="button"]:disabled {
+[type="button"]:disabled {
 	opacity: .5;
 	cursor: not-allowed;
 	pointer-events: none;
@@ -1760,29 +1763,39 @@ tbody > tr.active > * {
 	opacity: 0;
 }
 
-.btn-check + label[data-type="button"]:hover {
+.btn-check[type="checkbox"] + label,
+.btn-check[type="radio"] + label {
+	margin: 0;
+}
+
+.btn-check + label[type="button"]:hover {
 	color: var(--btn-text-color);
 	background-color: var(--btn-bg-color);
 	border-color: var(--btn-border-color);
 }
 
-.btn-check + label[data-type="button"]:active {
+.btn-check + label[type="button"]:active {
 	color: var(--btn-text-color);
 	background-color: var(--btn-bg-color);
 	border-color: var(--btn-border-color);
 }
 
-.btn-check:checked + label[data-type="button"] {
+.btn-check:checked + label[type="button"] {
 	color: var(--btn-active-text-color);
 	background-color: var(--btn-active-bg-color);
 	border-color: var(--btn-active-border-color);
 }
 
-.btn-check:checked + label[data-type=button]:not([class*="btn-"]) {
+.btn-check:checked + label[type=button]:not([class*="btn-"]) {
   	color: var(--primary-text-color);
 	background-color: var(--primary-bg-color);
 	border-color: var(--primary-border-color);
 }
+
+
+
+
+
 
 input.form-control-sm:read-only:not(:disabled):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
 textarea.form-control-sm:read-only:not(:disabled),
@@ -1803,7 +1816,8 @@ label:has(+ .input-group.input-group-sm) {
 
 input.form-control-sm:not([type="range"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not(progress):not(meter),
 .input-group.input-group-sm input:not([type="range"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not(progress):not(meter),
-.input-group.input-group-sm .input-group-text {
+.input-group.input-group-sm .input-group-text,
+.input-group:has(.form-control-sm) > .input-group-text {
     min-height: calc(1.2em + .5rem + calc(var(--border-width) * 2)) !important;
     padding: .25rem .5rem !important;
     font-size: .875rem !important;
@@ -1922,7 +1936,8 @@ label:has(+ .input-group.input-group-lg) {
 
 input.form-control-lg:not([type="range"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not(progress):not(meter),
 .input-group.input-group-lg input:not([type="range"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]):not(progress):not(meter),
-.input-group.input-group-lg .input-group-text {
+.input-group.input-group-lg .input-group-text,
+.input-group:has(.form-control-lg) > .input-group-text {
     min-height: calc(1.5em + 1rem + calc(var(--border-width) * 2)) !important;
     padding: .5rem 1rem !important;
     font-size: 1.25rem !important;
@@ -2034,67 +2049,18 @@ meter.form-control-lg::-webkit-meter-bar {
 
 
 
-
-
-
-.form-group {
-	display: flex;
-	flex-direction: column;	
-	flex-wrap: wrap;
-	align-items: flex-start;
-	gap: 0.6rem;
-}
-
-.form-group label {
-	margin: 0 !important;
-	overflow-wrap: break-word !important;
-	word-break: break-word !important;
-}
-
-.form-group-vertical {
-	flex-direction: column !important;
-	align-items: flex-start !important;
-}
-
-.form-group-horizontal {
-	flex-direction: row !important;	
-	align-items: center !important;
-}
-
-.form-group-horizontal > input:not([type="checkbox"]):not([type="radio"]), 
-.form-group-horizontal > textarea, 
-.form-group-horizontal > select {
-    position: relative;
-    flex: 1 1 auto;
-    width: 1%;
-    min-width: 0;
-}
-
-.form-group-reverse {
-	flex-direction: column-reverse !important;
-}
-
-.form-group-horizontal.form-group-reverse {
-	flex-direction: row-reverse !important;
-}
-
-.form-group-vertical.form-group-reverse {
-	flex-direction: column-reverse !important;
-}
-
-.form-option {
+.form-check {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	gap: 0.6rem;
 }
 
-.form-option label {
+.form-check label {
 	margin: 0 !important;
-	cursor: pointer !important;
 }
 
-.form-option-reverse {
+.form-check-reverse {
 	flex-direction: row-reverse !important;
 }
 
@@ -2102,10 +2068,15 @@ meter.form-control-lg::-webkit-meter-bar {
 
 
 
+/* 
 
 
+BTN TEXT SIZE NOT INCREASE WHEN INPUT-GROUP-LG or SM FIX THAT
+check if container elements size incrases or not
+fix outline border effect issues
+fix when focus on input, button border not visible
 
-
+*/
 
 .input-group {
     position: relative;
@@ -2115,9 +2086,10 @@ meter.form-control-lg::-webkit-meter-bar {
     width: 100%;
 }
 
-.input-group > input,
+.input-group > input:not(.btn-check):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="color"]),
 .input-group > textarea,
 .input-group > select,
+.input-group > .input-group-content,
 .input-group > .form-floating {
     position: relative;
     flex: 1 1 auto;
@@ -2135,8 +2107,7 @@ meter.form-control-lg::-webkit-meter-bar {
 .input-group button,
 .input-group [type="submit"],
 .input-group [type="reset"],
-.input-group [type="button"],
-.input-group [data-type="button"] {
+.input-group [type="button"] {
     position: relative;
     z-index: 2;
 }
@@ -2144,8 +2115,7 @@ meter.form-control-lg::-webkit-meter-bar {
 .input-group button:focus,
 .input-group [type="submit"]:focus,
 .input-group [type="reset"]:focus,
-.input-group [type="button"]:focus,
-.input-group [data-type="button"]:focus {
+.input-group [type="button"]:focus {
     z-index: 5;
 }
 
@@ -2160,19 +2130,93 @@ meter.form-control-lg::-webkit-meter-bar {
     text-align: center;
     white-space: nowrap;
     color: var(--body-tertiary-text-color);
-    background-color: var(--body-tertiary-bg);
-    border: var(--border-width) solid var(--border-color);
+    background-color: var(--body-tertiary-bg-color);
+    border: var(--border-width) solid var(--form-border-color);
     border-radius: var(--border-radius);
 }
+
+.input-group > .input-group-content {
+	display: flex;
+	align-items: center;
+	padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+	color: var(--form-text-color);
+	background-color: var(--form-bg-color); 
+	border: var(--border-width) solid var(--form-border-color);
+	border-radius: var(--border-radius);	
+}
+
+.input-group-merge > * {
+	margin-left: 0 !important;
+}
+
+.input-group-merge > .input-group-text {	
+	background-color: var(--form-bg-color);
+}
+
+.input-group-merge > *:not(:first-child):not(.sep):not(button):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="color"]) {
+    border-left: none;
+}
+
+.input-group-merge > *:not(:last-child):not(.sep):not(button):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="color"]) {
+    border-right: none;
+}
+
+.input-group-merge > .input-group-text + input:not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="color"]),
+.input-group-merge > .input-group-text + textarea,
+.input-group-merge > .input-group-text + select,
+.input-group-merge > .input-group-text + .input-group-text:has(input),
+.input-group-merge > .input-group-text + .input-group-content {
+  	padding-left: 0;
+}
+
+.input-group-merge > input:not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="color"]):has(+ .input-group-text),
+.input-group-merge > textarea:has(+ .input-group-text),
+.input-group-merge > select:has(+ .input-group-text),
+.input-group-merge > .input-group-text:has(input):has(+ .input-group-text), 
+.input-group-merge > .input-group-content:has(+ .input-group-text) {
+	padding-right: 0;
+}
+
+.input-group-merge:focus-within > * {
+	color: var(--form-focus-text-color);
+	background-color: var(--form-focus-bg-color);
+	border-color: var(--form-focus-border-color) !important;	
+}
+
+
+
+.input-group-merge > .sepx {
+	display: flex;
+	width: 0;
+	padding: 0;	
+	z-index: 6;
+	overflow: hidden;	
+	border-left: var(--border-width) var(--border-style) var(--form-border-color);
+}
+
+.input-group:not(.input-group-merge) > .sepx {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .input-group .input-group-text input,
 .input-group .input-group-text select,
 .input-group .input-group-text textarea {
     font-size: initial;
 }
-
-
-
 
 .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3),
 .input-group:not(.has-validation) > .form-floating:not(:last-child) > input,
