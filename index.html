@@ -345,7 +345,7 @@
 
 					<label for="range">Range =</label>
 					<output for="range" id="rangeValue">0</output>
-					<input type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
+					<input class="" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 
 					<br>
 
@@ -404,12 +404,12 @@
 					<br>
 					
 					<label for="file">File</label>
-					<input type="file" id="file" name="file">
+					<input class="" type="file" id="file" name="file">
 
 					<br>
 
 					<label for="color">Color</label>
-					<input type="color" id="color" name="color" value="#ff0000">	
+					<input class="form-control" type="color" id="color" name="color" value="#ff0000">	
 
 					<br>
 					
@@ -549,7 +549,7 @@
 
 
 					<div class="input-group mb-3">
-						<button class="" type="button">Button</button>
+						<button class="btn" type="button">Button</button>
 						<input type="text">
 					</div>
 
@@ -565,16 +565,18 @@
 
 					
 
-					<div class="input-group input-group-merge mb-3">									
-						<span class="input-group-text">#</span>
-						<input class="" type="text">
-						<input class="border-left" type="text">
-						<button class="" type="button">Button</button>
-						<span class="input-group-text">#</span>
-						<div class="input-group-text">
-				  			<input type="checkbox" id="checkboxX">
+					<div class="input-group input-group-merge mb-3">
+					<button class="btn btn-secondary">Button</button>									
+						<span class="input-group-text">First Name:</span>												
+						<div class="input-group-content">							
+							<input type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 						</div>	
-						<span class="input-group-text">#</span>
+						<div class="input-group-content">							
+							<input type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
+						</div>							
+						<input class="btn btn-secondary" type="button" value="Button"/>
+						<input class="btn btn-secondary" type="button" value="Button"/>
+						
 					</div>			
 
 						
@@ -589,19 +591,19 @@
 			<h1>Buttons</h1>
 			<hr>  
 			<p>The button styles for submit, reset, and button are all the same. By default they are styled in primary colors.</p>
-			<input type="submit" id="submit" name="submit" value="Submit">
-			<input type="reset" id="reset" name="reset" value="Reset">
-			<button type="button" id="button" name="button">Button</button>
+			<input class="btn" type="submit" id="submit" name="submit" value="Submit">
+			<input class="btn" type="reset" id="reset" name="reset" value="Reset">
+			<button class="btn" type="button" id="button" name="button">Button</button>
 			<br><br>
 			<p>You can use the classes: <code>.btn-primary</code>, <code>.btn-secondary</code>, <code>.btn-success</code>, <code>.btn-danger</code>, <code>.btn-warning</code>, <code>.btn-info</code> to create more variants.</p>
-			<button class="btn-primary" type="button" id="button" name="button">Primary</button>
-			<button class="btn-secondary" type="button" id="button" name="button">Secondary</button>
-			<button class="btn-success" type="button" id="button" name="button">Success</button>
-			<button class="btn-danger" type="button" id="button" name="button">Danger</button>
-			<button class="btn-warning" type="button" id="button" name="button">Warning</button>
-			<button class="btn-info" type="button" id="button" name="button">Info</button>
-			<button class="btn-white" type="button" id="button" name="button">White</button>
-			<button class="btn-black" type="button" id="button" name="button">Black</button>
+			<button class="btn btn-primary" type="button" id="button" name="button">Primary</button>
+			<button class="btn btn-secondary" type="button" id="button" name="button">Secondary</button>
+			<button class="btn btn-success" type="button" id="button" name="button">Success</button>
+			<button class="btn btn-danger" type="button" id="button" name="button">Danger</button>
+			<button class="btn btn-warning" type="button" id="button" name="button">Warning</button>
+			<button class="btn btn-info" type="button" id="button" name="button">Info</button>
+			<button class="btn btn-white" type="button" id="button" name="button">White</button>
+			<button class="btn btn-black" type="button" id="button" name="button">Black</button>
 		</section>	
 
 		<section>
