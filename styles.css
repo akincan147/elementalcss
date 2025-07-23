@@ -894,7 +894,9 @@ output {
 	display: inline-block;
 }
 
-
+[list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
+	display: none !important;
+}
 
 ::-moz-placeholder {
 	color: var(--muted-text-color);
@@ -905,6 +907,8 @@ output {
 	color: var(--muted-text-color);
     opacity: 1;
 }
+
+
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
