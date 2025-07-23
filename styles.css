@@ -416,6 +416,10 @@ body {
 	-webkit-tap-highlight-color: rgba(0,0,0, 0);
 }
 
+main {
+ 	display: block;
+}
+
 
 /* For browsers that support `scrollbar-*` properties */
 /*
@@ -471,6 +475,9 @@ body {
 /* TYPOGRAPHY */
 
 hr {
+	box-sizing: content-box;
+  	height: 0; 
+  	overflow: visible; 
 	margin: 1rem 0;
 	color: var(--border-color-translucent);
 	border: 0;
@@ -543,6 +550,7 @@ a {
 	--link-hover-text-color: var(--body-link-hover-text-color);
 	--link-hover-text-decoration-color: var(--body-link-hover-text-decoration-color);	
 	color: var(--link-text-color);
+	background-color: transparent;
 	text-decoration: var(--link-text-decoration);
 	text-decoration-color: var(--link-text-decoration-color);
 	text-underline-offset: var(--link-text-underline-offset);
@@ -601,6 +609,7 @@ abbr[title] {
 	-webkit-text-decoration: underline dotted;	
 	text-decoration-skip-ink: none;
 	-webkit-text-decoration-skip-ink: none;	
+	border-bottom: none;
 }
 
 blockquote {
@@ -715,6 +724,10 @@ figcaption {
 	color: var(--muted-text-color);
 }
 
+img {
+	border-style: none;
+}
+
 img,
 svg {
 	vertical-align: middle;
@@ -820,10 +833,15 @@ fieldset {
 }
 
 legend {
+  	max-width: 100%;
 	padding: 0;
 	margin-bottom: 0.5rem;
 	font-size: calc(1.275rem + 0.3vw);
 	line-height: inherit;
+	white-space: normal;
+	overflow-wrap: break-word;
+	word-break: break-word;
+  	color: inherit;  
 }
 @media (min-width: 1200px) {
 	legend {
@@ -832,6 +850,10 @@ legend {
 }
 legend + * {
 	clear: left;
+}
+
+progress {
+	vertical-align: baseline;
 }
 
 input,
@@ -845,6 +867,27 @@ textarea {
 	line-height: inherit;	
 }
 
+[list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
+	display: none !important;
+}
+
+select {
+	text-transform: none;
+	word-wrap: normal;
+}
+
+select:disabled {
+ 	opacity: 1;
+}
+
+textarea {
+	resize: vertical;
+}
+
+output {
+	display: inline-block;
+}
+
 button,
 [type=button],
 [type=reset],
@@ -856,7 +899,6 @@ button,
     -moz-user-select: none;
     text-decoration: none;
     text-transform: none;
-    border-radius: 0; 
 }
 
 button:focus:not(:focus-visible),
@@ -877,27 +919,6 @@ button:not(:disabled),
  	cursor: pointer;
 }
 
-select {
-	text-transform: none;
-	word-wrap: normal;
-}
-
-select:disabled {
- 	opacity: 1;
-}
-
-textarea {
-	resize: vertical;
-}
-
-output {
-	display: inline-block;
-}
-
-[list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
-	display: none !important;
-}
-
 ::-moz-placeholder {
 	color: var(--muted-text-color);
     opacity: 1;
@@ -907,8 +928,6 @@ output {
 	color: var(--muted-text-color);
     opacity: 1;
 }
-
-
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
@@ -1305,6 +1324,10 @@ textarea.form-control {
 .form-control::-webkit-outer-spin-button,
 .form-control::-webkit-inner-spin-button {
 	display: none;
+}
+
+.form-control::-webkit-calendar-picker-indicator {
+ 	opacity: 0;
 }
 
 .form-control[type="color"] {	
