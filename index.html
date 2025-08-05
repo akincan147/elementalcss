@@ -297,29 +297,29 @@
 		<section>
 			<h1>Form Elements</h1>
 			<hr>
-			<form action="/action_page.php" class="needs-validation" novalidate>
+			<form class="" action="/action_page.php" class="needs-validation" novalidate>
 				<p>For valid form elements, you can simply add the <code>.is-valid</code> class to the form elements or dynamically using your validation system.</p>
 				<p>For invalid form elements, use <code>.is-invalid</code></p>
 				<fieldset style="width: 80%">
 					<legend>Form legend</legend>
 
-					<label for="text">Text</label>
-					<input type="text" id="text" name="text" placeholder="Here is the text" required>
+					<label class="form-label" for="text">Text</label>
+					<input class="form-control" type="text" id="text" name="text" placeholder="Here is the text" required>
 
 					<br>
 
-					<label for="password">Password</label>
-					<input type="password" id="password" name="password">
+					<label class="form-label" for="password">Password</label>
+					<input class="form-control" type="password" id="password" name="password">
 
 					<br>
 
-					<label for="number">Number</label>
-					<input type="number" id="number" name="number" min="1" max="50">
+					<label class="form-label" for="number">Number</label>
+					<input class="form-control" type="number" id="number" name="number" min="1" max="50">
 
 					<br>
 
-					<label for="select">Select</label>
-					<select name="select" id="select">
+					<label class="form-label" for="select">Select</label>
+					<select class="form-select" name="select" id="select">
 						<option value="option1">Option 1</option>
 						<option value="option2">Option 2</option>
 						<option value="option3">Option 3</option>
@@ -327,35 +327,35 @@
 
 					<br>
 
-					<label for="date">Date</label>
-					<input type="date" id="date" name="date">
+					<label class="form-label" for="date">Date</label>
+					<input class="form-control" type="date" id="date" name="date">
 
 					<br>
 
-					<label for="time">Time</label>
-					<input type="time" id="time" name="time">
+					<label class="form-label" for="time">Time</label>
+					<input class="form-control" type="time" id="time" name="time">
 
 					<br>
 
-					<label for="textarea">Textarea</label>
-					<textarea id="textarea" name="textarea"></textarea>
+					<label class="form-label" for="textarea">Textarea</label>
+					<textarea class="form-control form-control-sm" id="textarea" name="textarea"></textarea>
 
 					<br>
 
-					<label for="range">Range =</label>
+					<label class="form-label" for="range">Range =</label>
 					<output for="range" id="rangeValue">0</output>
-					<input class="" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
+					<input class="form-range" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 
 					<br>
 
-					<label for="indeterminate-progress">Indeterminate Progress</label>
-					<progress id="indeterminate-progress" name="indeterminate-progress" max="100"></progress>
+					<label class="form-label" for="indeterminate-progress">Indeterminate Progress</label>
+					<progress class="progress" id="indeterminate-progress" name="indeterminate-progress" max="100"></progress>
 
 					<br>
 
-					<label for="progress">Progress =</label>	
+					<label class="form-label" for="progress">Progress =</label>	
 					<output for="progress" id="progressValue"></output>		
-					<progress id="progress" name="progress" value="0" max="100"></progress>			
+					<progress class="progress" id="progress" name="progress" value="0" max="100"></progress>			
 
 					<script>
 				        // Function to update progress value
@@ -387,28 +387,38 @@
 
 					<br>
 
-					<label for="meter2">Meter - Optimum</label>
-					<meter id="meter2" name="meter2" value="8" min="0" low="3" optimum="8" high="7" max="10"></meter>
+					<label class="form-label" for="meter2">Meter - Optimum</label>
+					<meter class="meter" id="meter2" name="meter2" value="8" min="0" low="3" optimum="8" high="7" max="10"></meter>
 
 					<br>
 
-					<label for="meter">Meter - Even/Less/Good</label>
-					<meter id="meter" name="meter" value="2" min="0" low="3" optimum="8" high="7" max="10"></meter>
+					<label class="form-label" for="meter">Meter - Even/Less/Good</label>
+					<meter class="meter" id="meter" name="meter" value="2" min="0" low="3" optimum="8" high="7" max="10"></meter>
 
 					<br>
 
-					<label for="meter1">Meter - Suboptimum</label>
-					<meter id="meter1" name="meter1" value="3" min="0" low="3" optimum="8" high="7" max="10"></meter>				
+					<label class="form-label" for="meter1">Meter - Suboptimum</label>
+					<meter class="meter" id="meter1" name="meter1" value="3" min="0" low="3" optimum="8" high="7" max="10"></meter>				
 
 					<br>
 					
-					<label for="file">File</label>
-					<input class="" type="file" id="file" name="file">
+					<label class="form-label" for="file">File</label>
+					<input class="form-control form-control-sm" type="file" id="file" name="file">
+					<br>
+
+					<div class="row">
+						<div class="col-auto">
+							<input class="form-control form-control" type="color" id="color" name="color" value="#ff0000">	
+						</div>
+						<div class="col">
+							<input class="form-control form-control" type="date" id="date" name="date">	
+						</div>
+					</div>
 
 					<br>
 
-					<label for="color">Color</label>
-					<input class="form-control" type="color" id="color" name="color" value="#ff0000">	
+					<label class="form-label" for="color">Color</label>
+					<input class="form-control form-control-lg" type="color" id="color" name="color" value="#ff0000">	
 
 					<br>
 					
@@ -438,88 +448,76 @@
 
 
 
-					<input type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox" value="indeterminate-checkbox">  
-					<label for="indeterminate-checkbox">Indeterminate Checkbox</label>		  			
+					<input class="form-check-input" type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox" value="indeterminate-checkbox">  
+					<label class="form-check-label" for="indeterminate-checkbox">Indeterminate Checkbox</label>		  			
 
 
 		  			<br>
 
 
-		  			<input type="checkbox" id="checkbox">  
-					<label for="checkbox">Checkbox 0</label>
+		  			<input class="form-check-input" type="checkbox" id="checkbox">  
+					<label class="form-check-label" for="checkbox">Checkbox 0</label>
 
 					<br>
 
 
-					<div class="form-check">
-			  			<input type="checkbox" id="checkbox1">  
-			  			<label for="checkbox1">Checkbox 1</label>
+					<div class="form-check form-check-sm">
+			  			<input class="form-check-input" type="checkbox" id="checkbox1">  
+			  			<label class="form-check-label" for="checkbox1">Checkbox 1</label>
 					</div>	
 
 					<div class="form-check">
-			  			<input type="checkbox" id="checkbox2">  
-			  			<label for="checkbox2">Checkbox 2</label>
+			  			<input class="form-check-input" type="checkbox" id="checkbox2">  
+			  			<label class="form-check-label" for="checkbox2">Checkbox 2</label>
+					</div>
+
+					<div class="form-check form-check-lg">
+			  			<input class="form-check-input" type="checkbox" id="checkbox2">  
+			  			<label class="form-check-label" for="checkbox2">Checkbox 2</label>
 					</div>	
 
 		  			<br>
 
-		  			<input type="radio" id="radio" name="radio" value="radio">
-					<label for="radio">Radio</label>	
+		  			<input class="form-check-input" type="radio" id="radio" name="radio" value="radio">
+					<label class="form-check-label" for="radio">Radio</label>	
 
 					<br>
 					
-					<input type="checkbox" role="switch" id="checkbox-switch" />
-					<label for="checkbox-switch">Checkbox Switch</label>						
+					<input class="form-check-input" type="checkbox" role="switch" id="checkbox-switch" />
+					<label class="form-check-label" for="checkbox-switch">Checkbox Switch</label>						
 
 					<br>
 
-				    <input class="form-control-lg" type="text" placeholder="large">
+				    <input class="form-control form-control-lg" type="text" placeholder="large">
 				    <br>
-				    <input type="text" placeholder="default">
+				    <input class="form-control" type="text" placeholder="default">
 				    <br>
-				    <input class="form-control-sm" type="text" placeholder="small">
+				    <input class="form-control form-control-sm" type="text" placeholder="small">
 				    <br>
+
+
+
+
+
 				    <br>
-
-
-				    <input type="text" list="fruits" placeholder="Type a fruit">
-  <datalist id="fruits">
-    <option value="Apple">
-    <option value="Banana">
-    <option value="Cherry">
-  </datalist>
-
-  <br>
-
-
-   <input type="date" list="dates">
-  <datalist id="dates">
-    <option value="2025-07-01">
-    <option value="2025-07-15">
-    <option value="2025-07-30">
-  </datalist>
-
-  <br>
-
-
 				    
 				    <div class="input-group mb-3">
 						<span class="input-group-text">Group Text</span>
-						<input type="text" placeholder="Username">
+						<input class="form-control" type="text" placeholder="Username">
 					</div>
 
 					
 
 					<div class="input-group mb-3">
 						<span class="input-group-text">With textarea</span>
-						<textarea></textarea>
+						<textarea class="form-control"></textarea>
 					</div>
 
 
 
 					<div class="input-group mb-3">
 						<label class="input-group-text" for="inputGroupSelect01">Options</label>
-						<select id="inputGroupSelect01">
+						<select class="form-select" id="inputGroupSelect01">
 							<option selected>Choose...</option>
 							<option value="1">One</option>
 							<option value="2">Two</option>
@@ -531,51 +529,51 @@
 						
 					<div class="input-group mb-3">
 						<span class="input-group-text">
-							<input type="checkbox"/>
+							<input class="form-check-input" type="checkbox"/>
 						</span>
-						<input type="text">
+						<input class="form-control" type="text">
 					</div>
 
 					<div class="input-group mb-3">
 						<span class="input-group-text">							
-							<input type="checkbox"/>
+							<input class="form-check-input" type="checkbox"/>
 						</span>
-						<input type="text">
+						<input class="form-control" type="text">
 					</div>	
 
 					<div class="input-group mb-3">
 						<span class="input-group-text">
-							<input type="checkbox" role="switch"/>
+							<input class="form-check-input" type="checkbox" role="switch"/>
 						</span>
-						<input type="text">
+						<input class="form-control" type="text">
 					</div>	
 
 					<div class="input-group mb-3">
 						<span class="input-group-text">
-							<input type="checkbox" role="switch"/>
+							<input class="form-check-input" type="checkbox" role="switch"/>
 						</span>
-						<input type="text">
+						<input class="form-control" type="text">
 					</div>						
 
 
 
 					<div class="input-group mb-3">
 						<label class="input-group-text" for="inputGroupFile01">Upload</label>
-						<input type="file" id="inputGroupFile01">
+						<input class="form-control" type="file" id="inputGroupFile01">
 					</div>
 
 
 
 					<div class="input-group mb-3">
 						<button class="btn" type="button">Button</button>
-						<input type="text">
+						<input class="form-control" type="text">
 					</div>
 
 
 					<div class="input-group mb-3">
 						<label class="input-group-text" for="rangex">Range</label>
 						<div class="input-group-content">							
-							<input type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
+							<input class="form-range" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 						</div>					
 					</div>
 
@@ -587,10 +585,10 @@
 					<button class="btn btn-secondary">Button</button>									
 						<span class="input-group-text">First Name:</span>												
 						<div class="input-group-content">							
-							<input type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
+							<input class="form-range" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 						</div>	
 						<div class="input-group-content">							
-							<input type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
+							<input class="form-range" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 						</div>							
 						<input class="btn btn-secondary" type="button" value="Button"/>
 						<input class="btn btn-secondary" type="button" value="Button"/>
