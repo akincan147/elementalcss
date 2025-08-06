@@ -1263,7 +1263,8 @@ tbody > tr.active > * {
     border-radius: var(--border-radius);
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
     color: var(--form-focus-text-color);
     background-color: var(--form-focus-bg-color);
     border-color: var(--form-focus-border-color);
@@ -1453,7 +1454,7 @@ textarea.form-control {
   	cursor: grab;
 	background-color: var(--form-text-color);
 	border: none;
-	border-radius: inherit;
+	border-radius: var(--border-radius);
 	height: .688em;
 	width: .688em;
 }
@@ -1465,7 +1466,7 @@ textarea.form-control {
   	cursor: grab;
 	background-color: var(--form-text-color);
 	border: none;
-	border-radius: inherit;
+	border-radius: var(--border-radius);
 	height: .688em;
 	width: .688em;
 }
@@ -2100,7 +2101,7 @@ select.is-invalid:focus {
 .form-sm .form-range,
 .input-group-sm .form-range {
 	font-size: .875rem;
-	border-radius: var(--border-radius-sm);	
+	--border-radius: var(--border-radius-sm);	
 }
 
 .form-control-sm[type="color"],
@@ -2193,7 +2194,7 @@ select.is-invalid:focus {
 .form-lg .form-range,
 .input-group-lg .form-range {
 	font-size: 1.25rem;
-	border-radius: var(--border-radius-lg);	
+	--border-radius: var(--border-radius-lg);	
 }
 
 .form-control-lg[type="color"],
