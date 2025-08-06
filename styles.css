@@ -1335,18 +1335,17 @@ textarea.form-control {
 .form-control[type="color"] {		
 	cursor: pointer;	
 	width: 3em;
-    height: calc(1.5em + .75rem + calc(var(--border-width) * 2));
-    border-radius: var(--border-radius);
+    height: calc(1.5em + .75rem + calc(var(--border-width) * 2));    
     padding: .375rem;   
 }
 
 .form-control[type="color"]::-webkit-color-swatch {
-	border-radius: inherit;
+	border-radius: var(--border-radius);
 	border: none;	
 }
 
 .form-control[type="color"]::-moz-color-swatch {
-	border-radius: inherit;
+	border-radius: var(--border-radius);
 	border: none;
 }
 
@@ -2110,7 +2109,7 @@ select.is-invalid:focus {
     font-size: .875rem;
     padding: .25rem;
     height: calc(1.5em + .5rem + calc(var(--border-width) * 2));    
-    border-radius: var(--border-radius-sm);
+    --border-radius: var(--border-radius-sm);
 }
 
 .form-check-input-sm,
@@ -2203,7 +2202,7 @@ select.is-invalid:focus {
     font-size: 1.25rem;
     padding: .5rem;
     height: calc(1.5em + 1rem + calc(var(--border-width) * 2));
-    border-radius: var(--border-radius-lg);
+    --border-radius: var(--border-radius-lg);
 }
 
 .form-check-input-lg,
