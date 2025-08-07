@@ -1337,16 +1337,17 @@ textarea.form-control {
 	cursor: pointer;	
 	width: 3em;
     height: calc(1.5em + .75rem + calc(var(--border-width) * 2));    
-    padding: .375rem;   
+    padding: .375rem;
+    --color-swatch-border-radius: var(--border-radius);   
 }
 
 .form-control[type="color"]::-webkit-color-swatch {
-	border-radius: var(--border-radius);
+	border-radius: var(--color-swatch-border-radius);
 	border: none;	
 }
 
 .form-control[type="color"]::-moz-color-swatch {
-	border-radius: var(--border-radius);
+	border-radius: var(--color-swatch-border-radius);
 	border: none;
 }
 
@@ -1425,6 +1426,11 @@ textarea.form-control {
     background-color: var(--form-bg-color);  
     border: var(--border-width) var(--border-style) var(--form-border-color);
     border-radius: var(--border-radius);
+    --range-thumb-height: .688em;
+    --range-thumb-width: .688em;
+    --range-thumb-border: none;
+    --range-thumb-border-radius: var(--border-radius);
+    --range-thumb-bg-color: var(--form-text-color);
 }
 
 .form-range:focus {
@@ -1452,11 +1458,11 @@ textarea.form-control {
 	-webkit-appearance: none;
 	-moz-appearance: none;	
   	cursor: grab;
-	background-color: var(--form-text-color);
+	background-color: var(--range-thumb-bg-color);
 	border: none;
-	border-radius: var(--border-radius);
-	height: .688em;
-	width: .688em;
+	border-radius: var(--range-thumb-border-radius);
+	height: var(--range-thumb-height);
+	width: var(--range-thumb-width);
 }
 
 .form-range::-moz-range-thumb {
@@ -1464,11 +1470,11 @@ textarea.form-control {
 	-webkit-appearance: none;
 	-moz-appearance: none;	
   	cursor: grab;
-	background-color: var(--form-text-color);
+	background-color: var(--range-thumb-bg-color);
 	border: none;
-	border-radius: var(--border-radius);
-	height: .688em;
-	width: .688em;
+	border-radius: var(--range-thumb-border-radius);
+	height: var(--range-thumb-height);
+	width: var(--range-thumb-width);
 }
 
 .form-range:active::-webkit-slider-thumb {
@@ -2101,7 +2107,8 @@ select.is-invalid:focus {
 .form-sm .form-range,
 .input-group-sm .form-range {
 	font-size: .875rem;
-	--border-radius: var(--border-radius-sm);	
+	border-radius: var(--border-radius-sm);
+	--range-thumb-border-radius: var(--border-radius);	
 }
 
 .form-control-sm[type="color"],
@@ -2110,7 +2117,8 @@ select.is-invalid:focus {
     font-size: .875rem;
     padding: .25rem;
     height: calc(1.5em + .5rem + calc(var(--border-width) * 2));    
-    --border-radius: var(--border-radius-sm);
+    border-radius: var(--border-radius-sm);
+    --color-swatch-border-radius: var(--border-radius-sm);
 }
 
 .form-check-input-sm,
@@ -2194,7 +2202,8 @@ select.is-invalid:focus {
 .form-lg .form-range,
 .input-group-lg .form-range {
 	font-size: 1.25rem;
-	--border-radius: var(--border-radius-lg);	
+	border-radius: var(--border-radius-lg);
+	--range-thumb-border-radius: var(--border-radius-lg);	
 }
 
 .form-control-lg[type="color"],
@@ -2203,7 +2212,8 @@ select.is-invalid:focus {
     font-size: 1.25rem;
     padding: .5rem;
     height: calc(1.5em + 1rem + calc(var(--border-width) * 2));
-    --border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-lg);
+    --color-swatch-border-radius: var(--border-radius-lg);
 }
 
 .form-check-input-lg,
