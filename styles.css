@@ -1426,12 +1426,12 @@ textarea.form-control {
     background-color: transparent;
     color: var(--body-tertiary-text-color);
     --range-track-width: 100%;
-    --range-track-height: .5em;
+    --range-track-height: .75em;
     --range-track-bg-color: var(--body-tertiary-bg-color);
     --range-track-border: none;
     --range-track-border-radius: var(--border-radius);
     --range-progress-bg-color: var(--primary-bg-color);
-    --range-thumb-height: 1.25em;
+    --range-thumb-height: 1.5em;
     --range-thumb-width: .75em;
     --range-thumb-bg-color: var(--primary-bg-color);
     --range-thumb-border: none;
@@ -1699,7 +1699,7 @@ optgroup:disabled {
 	vertical-align: baseline;    
     display: flex;    
     overflow: hidden;    
-    height: .5em;
+    height: .75em;
     font-size: 1rem;
     position: relative;
     width: 100%;
@@ -1781,17 +1781,18 @@ optgroup:disabled {
 	vertical-align: baseline;    
 	display: flex;
 	width: 100%;
-	height: .5em;
+	height: .75em;
+	--meter-bar-height: .75em;
 	font-size: 1rem;
 	color: var(--body-tertiary-text-color);
 	background: none;
 	background-color: var(--body-tertiary-bg-color);	
 	border: 0;
-	border-radius: var(--border-radius);
+	border-radius: var(--border-radius);	
 }
 
 .meter::-webkit-meter-bar {  
-	height: 1em;
+	height: var(--meter-bar-height);
 	color: var(--body-tertiary-text-color);	
 	background: var(--body-tertiary-bg-color);	
 	border: 0;
