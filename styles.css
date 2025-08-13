@@ -1426,7 +1426,7 @@ textarea.form-control {
     background-color: transparent;
     color: var(--body-tertiary-text-color);
     --range-track-width: 100%;
-    --range-track-height: .625em;
+    --range-track-height: .5em;
     --range-track-bg-color: var(--body-tertiary-bg-color);
     --range-track-border: none;
     --range-track-border-radius: var(--border-radius);
