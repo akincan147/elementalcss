@@ -1303,23 +1303,6 @@ textarea.form-control {
     background-image: none;
 }
 
-.form-select:after {
-	display: block;
-    position: absolute;
-    inset-block-start: calc(50% - .375em);
-    transform: rotate(-45deg);
-    width: .525em;
-    height: .525em;
-    transform-origin: 50%;
-    border: 1px solid var(--theme-text);
-    pointer-events: none;
-    content: " ";
-    z-index: 1;
-    border-block-start: 0;
-    border-inline-end: 0;
-    inset-inline-end: calc(.625em - 1px);
-}
-
 .form-control[type="number"] {
 	-moz-appearance: textfield;
 }
@@ -1450,9 +1433,9 @@ textarea.form-control {
 
 .form-range::-webkit-slider-runnable-track {	
 	width: var(--range-track-width);
-	height: var(--range-track-height);
-	color: transparent;
+	height: var(--range-track-height);	
 	cursor: pointer;
+	color: transparent;
 	background-color: var(--range-track-bg-color);
 	border: var(--range-track-border);
 	border-radius: var(--range-track-border-radius);
@@ -1461,8 +1444,8 @@ textarea.form-control {
 .form-range::-moz-range-track {	
 	width: var(--range-track-width);
 	height: var(--range-track-height);
-	color: transparent;
 	cursor: pointer;
+	color: transparent;	
 	background-color: var(--range-track-bg-color);
 	border: var(--range-track-border);
 	border-radius: var(--range-track-border-radius);	
@@ -1505,14 +1488,14 @@ textarea.form-control {
 }
 
 .form-range:active::-webkit-slider-thumb {
-	background-color: var(--form-focus-text-color);
+	background-color: var(--primary-active-bg-color);
 	border: none;
 	outline: 0;
 	cursor: grabbing;
 }
 
 .form-range:active::-moz-range-thumb {
-	background-color: var(--form-focus-text-color);
+	background-color: var(--primary-active-bg-color);
 	border: none;
 	outline: 0;
 	cursor: grabbing;
@@ -1706,71 +1689,62 @@ optgroup:disabled {
     color: var(--body-tertiary-text-color);
     background-color: var(--body-tertiary-bg-color);
     border: 0;
-    border-radius: var(--border-radius);    
+    border-radius: var(--border-radius);  
+    --progress-bg-color: var(--body-tertiary-bg-color);
+    --progress-value-bg-color: var(--primary-bg-color);  
 }
 
 .progress::-webkit-progress-bar {
-    background-color: var(--body-tertiary-bg-color);    
+    background-color: var(--progress-bg-color);    
 }
 
 .progress::-moz-progress-bar {
-    background-color: var(--body-tertiary-bg-color);
+    background-color: var(--progress-bg-color);
 }
 
 .progress[value]::-webkit-progress-value {
 	width: 100%;
-	background-color: var(--primary-bg-color);
+	background-color: var(--progress-value-bg-color);
 	transition: width 0.6s linear;
 }
 
 .progress[value]::-moz-progress-bar {
 	width: 100%;
-	background-color: var(--primary-bg-color);	
+	background-color: var(--progress-value-bg-color);	
 	-moz-transition: width 0.6s linear;
 	transition: width 0.6s linear;
 }
 
 .progress:not([value])::before {
   	content: "";
-    position: absolute;
-    top: 50%;    
-    transform: translateY(-50%);
+    position: relative;    
     width: 50%; 
     height: 100%;       
-    background-color: var(--primary-bg-color); 
-    animation: progressAnimation 1s linear infinite;
-}
-
-.progress:not([value])::-webkit-progress-bar {
-	background-color: var(--body-tertiary-bg-color);
+    background-color: var(--progress-value-bg-color); 
+    animation: webkit-progress-indeterminate-slide 1s linear infinite;
 }
 
 .progress:not([value])::-moz-progress-bar {
-	/* Firefox does not support animation, so the default progress background is set. */	      
-    background-color: var(--body-tertiary-bg-color);
+	width: 50%;	
+	background-color: var(--progress-value-bg-color);
+	animation: moz-progress-indeterminate-slide 1s linear infinite;
 }
 
-
-.progress:indeterminate::-moz-progress-bar {  	
-	background-color: var(--primary-bg-color);
-	animation: progress-loading 1s linear infinite;
-}
-
-@keyframes progress-loading {
+@keyframes moz-progress-indeterminate-slide {
   0% {
     transform: translateX(-100%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(200%);
   }
 }
 
-@keyframes progressAnimation {
+@keyframes webkit-progress-indeterminate-slide {
   0% {
-    left: -100%; /* Start off-screen */
+    left: -100%;
   }
   100% {
-    left: 100%; /* Move to the right of the container */
+    left: 100%;
   }
 }
 
@@ -1788,42 +1762,46 @@ optgroup:disabled {
 	background: none;
 	background-color: var(--body-tertiary-bg-color);	
 	border: 0;
-	border-radius: var(--border-radius);	
+	border-radius: var(--border-radius);
+	--meter-bar-bg-color: var(--body-tertiary-bg-color);
+	--meter-bar-optimum-bg-color: var(--success-bg-color);
+	--meter-bar-sub-sub-optimum-bg-color: var(--danger-bg-color);
+	--meter-bar-sub-optimum-bg-color: var(--warning-bg-color);	
+	--meter-bar-border-radius: var(--border-radius);
 }
 
 .meter::-webkit-meter-bar {  
 	height: var(--meter-bar-height);
-	color: var(--body-tertiary-text-color);	
-	background: var(--body-tertiary-bg-color);	
+	background: var(--meter-bar-bg-color);	
 	border: 0;
-	border-radius: var(--border-radius);
+	border-radius: var(--meter-bar-border-radius);
 }
 
 .meter::-webkit-meter-optimum-value {
- 	background: var(--success-bg-color);
+ 	background: var(--meter-bar-optimum-bg-color);
 }
 
 .meter::-webkit-meter-even-less-good-value {
-	background: var(--danger-bg-color);
+	background: var(--meter-bar-sub-sub-optimum-bg-color);
 }
 
 .meter::-webkit-meter-suboptimum-value {
-	background: var(--warning-bg-color);
+	background: var(--meter-bar-sub-optimum-bg-color);
 }
 
 .meter:-moz-meter-optimum::-moz-meter-bar {
     background: none; 
-    background-color: var(--success-bg-color);
+    background-color: var(--meter-bar-optimum-bg-color);
 }
 
 .meter:-moz-meter-sub-sub-optimum::-moz-meter-bar{
     background: none;
-    background-color: var(--danger-bg-color);
+    background-color: var(--meter-bar-sub-sub-optimum-bg-color);
 }
 
 .meter:-moz-meter-sub-optimum::-moz-meter-bar{
     background: none; 
-    background-color: var(--warning-bg-color);
+    background-color: var(--meter-bar-sub-optimum-bg-color);
 }
 
 
@@ -2184,15 +2162,8 @@ select.is-invalid:focus {
 .input-group-sm .meter {	
 	font-size: .875rem;	
 	border-radius: var(--border-radius-sm);
+	--meter-bar-border-radius: var(--border-radius-sm);
 }
-
-.meter-sm::-webkit-meter-bar,
-.form-sm .meter::-webkit-meter-bar,
-.input-group-sm .meter::-webkit-meter-bar {
-	font-size: .875rem;
-	border-radius: var(--border-radius-sm);
-}
-
 
 
 
@@ -2272,7 +2243,7 @@ select.is-invalid:focus {
 .form-lg .progress,
 .input-group-lg .progress {    
     font-size: 1.25rem;
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-lg);    
 }
 
 .meter-lg,
@@ -2280,14 +2251,10 @@ select.is-invalid:focus {
 .input-group-lg .meter {	
 	font-size: 1.25rem;
 	border-radius: var(--border-radius-lg);
+	--meter-bar-border-radius: var(--border-radius-lg);
 }
 
-.meter-lg::-webkit-meter-bar,
-.form-lg .meter::-webkit-meter-bar,
-.input-group-lg .meter::-webkit-meter-bar {
-	font-size: 1.25rem;
-	border-radius: var(--border-radius-lg);
-}
+
 
 
 
