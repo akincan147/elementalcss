@@ -1426,12 +1426,12 @@ textarea.form-control {
     background-color: transparent;
     color: var(--body-tertiary-text-color);
     --range-track-width: 100%;
-    --range-track-height: 1em;
+    --range-track-height: .625em;
     --range-track-bg-color: var(--body-tertiary-bg-color);
     --range-track-border: none;
     --range-track-border-radius: var(--border-radius);
     --range-progress-bg-color: var(--primary-bg-color);
-    --range-thumb-height: 1.75em;
+    --range-thumb-height: 1.5em;
     --range-thumb-width: 1em;
     --range-thumb-bg-color: var(--primary-bg-color);
     --range-thumb-border: none;
