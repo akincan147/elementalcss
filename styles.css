@@ -1420,19 +1420,23 @@ textarea.form-control {
     display: block;
 	width: 100%;	
 	cursor: default;
-	height: 1em;	
-	padding: 0.125em;  
-	color: var(--form-text-color);   
-    background-color: var(--form-bg-color);  
-    border: var(--border-width) var(--border-style) var(--form-border-color);
-    border-radius: var(--border-radius);
-    --range-thumb-height: .688em;
-    --range-thumb-width: .688em;
-    --range-thumb-border: none;
-    --range-thumb-border-radius: var(--border-radius);
+	padding: 0;
+	height: 1.5em;  
+    background-color: transparent;
+    --range-track-width: 100%;
+    --range-track-height: .5em;
+    --range-track-bg-color: var(--form-bg-color);
+    --range-track-border: var(--border-width) var(--border-style) var(--form-border-color);
+    --range-track-border-radius: var(--border-radius);
+    --range-progress-bg-color: var(--primary-bg-color);
+    --range-thumb-height: 1em;
+    --range-thumb-width: .5em;
     --range-thumb-bg-color: var(--form-text-color);
+    --range-thumb-border: none;
+    --range-thumb-border-radius: var(--border-radius);    
 }
 
+/*
 .form-range:focus {
     color: var(--form-focus-text-color);
     background-color: var(--form-focus-bg-color);
@@ -1440,17 +1444,35 @@ textarea.form-control {
     outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
     outline-offset: var(--focus-outline-offset);
 }
+*/
 
-.form-range::-webkit-slider-container {
-    appearance: auto;
-    -webkit-user-modify: read-only !important;
-    min-inline-size: 0px;
-    min-block-size: auto;
-    box-sizing: border-box;
-    display: flex;    
-    flex: 1 1 0%;    
-	position: relative;
-	z-index: 1;
+.form-range::-webkit-slider-runnable-track {	
+	width: var(--range-track-width);
+	height: var(--range-track-height);
+	color: transparent;
+	cursor: pointer;
+	background-color: var(--range-track-bg-color);
+	border: var(--range-track-border);
+	border-radius: var(--range-track-border-radius);
+}
+
+.form-range::-moz-range-track {	
+	width: var(--range-track-width);
+	height: var(--range-track-height);
+	color: transparent;
+	cursor: pointer;
+	background-color: var(--range-track-bg-color);
+	border: var(--range-track-border);
+	border-radius: var(--range-track-border-radius);	
+}
+
+.form-range::-moz-range-progress {
+	cursor: pointer;
+    background-color: var(--range-progress-bg-color);
+    border-top-left-radius: var(--range-track-border-radius);
+    border-bottom-left-radius: var(--range-track-border-radius);
+    height: var(--range-track-height);
+    border: 0;
 }
 
 .form-range::-webkit-slider-thumb {
@@ -1463,6 +1485,7 @@ textarea.form-control {
 	border-radius: var(--range-thumb-border-radius);
 	height: var(--range-thumb-height);
 	width: var(--range-thumb-width);
+	margin-top: calc((var(--range-track-height) - var(--range-thumb-height)) / 2 - var(--border-width));
 }
 
 .form-range::-moz-range-thumb {
@@ -1481,7 +1504,6 @@ textarea.form-control {
 	background-color: var(--form-focus-text-color);
 	border: none;
 	outline: 0;
-	box-shadow: none;
 	cursor: grabbing;
 }
 
@@ -1489,7 +1511,6 @@ textarea.form-control {
 	background-color: var(--form-focus-text-color);
 	border: none;
 	outline: 0;
-	box-shadow: none;
 	cursor: grabbing;
 }
 
@@ -1721,7 +1742,22 @@ optgroup:disabled {
 
 .progress:not([value])::-moz-progress-bar {
 	/* Firefox does not support animation, so the default progress background is set. */	      
-    background-color: var(--body-tertiary-bg-color); 
+    background-color: var(--body-tertiary-bg-color);
+}
+
+
+.progress:indeterminate::-moz-progress-bar {  	
+	background-color: var(--primary-bg-color);
+	animation: progress-loading 1s linear infinite;
+}
+
+@keyframes progress-loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes progressAnimation {
