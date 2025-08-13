@@ -1421,19 +1421,21 @@ textarea.form-control {
 	width: 100%;	
 	cursor: default;
 	padding: 0;
-	height: 1.5em;  
+	line-height: 1.5;
+	font-size: 1rem;  
     background-color: transparent;
+    color: var(--body-tertiary-text-color);
     --range-track-width: 100%;
-    --range-track-height: .5em;
-    --range-track-bg-color: var(--form-bg-color);
-    --range-track-border: var(--border-width) var(--border-style) var(--form-border-color);
+    --range-track-height: 1em;
+    --range-track-bg-color: var(--body-tertiary-bg-color);
+    --range-track-border: none;
     --range-track-border-radius: var(--border-radius);
     --range-progress-bg-color: var(--primary-bg-color);
-    --range-thumb-height: 1em;
-    --range-thumb-width: .5em;
-    --range-thumb-bg-color: var(--form-text-color);
+    --range-thumb-height: 1.75em;
+    --range-thumb-width: 1em;
+    --range-thumb-bg-color: var(--primary-bg-color);
     --range-thumb-border: none;
-    --range-thumb-border-radius: var(--border-radius);    
+    --range-thumb-border-radius: calc(var(--border-radius) / 2);   
 }
 
 /*
@@ -1481,11 +1483,13 @@ textarea.form-control {
 	-moz-appearance: none;	
   	cursor: grab;
 	background-color: var(--range-thumb-bg-color);
-	border: none;
+	border: var(--range-thumb-border);
 	border-radius: var(--range-thumb-border-radius);
 	height: var(--range-thumb-height);
 	width: var(--range-thumb-width);
-	margin-top: calc((var(--range-track-height) - var(--range-thumb-height)) / 2 - var(--border-width));
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);	
 }
 
 .form-range::-moz-range-thumb {
@@ -1494,7 +1498,7 @@ textarea.form-control {
 	-moz-appearance: none;	
   	cursor: grab;
 	background-color: var(--range-thumb-bg-color);
-	border: none;
+	border: var(--range-thumb-border);
 	border-radius: var(--range-thumb-border-radius);
 	height: var(--range-thumb-height);
 	width: var(--range-thumb-width);
@@ -1694,7 +1698,8 @@ optgroup:disabled {
 	-moz-appearance: none;	
 	vertical-align: baseline;    
     display: flex;    
-    overflow: hidden;
+    overflow: hidden;    
+    height: 1em;
     font-size: 1rem;
     position: relative;
     width: 100%;
@@ -2144,7 +2149,8 @@ select.is-invalid:focus {
 .input-group-sm .form-range {
 	font-size: .875rem;
 	border-radius: var(--border-radius-sm);
-	--range-thumb-border-radius: var(--border-radius);	
+	--range-track-border-radius: var(--border-radius-sm);	
+	--range-thumb-border-radius: calc(var(--border-radius-sm) / 2);	
 }
 
 .form-control-sm[type="color"],
@@ -2239,7 +2245,8 @@ select.is-invalid:focus {
 .input-group-lg .form-range {
 	font-size: 1.25rem;
 	border-radius: var(--border-radius-lg);
-	--range-thumb-border-radius: var(--border-radius-lg);	
+	--range-track-border-radius: var(--border-radius-lg);
+	--range-thumb-border-radius: calc(var(--border-radius-lg) / 2);
 }
 
 .form-control-lg[type="color"],
