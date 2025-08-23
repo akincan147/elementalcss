@@ -76,6 +76,8 @@ Bootstrap's color variables have been extended and optimized to be controlled fr
 end has been changed to right.
 start has been changed to left.
 
+legend default style bringed back
+
 Additionally, a .color- class has been added alongside the .text- class. 
 
 The .link-underline and underline colors have been removed as they are no longer necessary.
@@ -86,10 +88,6 @@ The .link-underline and underline colors have been removed as they are no longer
 
 .initialism removed since they are same with .small
 
-legend default style bringed back
-
-.form-control removed because default form elements normalized and stylized together
-
 .blockquote class removed and default element uses styles and normalizes
 
 .list-inline-item removed because li is already define itself in this way
@@ -98,5 +96,100 @@ legend default style bringed back
 
 
 
+
+
+
+
+.form-control-plaintext
+.form-control-color
+
+details {
+    display: block;
+}
+
+summary {
+    display: list-item;
+}
+
+
+
+
+
+
+.form-check-inline .form-check-input ~ .valid-feedback {
+  margin-left: 0.5em;
+}
+
+
+
+
+
+
+
+
+
+.form-control.is-valid,
+.form-select.is-valid,
+.form-check-input.is-valid,
+.form-control:user-valid,
+.was-validated .form-control:valid,
+.was-validated .form-select:valid,
+.was-validated .form-check-input:valid {
+    border-color: var(--success-bg-color);
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid,
+.form-check-input.is-invalid,
+.form-control:user-invalid,
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid,
+.was-validated .form-check-input:invalid {
+    border-color: var(--danger-bg-color);
+}
+
+.form-control.is-valid:focus,
+.form-select.is-valid:focus,
+.form-check-input.is-valid:focus,
+.was-validated .form-control:valid:focus,
+.was-validated .form-select:valid:focus,
+.was-validated .form-check-input:valid:focus {
+    outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--success-bg-color), transparent var(--focus-outline-alpha,25%));
+    outline-offset: var(--focus-outline-offset);
+}
+
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus,
+.form-check-input.is-invalid:focus,
+.was-validated .form-control:invalid:focus,
+.was-validated .form-select:invalid:focus,
+.was-validated .form-check-input:invalid:focus {
+    outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--danger-bg-color), transparent var(--focus-outline-alpha,25%));
+    outline-offset: var(--focus-outline-offset);
+}
+
+
+
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3),
+.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control,
+.input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select,
+.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group.has-validation > .dropdown-toggle:nth-last-child(n+4),
+.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-control,
+.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select,
+.input-group.has-validation > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+date
+time
+file
+range
 
 

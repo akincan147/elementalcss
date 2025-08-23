@@ -297,29 +297,34 @@
 		<section>
 			<h1>Form Elements</h1>
 			<hr>
-			<form class="" action="/action_page.php" class="needs-validation" novalidate>
+			<form class="needs-validation" novalidate>
 				<p>For valid form elements, you can simply add the <code>.is-valid</code> class to the form elements or dynamically using your validation system.</p>
 				<p>For invalid form elements, use <code>.is-invalid</code></p>
 				<fieldset style="width: 80%">
 					<legend>Form legend</legend>
 
 					<label class="form-label" for="text">Text</label>
-					<input class="form-control" type="text" id="text" name="text" placeholder="Here is the text" required>
-
+					<input class="form-control" type="text" id="text" name="text" placeholder="text" required>
+					<div class="valid-feedback">
+				      Looks good!
+				    </div>
+				    <div class="invalid-feedback">
+				      Looks bad!
+				    </div>
 					<br>
 
 					<label class="form-label" for="password">Password</label>
-					<input class="form-control" type="password" id="password" name="password">
+					<input class="form-control" type="password" id="password" name="password" placeholder="password">
 
 					<br>
 
 					<label class="form-label" for="number">Number</label>
-					<input class="form-control" type="number" id="number" name="number" min="1" max="50">
-
+					<input class="form-control" type="number" id="number" name="number" min="1" max="50" placeholder="number">
 					<br>
 
 					<label class="form-label" for="select">Select</label>
-					<select class="form-select" name="select" id="select">
+					<select class="form-select" name="select" id="select" placeholder="">
+						<option value="">Choose</option>
 						<option value="option1">Option 1</option>
 						<option value="option2">Option 2</option>
 						<option value="option3">Option 3</option>
@@ -338,13 +343,16 @@
 					<br>
 
 					<label class="form-label" for="textarea">Textarea</label>
-					<textarea class="form-control form-control-sm" id="textarea" name="textarea"></textarea>
+					<textarea class="form-control form-control-sm" id="textarea" name="textarea" placeholder="textarea"></textarea>
 
 					<br>
 
 					<label class="form-label" for="range">Range =</label>
 					<output for="range" id="rangeValue">0</output>
-					<input class="form-range form-range-sm" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
+					<input class="form-range form-range-sm" type="range" id="range" name="range" min="10" max="50" oninput="rangeValue.value = this.value">
+					<div class="valid-feedback">
+				      Looks good!
+				    </div>
 
 					<br>
 
@@ -413,32 +421,45 @@
 					<br>
 					
 					<label class="form-label" for="file">File</label>
-					<input class="form-control form-control-sm" type="file" id="file" name="file">
+					<input class="form-control form-control-sm" type="file" id="fileInput" name="file">
+					<button class="btn btn-secondary mt-3" id="clearBtn" type="button">Clear file(s)</button>
+					<script>
+						const fileInput = document.getElementById('fileInput');
+						const clearBtn = document.getElementById('clearBtn');
+
+						clearBtn.addEventListener('click', function () {
+							// Clears the selected file
+						    fileInput.value = '';						    
+						    // Trigger the check after clearing
+						    fileInput.dispatchEvent(new Event('change', { bubbles: true }));
+						});
+					</script>
+
 					<br>
 
 					<div class="row">
 						<div class="col-auto">
-							<input class="form-control form-control" type="color" id="color" name="color" value="#ff0000">	
+							<input class="form-control form-control-sm" type="file" id="file" name="file">	
 						</div>
 						<div class="col">
-							<input class="form-control form-control" type="date" id="date" name="date">	
+							<input class="form-control form-control-sm" type="date" id="date" name="date">	
 						</div>
 					</div>
 
 					<br>
 
 					<label class="form-label" for="color">Color</label>
-					<input class="form-control form-control-sm" type="color" id="color" name="color" value="#ff0000">	
+					<input class="form-control form-control-sm" type="color" id="color" name="color" optional>	
 
 					<br>
 
 					<label class="form-label" for="color">Color</label>
-					<input class="form-control" type="color" id="color" name="color" value="#ff0000">	
+					<input class="form-control" type="color" id="color" name="color">	
 
 					<br>
 
 					<label class="form-label" for="color">Color</label>
-					<input class="form-control form-control-lg" type="color" id="color" name="color" value="#ff0000">	
+					<input class="form-control form-control-lg" type="color" id="color" name="color">	
 
 					<br>
 					
@@ -482,8 +503,14 @@
 
 
 					<div class="form-check form-check-sm">
-			  			<input class="form-check-input" type="checkbox" id="checkbox1">  
+			  			<input class="form-check-input" type="checkbox" id="checkbox1" required>  
 			  			<label class="form-check-label" for="checkbox1">Checkbox 1</label>
+			  			<div class="valid-feedback">
+					        Very good!.
+					      </div>
+					      <div class="invalid-feedback">
+					        Very bad!.
+					      </div>
 					</div>	
 
 					<div class="form-check">
@@ -492,8 +519,8 @@
 					</div>
 
 					<div class="form-check form-check-lg">
-			  			<input class="form-check-input" type="checkbox" id="checkbox2">  
-			  			<label class="form-check-label" for="checkbox2">Checkbox 2</label>
+			  			<input class="form-check-input" type="checkbox" id="checkbox3">  
+			  			<label class="form-check-label" for="checkbox3">Checkbox 3</label>
 					</div>	
 
 		  			<br>
@@ -531,7 +558,15 @@
 					<div class="input-group mb-3">
 						<span class="input-group-text">With textarea</span>
 						<textarea class="form-control"></textarea>
+						 <div class="valid-feedback">
+					        Very good!.
+					      </div>
+					      <div class="valid-feedback">
+					        Very good!.
+					      </div>
+						
 					</div>
+
 
 
 
@@ -611,7 +646,7 @@
 							<input class="form-range" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 						</div>							
 						<input class="btn btn-secondary" type="button" value="Button"/>
-						<input class="btn btn-secondary" type="button" value="Button"/>
+						<input class="btn btn-secondary" type="reset" value="Reset"/>
 						
 					</div>			
 
@@ -678,6 +713,10 @@
 		</section>
 	</div>	
 	<script type="text/javascript">
+    	var checkbox = document.getElementById("indeterminate-checkbox");
+		checkbox.indeterminate = true;
+    </script>  
+	<script type="text/javascript">
 		document.addEventListener('DOMContentLoaded', function() {
 		    const details = document.querySelectorAll('.auto-collapse details');
 
@@ -693,34 +732,39 @@
 		        });
 		    });
 		});
-	</script>
-    <script type="text/javascript">
-    	var checkbox = document.getElementById("indeterminate-checkbox");
-		checkbox.indeterminate = true;
-    </script>
-    <script type="text/javascript">
-    	document.addEventListener('DOMContentLoaded', function() {
-		    var forms = document.querySelectorAll('form.needs-validation');
+	</script>      
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+		    const selectors = 'input[type="date"], input[type="datetime-local"], input[type="time"], input[type="file"]';
 
-		    forms.forEach(function(form) {
-		        form.addEventListener('submit', function(event) {
-		            event.preventDefault(); // Prevent the default form submission
+		    // Determines if input is empty
+		    const isInputEmpty = input => 
+		        input.type === 'file' ? input.files.length === 0 : !input.value.trim();
 
-		            var inputs = form.querySelectorAll('input'); // Select all input elements within the form
+		    // Update the input's empty state class
+		    const updateEmptyState = input => {
+		        input.classList.toggle('is-empty', isInputEmpty(input));
+		    };
 
-		            inputs.forEach(function(input) {
-		                if (input.checkValidity()) {
-		                    input.classList.remove('is-invalid');
-		                    input.classList.add('is-valid');
-		                } else {
-		                    input.classList.remove('is-valid');
-		                    input.classList.add('is-invalid');
-		                }
-		            });
-		        });
-		    });
+		    // Initialize all inputs
+		    const initEmptyStates = () => {
+		        document.querySelectorAll(selectors).forEach(updateEmptyState);
+		    };
+
+		    // Initial check
+		    initEmptyStates();
+
+		    // Unified event handler for both input and file change events
+		    const handleEvent = e => {
+		        if (e.target.matches(selectors)) updateEmptyState(e.target);
+		    };
+
+		    document.addEventListener('input', handleEvent);
+		    document.addEventListener('change', handleEvent);
 		});
-    </script>
+	</script>
+
+
 </body>
 
 </html>
