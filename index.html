@@ -305,12 +305,14 @@
 
 					<label class="form-label" for="text">Text</label>
 					<input class="form-control" type="text" id="text" name="text" placeholder="text" required>
-					<div class="valid-feedback">
-				      Looks good!
-				    </div>
-				    <div class="invalid-feedback">
-				      Looks bad!
-				    </div>
+					<div class="feedback-group">
+						<div class="valid-feedback">
+				      		Looks good!
+					    </div>
+					    <div class="invalid-feedback">
+				      		Looks bad!
+					    </div>
+					</div>
 					<br>
 
 					<label class="form-label" for="password">Password</label>
@@ -350,9 +352,6 @@
 					<label class="form-label" for="range">Range =</label>
 					<output for="range" id="rangeValue">0</output>
 					<input class="form-range form-range-sm" type="range" id="range" name="range" min="10" max="50" oninput="rangeValue.value = this.value">
-					<div class="valid-feedback">
-				      Looks good!
-				    </div>
 
 					<br>
 
@@ -439,10 +438,10 @@
 
 					<div class="row">
 						<div class="col-auto">
-							<input type="color" class="form-color">	
+							<input class="form-control form-control-lg" type="file" name="datex">
 						</div>
 						<div class="col">
-							<input class="form-control" type="date" id="date" name="date">	
+							<input class="form-control form-control-lg" type="text" name="datexx">	
 						</div>
 					</div>
 
@@ -463,7 +462,7 @@
 					<br>
 					
 					<div>
-						<input class="btn-check" type="checkbox" id="btn-check" name="btn-check" value="checkbox">  
+						<input class="btn-check" type="checkbox" id="btn-check" name="btn-check" value="checkbox">						 
 						<label class="" for="btn-check" type="button" tabindex="0">Checkbox 0</label>
 					</div>
 					<br>
@@ -503,18 +502,20 @@
 
 					<div class="form-check form-check-sm">
 			  			<input class="form-check-input" type="checkbox" id="checkbox1" required>  
-			  			<label class="form-check-label" for="checkbox1">Checkbox 1</label>
-			  			<div class="valid-feedback">
-					        Very good!.
-					      </div>
-					      <div class="invalid-feedback">
-					        Very bad!.
-					      </div>
+			  			<label class="form-check-label" for="checkbox1">Checkbox 1</label>			  				
 					</div>	
+					<div class="feedback-group">
+						<div class="valid-feedback">
+				        	Very good!.
+				      	</div>
+				      	<div class="invalid-feedback">
+				        	Very bad!.
+				      	</div>
+					</div>
 
 					<div class="form-check">
-			  			<input class="form-check-input" type="checkbox" id="checkbox2">  
-			  			<label class="form-check-label" for="checkbox2">Checkbox 2</label>
+			  			<input class="form-check-input" type="checkbox" id="checkbox2" required>
+			  			<label class="form-check-label" for="checkbox2">Checkbox 2</label>			  			
 					</div>
 
 					<div class="form-check form-check-lg">
@@ -547,114 +548,124 @@
 
 				    <br>
 				    
-				    <div class="input-group mb-3">
-						<span class="input-group-text">Group Text</span>
-						<input class="form-control" type="text" placeholder="Username">
+				    <div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">Text</span>
+						<input class="form-control" type="text" placeholder="text" required>						
+					</div>
+					<div class="feedback-group">
+						<div class="valid-feedback">
+				        	Very good!.
+				      	</div>
+				      	<div class="invalid-feedback">
+				        	Very bad!.
+				      	</div>
 					</div>
 
-					
-
-					<div class="input-group mb-3">
-						<span class="input-group-text">With textarea</span>
-						<textarea class="form-control" required></textarea>
-						<div class="feedback-group">
-							<div class="valid-feedback">
-							Very good!.
-						</div>
-						<div class="invalid-feedback">
-							Very bad!.
-						</div>	
-						</div>					
+					<div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">Date</span>
+						<input class="form-control" type="date">
 					</div>
 
+					<div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">Time</span>
+						<input class="form-control" type="time">
+					</div>					
 
+					<div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">Textarea</span>
+						<textarea class="form-control" placeholder="textarea"></textarea>											
+					</div>
 
-
-					<div class="input-group mb-3">
-						<label class="input-group-text" for="inputGroupSelect01">Options</label>
+					<div class="input-group input-group-merge mb-3">
+						<label class="input-group-text" for="inputGroupSelect01">Select</label>
 						<select class="form-select" id="inputGroupSelect01">
-							<option selected>Choose...</option>
+							<option selected value="">Choose...</option>
 							<option value="1">One</option>
 							<option value="2">Two</option>
 							<option value="3">Three</option>
 						</select>
 					</div>
 
-					
-						
-					<div class="input-group mb-3">
-						<span class="input-group-text">
-							<input class="form-check-input" type="checkbox"/>
-						</span>
-						<input class="form-control" type="text">
-					</div>
-
-					<div class="input-group mb-3">
-						<span class="input-group-text">							
-							<input class="form-check-input" type="checkbox"/>
-						</span>
-						<input class="form-control" type="text">
-					</div>	
-
-					<div class="input-group mb-3">
-						<span class="input-group-text">
-							<input class="form-check-input" type="checkbox" role="switch"/>
-						</span>
-						<input class="form-control" type="text">
-					</div>	
-
-					<div class="input-group mb-3">
-						<span class="input-group-text">
-							<input class="form-check-input" type="checkbox" role="switch"/>
-						</span>
-						<input class="form-control" type="text">
-					</div>						
-
-
-
-					<div class="input-group mb-3">
-						<label class="input-group-text" for="inputGroupFile01">Upload</label>
+					<div class="input-group input-group-merge mb-3">
+						<label class="input-group-text" for="inputGroupFile01">File</label>
 						<input class="form-control" type="file" id="inputGroupFile01">
+					</div>					
+						
+					<div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">
+							<input class="form-check-input" type="checkbox" required />
+						</span>
+						<input class="form-control" type="text" placeholder="text">
+					</div>					
+
+					<div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">							
+							<div class="form-check">
+				  				<input class="form-check-input" type="checkbox" id="checkbox2">  
+				  				<label class="form-check-label" for="checkbox2">Checkbox 2</label>
+							</div>
+						</span>
+						<input class="form-control" type="text" placeholder="text">
+					</div>					
+
+					<div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">							
+							Form Check
+						</span>
+						<div class="form-check">
+			  				<input class="form-check-input" type="checkbox" id="checkbox2">  
+			  				<label class="form-check-label" for="checkbox2">Checkbox 2</label>
+						</div>
+					</div>	
+
+					<div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">
+							<div class="form-check">
+			  					<input class="form-check-input" type="checkbox" role="switch"/>
+			  					<label class="form-check-label" for="checkbox2">Switch</label>
+							</div>							
+						</span>
+						<input class="form-control" type="text">
 					</div>
 
-
-
-					<div class="input-group mb-3">
+					<div class="input-group input-group-merge mb-3">
 						<button class="btn" type="button">Button</button>
 						<input class="form-control" type="text">
 					</div>
 
-
-					<div class="input-group mb-3">
-						<label class="input-group-text" for="rangex">Range</label>
-												
-						<div class="form-check">
-				  			<input class="form-check-input" type="checkbox" id="checkbox2">  
-				  			<label class="form-check-label" for="checkbox2">Checkbox 2</label>
-						</div>
-						<input type="text" class="form-control" name="">
-						<div class="form-check">
-				  			<input class="form-check-input" type="checkbox" id="checkbox2">  
-				  			<label class="form-check-label" for="checkbox2">Checkbox 2</label>
-						</div>
-											
+					<div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">							
+							Range
+						</span>
+						<input class="form-range" type="range" name="">
 					</div>
 
-
-
-					
+					<div class="input-group input-group-merge mb-3">
+						<span class="input-group-text">							
+							Color
+						</span>
+						<input class="form-color" type="color" name="">
+					</div>
 
 					<div class="input-group input-group-merge mb-3">
-						
-						<input type="file" class="form-control" name="" placeholder="name">
-						<input type="text" class="form-control" name="" placeholder="lastname" required>
-						
-						
-					</div>			
-
-						
-
-
+						<span class="input-group-text">							
+							Mixed
+						</span>
+						<input class="btn" type="button" name="" value="Button">
+						<input class="form-color" type="color" name="">
+						<input class="form-control" type="text" name="" placeholder="text">
+						<input class="form-range" type="range" name="">
+						<select class="form-select" id="inputGroupSelect01">
+							<option selected value="">Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+						<div class="form-check">
+		  					<input class="form-check-input" type="checkbox" role="switch"/>
+		  					<label class="form-check-label" for="checkbox2">Switch</label>
+						</div>	
+					</div>
 								
 				</fieldset>
 			</form>

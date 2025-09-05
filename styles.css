@@ -1947,18 +1947,16 @@ fix when focus on input, button border not visible
 	padding: .375rem .75rem;
 }
 
+.input-group-merge:has(:is(.btn, .form-check-input, .form-color)):not(:has(:is(.form-control, .form-select, .form-range))) {
+	width: fit-content;
+}
+
 .input-group-merge:has(:is(.btn, .form-color, .form-control[type="file"]):first-child) {
 	padding-left: .375rem;
 }
 
 .input-group-merge:has(:is(.btn, .form-color):last-child) {
 	padding-right: .375rem;
-}
-
-.input-group-merge > .form-control[type="file"] {	
-	--file-selector-btn-margin: 0;
-	--file-selector-btn-border-width: var(--form-border-width);
-	--file-selector-btn-border-radius: var(--border-radius); 
 }
 
 .input-group-merge > .form-control,
@@ -1971,9 +1969,18 @@ fix when focus on input, button border not visible
 	border-radius: 0;
 }
 
-.input-group-merge > .btn {    
-    align-self: center;
-    border-radius: var(--border-radius) !important;   
+.input-group-merge > textarea.form-control {
+	min-height: 1.5em;
+}
+
+.input-group-merge > .form-control[type="file"] {	
+	--file-selector-btn-margin: 0;
+	--file-selector-btn-border-width: var(--form-border-width);
+	--file-selector-btn-border-radius: var(--border-radius); 
+}
+
+.input-group-merge > .form-select {
+	background-position: right center;
 }
 
 .input-group-merge > .form-color {
@@ -1984,6 +1991,11 @@ fix when focus on input, button border not visible
 	background-color: transparent;
 	border: none;
 	border-radius: 0 !important;
+}
+
+.input-group-merge > .btn {    
+    align-self: center;
+    border-radius: var(--border-radius) !important;   
 }
 
 .input-group-merge > .input-group-text,
@@ -2008,8 +2020,7 @@ fix when focus on input, button border not visible
 	outline: 0;
 }
 
-
-.input-group-merge:has(:user-valid:not(:placeholder-shown)):not(:has(:user-invalid)) {
+.input-group-merge:has(:not(.is-empty):not(:placeholder-shown):user-valid):not(:has(:user-invalid)) {
 	border-color: var(--success-bg-color);
 }
 
@@ -2020,18 +2031,18 @@ fix when focus on input, button border not visible
 
 
 
-.input-group:not(:has(.feedback-group, .valid-feedback, .invalid-feedback)) > .dropdown-toggle:nth-last-child(n+3),
-.input-group:not(:has(.feedback-group, .valid-feedback, .invalid-feedback)) > .form-floating:not(:last-child) > .form-control,
-.input-group:not(:has(.feedback-group, .valid-feedback, .invalid-feedback)) > .form-floating:not(:last-child) > .form-select,
-.input-group:not(:has(.feedback-group, .valid-feedback, .invalid-feedback)) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+.input-group > .dropdown-toggle:nth-last-child(n+3),
+.input-group > .form-floating:not(:last-child) > .form-control,
+.input-group > .form-floating:not(:last-child) > .form-select,
+.input-group > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.input-group:has(.feedback-group, .valid-feedback, .invalid-feedback) > .dropdown-toggle:nth-last-child(n+4),
-.input-group:has(.feedback-group, .valid-feedback, .invalid-feedback) > .form-floating:nth-last-child(n+3) > .form-control,
-.input-group:has(.feedback-group, .valid-feedback, .invalid-feedback) > .form-floating:nth-last-child(n+3) > .form-select,
-.input-group:has(.feedback-group, .valid-feedback, .invalid-feedback) > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+.input-group > .dropdown-toggle:nth-last-child(n+4),
+.input-group > .form-floating:nth-last-child(n+3) > .form-control,
+.input-group > .form-floating:nth-last-child(n+3) > .form-select,
+.input-group > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -2114,23 +2125,24 @@ fix when focus on input, button border not visible
 	border-radius: var(--border-radius);
 }
 
-:not(.is-empty):not(:placeholder-shown):user-valid ~ .valid-feedback,
-:not(.is-empty):not(:placeholder-shown):user-valid ~ .valid-tooltip {
+.form-control:not(.is-empty):not(.is-empty):not(:placeholder-shown):user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.form-select:has(option:checked:not([value=""])):user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
+:is(.form-color, .form-range):user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.form-check-input:required:user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.form-check:has(.form-check-input:required:user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.input-group:has(.form-control:not(.is-empty):not(:placeholder-shown):user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.input-group:has(.form-select:user-valid > option:checked:not([value=""])) + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.input-group:has(:is(.form-color, .form-range):user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.input-group:has(.form-check-input:required:user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip) {
 	display: block;
 }
 
-:not(.is-empty):not(:placeholder-shown):user-valid ~ .feedback-group .valid-feedback,
-:not(.is-empty):not(:placeholder-shown):user-valid ~ .feedback-group .valid-tooltip {
-	display: block;
-}
-
-:user-invalid ~ .invalid-feedback,
-:user-invalid ~ .invalid-tooltip {
-	display: block;
-}
-
-:user-invalid ~ .feedback-group .invalid-feedback,
-:user-invalid ~ .feedback-group .invalid-tooltip {
+:user-invalid + .feedback-group .invalid-feedback,
+:user-invalid + .feedback-group .invalid-tooltip,
+.input-group:has(:user-invalid) + .feedback-group .invalid-feedback,
+.input-group:has(:user-invalid) + .feedback-group .invalid-tooltip,
+.form-check:has(:user-invalid) + .feedback-group .invalid-feedback,
+.form-check:has(:user-invalid) + .feedback-group .invalid-tooltip {
 	display: block;
 }
 
@@ -2148,6 +2160,13 @@ fix when focus on input, button border not visible
 	color: var(--success-bg-color);
 }
 
+.form-control:not(.is-empty):not(:placeholder-shown):user-valid:focus,
+.form-select:has(option:checked:not([value=""])):user-valid:focus,
+.form-check-input:required:user-valid:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--success-bg-color), transparent var(--focus-outline-alpha));
+    outline-offset: var(--focus-outline-offset);
+}
+
 .form-control:user-invalid,
 .form-select:user-invalid,
 .form-check-input:user-invalid {
@@ -2160,13 +2179,6 @@ fix when focus on input, button border not visible
 
 .form-check-input:user-invalid + .form-check-label {
 	color: var(--danger-bg-color);
-}
-
-.form-control:not(.is-empty):not(:placeholder-shown):user-valid:focus,
-.form-select:has(option:checked:not([value=""])):user-valid:focus,
-.form-check-input:required:user-valid:focus {
-	outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--success-bg-color), transparent var(--focus-outline-alpha));
-    outline-offset: var(--focus-outline-offset);
 }
 
 .form-control:user-invalid:focus,
