@@ -297,7 +297,7 @@
 		<section>
 			<h1>Form Elements</h1>
 			<hr>
-			<form class="needs-validation" novalidate>
+			<form class="needs-validation form-sm" novalidate>
 				<p>For valid form elements, you can simply add the <code>.is-valid</code> class to the form elements or dynamically using your validation system.</p>
 				<p>For invalid form elements, use <code>.is-invalid</code></p>
 				<fieldset style="width: 80%">
@@ -335,7 +335,7 @@
 					<br>
 
 					<label class="form-label" for="date">Date</label>
-					<input class="form-control" type="date" id="date" name="date">
+					<input class="form-control" type="datetime-local" id="date" name="date">
 
 					<br>
 
@@ -345,13 +345,13 @@
 					<br>
 
 					<label class="form-label" for="textarea">Textarea</label>
-					<textarea class="form-control form-control-sm" id="textarea" name="textarea" placeholder="textarea"></textarea>
+					<textarea class="form-control" id="textarea" name="textarea" placeholder="textarea"></textarea>
 
 					<br>
 
 					<label class="form-label" for="range">Range =</label>
 					<output for="range" id="rangeValue">0</output>
-					<input class="form-range form-range-sm" type="range" id="range" name="range" min="10" max="50" oninput="rangeValue.value = this.value">
+					<input class="form-range" type="range" id="range" name="range" min="10" max="50" oninput="rangeValue.value = this.value">
 
 					<br>
 
@@ -361,7 +361,7 @@
 					<br>
 
 					<label class="form-label" for="range">Range</label>
-					<input class="form-range form-range-lg" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
+					<input class="form-range" type="range" id="range" name="range" min="0" max="50" oninput="rangeValue.value = this.value">
 
 					<br>
 
@@ -410,7 +410,7 @@
 					<br>
 
 					<label class="form-label" for="meter">Meter - Even/Less/Good</label>
-					<meter class="meter meter-lg" id="meter" name="meter" value="2" min="0" low="3" optimum="8" high="7" max="10"></meter>
+					<meter class="meter" id="meter" name="meter" value="2" min="0" low="3" optimum="8" high="7" max="10"></meter>
 
 					<br>
 
@@ -420,7 +420,7 @@
 					<br>
 					
 					<label class="form-label" for="file">File</label>
-					<input class="form-control form-control-sm" type="file" id="fileInput" name="file">
+					<input class="form-control" type="file" id="fileInput" name="file">
 					<button class="btn btn-secondary mt-3" id="clearBtn" type="button">Clear file(s)</button>
 					<script>
 						const fileInput = document.getElementById('fileInput');
@@ -438,17 +438,35 @@
 
 					<div class="row">
 						<div class="col-auto">
-							<input class="form-control form-control-lg" type="file" name="datex">
+							<input class="form-control" type="file" name="datex">
 						</div>
 						<div class="col">
-							<input class="form-control form-control-lg" type="text" name="datexx">	
+							<div class="input-group input-group-merge">
+								<span class="input-group-text">							
+									Mixed
+								</span>
+								<input class="btn" type="button" name="" value="Button">
+								<input class="form-color" type="color" name="">
+								<input class="form-control" type="text" name="" placeholder="text">
+								<input class="form-range" type="range" name="">
+								<select class="form-select" id="inputGroupSelect01">
+									<option selected value="">Choose...</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+								</select>
+								<div class="form-check">
+				  					<input class="form-check-input" type="checkbox" role="switch"/>
+				  					<label class="form-check-label" for="checkbox2">Switch</label>
+								</div>	
+							</div>	
 						</div>
 					</div>
 
 					<br>
 
 					<label class="form-label" for="color">Color</label>
-					<input class="form-color form-color-sm" type="color" id="color" name="color" optional>	
+					<input class="form-color" type="color" id="color" name="color" optional>	
 
 					<br>
 
@@ -457,27 +475,27 @@
 					<br>
 
 					<label class="form-label" for="color">Color</label>
-					<input class="form-color form-color-lg" type="color" id="color" name="color">	
+					<input class="form-color" type="color" id="color" name="color">	
 
 					<br>
 					
 					<div>
-						<input class="btn-check" type="checkbox" id="btn-check" name="btn-check" value="checkbox">						 
+						<input class="btn-check" type="checkbox" id="btn-check" name="btn-check" value="checkbox">
 						<label class="" for="btn-check" type="button" tabindex="0">Checkbox 0</label>
 					</div>
 					<br>
 					<div>
-						<input class="btn-check" type="checkbox" id="btn-check1" name="btn-check1" value="checkbox">  
+						<input class="btn-check" type="checkbox" id="btn-check1" name="btn-check1" value="checkbox">
 						<label class="" for="btn-check1" type="button" tabindex="0">Checkbox 1</label>
 					</div>
 					<br>
 					<div>
-						<input class="btn-check" type="checkbox" id="btn-check2" name="btn-check2" value="checkbox">  
+						<input class="btn-check" type="checkbox" id="btn-check2" name="btn-check2" value="checkbox">
 						<label class="btn-danger" for="btn-check2" type="button" tabindex="0">Checkbox 2</label>
 					</div>
 					<br>
 					<div>
-						<input class="btn-check" type="checkbox" id="btn-check3" name="btn-check3" value="checkbox">  
+						<input class="btn-check" type="checkbox" id="btn-check3" name="btn-check3" value="checkbox">
 						<label class="btn-danger" for="btn-check3" type="button" tabindex="0">Checkbox 3</label>
 					</div>
 
@@ -500,7 +518,7 @@
 					<br>
 
 
-					<div class="form-check form-check-sm">
+					<div class="form-check">
 			  			<input class="form-check-input" type="checkbox" id="checkbox1" required>  
 			  			<label class="form-check-label" for="checkbox1">Checkbox 1</label>			  				
 					</div>	
@@ -518,7 +536,7 @@
 			  			<label class="form-check-label" for="checkbox2">Checkbox 2</label>			  			
 					</div>
 
-					<div class="form-check form-check-lg">
+					<div class="form-check">
 			  			<input class="form-check-input" type="checkbox" id="checkbox3">  
 			  			<label class="form-check-label" for="checkbox3">Checkbox 3</label>
 					</div>	
@@ -535,11 +553,11 @@
 
 					<br>
 
-				    <input class="form-control form-control-lg" type="text" placeholder="large">
+				    <input class="form-control" type="text" placeholder="large">
 				    <br>
 				    <input class="form-control" type="text" placeholder="default">
 				    <br>
-				    <input class="form-control form-control-sm" type="text" placeholder="small">
+				    <input class="form-control" type="text" placeholder="small">
 				    <br>
 
 

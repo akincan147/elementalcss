@@ -111,6 +111,7 @@
 	--muted-text-color: #636c76;
 
 	--border-radius: 0.375rem;
+	--border-radius-ratio: 2;
 	--border-radius-sm: 0.25rem;
 	--border-radius-md: 0.375rem;
     --border-radius-lg: 0.5rem;
@@ -140,7 +141,10 @@
 	--focus-outline-color: #0073e5;
 	--focus-outline-alpha: 25%;
 	--focus-outline-offset: 2px;
-
+	
+	--form-font-size: 1rem;
+	--form-padding-y: .375rem;
+	--form-padding-x: .75rem;
 	--form-bg-color: #ffffff;	
 	--form-text-color: #1f2328;
 	--form-border-color: #cbd0dd;
@@ -1249,6 +1253,7 @@ tbody > tr.active > * {
 
 
 .form-label {
+	font-size: var(--form-font-size);
 	margin-bottom: 0.5rem;
 }
 
@@ -1257,9 +1262,9 @@ tbody > tr.active > * {
 	-webkit-appearance: none;
     -moz-appearance: none;    
 	display: block;
-	width: 100%;
-	padding: .375rem .75rem;
-    font-size: 1rem;
+	width: 100%;	
+	padding: var(--form-padding-y) var(--form-padding-x);
+    font-size: var(--form-font-size);
     font-weight: 400;
     line-height: 1.5;
     color: var(--form-text-color);    
@@ -1267,6 +1272,13 @@ tbody > tr.active > * {
     background-clip: padding-box;
     border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
     border-radius: var(--border-radius);
+}
+
+.form-control[type="date"]:not(:focus):not(:user-invalid).is-empty,
+.form-control[type="time"]:not(:focus):not(:user-invalid).is-empty,
+.form-control[type="datetime-local"]:not(:focus):not(:user-invalid).is-empty,
+.form-control[type="file"]:not(:focus):not(:user-invalid).is-empty {
+	color: var(--muted-text-color);
 }
 
 .form-control:focus,
@@ -1279,7 +1291,7 @@ tbody > tr.active > * {
 }
 
 textarea.form-control {
-	min-height: calc(1.5em + .75rem + calc(var(--form-border-width) * 2));
+	min-height: calc(1.5em + var(--form-padding-x) + calc(var(--form-border-width) * 2));
 }
 
 .form-select {	
@@ -1287,9 +1299,9 @@ textarea.form-control {
 	-webkit-appearance: none;
     -moz-appearance: none;    
 	display: block;
-	width: 100%;
-	padding: .375rem 2.5rem .375rem .75rem;
-    font-size: 1rem;
+	width: 100%; 
+	padding: var(--form-padding-y) calc(var(--form-padding-x) * 2 + 1em) var(--form-padding-y) var(--form-padding-x);
+    font-size: var(--form-font-size);
     font-weight: 400;
     line-height: 1.5;
     color: var(--form-text-color);    
@@ -1297,7 +1309,7 @@ textarea.form-control {
     background-clip: padding-box;
     background-image: var(--select-bg-image);
     background-repeat: no-repeat;
-    background-position: right .75rem center;
+    background-position: right var(--form-padding-x) center;
     background-size: 1em 1em;
     border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
     border-radius: var(--border-radius);	
@@ -1305,7 +1317,7 @@ textarea.form-control {
 
 .form-select[multiple],
 .form-select[size]:not([size="1"]) {
-    padding-right: .75rem;
+    padding-right: var(--form-padding-x);
     background-image: none;
 }
 
@@ -1322,41 +1334,11 @@ textarea.form-control {
  	opacity: 0;
 }
 
-.form-color {	
-	appearance: none;
-	-webkit-appearance: none;
-    -moz-appearance: none;   
-    cursor: pointer; 
-	display: block;	
-    font-size: 1rem;    
-    line-height: 1.5; 
-    padding: 0;  	
-	width: calc(1.5em + .75rem + calc(var(--form-border-width) * 2));
-    height: calc(1.5em + .75rem + calc(var(--form-border-width) * 2));   
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    --color-swatch-border-radius: var(--border-radius);
-    --color-swatch-box-shadow: inset 0 0 0 2px rgba(0,0,0, 0.20);     
-}
-
-.form-color::-webkit-color-swatch {
-	border: none;	
-	border-radius: var(--color-swatch-border-radius);
-	box-shadow: var(--color-swatch-box-shadow);
-}
-
-.form-color::-moz-color-swatch {
-	border: none;
-	border-radius: var(--color-swatch-border-radius);
-	box-shadow: var(--color-swatch-box-shadow);
-}
-
 .form-control[type="file"] {
 	overflow: hidden;
-	--file-selector-btn-padding: 0.375rem 0.75rem;
-	--file-selector-btn-margin: -0.375rem -0.75rem;
-	--file-selector-btn-margin-end: 0.75rem;
+	--file-selector-btn-padding: var(--form-padding-y) var(--form-padding-x);
+	--file-selector-btn-margin: calc(var(--form-padding-y) * -1) calc(var(--form-padding-x) * -1);
+	--file-selector-btn-margin-end: var(--form-padding-x);
 	--file-selector-btn-border-width: 0;
 	--file-selector-btn-border-style: var(--form-border-style);	
 	--file-selector-btn-border-radius: 0;
@@ -1387,8 +1369,7 @@ textarea.form-control {
 	border-width: var(--file-selector-btn-border-width);
 	border-color: var(--file-selector-btn-border-color);
 	border-radius: var(--file-selector-btn-border-radius);
-	border-inline-end-width: var(--form-border-width);
-	
+	border-inline-end-width: var(--form-border-width);	
 }
 
 .form-control[type="file"]::-webkit-file-upload-button {
@@ -1403,8 +1384,7 @@ textarea.form-control {
 	border-width: var(--file-selector-btn-border-width);
 	border-color: var(--file-selector-btn-border-color);
 	border-radius: var(--file-selector-btn-border-radius);
-	border-inline-end-width: var(--form-border-width);
-	
+	border-inline-end-width: var(--form-border-width);	
 }
 
 .form-control[type="file"]:hover:not(:disabled):not([readonly])::file-selector-button {
@@ -1431,6 +1411,36 @@ textarea.form-control {
 	border-color: var(--file-selector-btn-active-border-color);	
 }
 
+.form-color {	
+	appearance: none;
+	-webkit-appearance: none;
+    -moz-appearance: none;   
+    cursor: pointer; 
+	display: block;	
+    font-size: var(--form-font-size);    
+    line-height: 1.5; 
+    padding: 0;  	
+	width: calc(1.5em + var(--form-padding-x) + calc(var(--form-border-width) * 2));
+    height: calc(1.5em + var(--form-padding-x) + calc(var(--form-border-width) * 2));   
+    background-color: transparent;
+    border: none;
+    border-radius: var(--border-radius);
+    --color-swatch-border-radius: var(--border-radius);
+    --color-swatch-box-shadow: inset 0 0 0 2px rgba(0,0,0, 0.20);     
+}
+
+.form-color::-webkit-color-swatch {
+	border: none;	
+	border-radius: var(--color-swatch-border-radius);
+	box-shadow: var(--color-swatch-box-shadow);
+}
+
+.form-color::-moz-color-swatch {
+	border: none;
+	border-radius: var(--color-swatch-border-radius);
+	box-shadow: var(--color-swatch-box-shadow);
+}
+
 .form-range {	
 	appearance: none;
 	-webkit-appearance: none;
@@ -1440,7 +1450,7 @@ textarea.form-control {
 	cursor: default;
 	padding: 0;
 	line-height: 1.5;
-	font-size: 1rem;  
+	font-size: var(--form-font-size);  
     background-color: transparent;
     outline: none;
     border: none;
@@ -1456,7 +1466,7 @@ textarea.form-control {
     --range-thumb-width: .75em;
     --range-thumb-bg-color: var(--primary-bg-color);
     --range-thumb-border-color: var(--primary-border-color);
-    --range-thumb-border-radius: calc(var(--border-radius) / 2);  
+    --range-thumb-border-radius: calc(var(--border-radius) / var(--border-radius-ratio));  
     --range-thumb-active-bg-color: var(--primary-active-bg-color);
     --range-thumb-active-border-color: var(--primary-active-border-color);
     --range-thumb-focus-bg-color: var(--primary-active-bg-color);
@@ -1590,14 +1600,11 @@ optgroup:disabled {
 	cursor: not-allowed;
 }
 
-
-
-
 .form-check {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: 0.75rem;
+	gap: var(--form-padding-x);
 }
 
 .form-check-reverse {
@@ -1617,7 +1624,7 @@ optgroup:disabled {
 	align-items: center;
 	justify-content: center;
 	transform: scale(1);
-	font-size: 1rem;
+	font-size: var(--form-font-size);
     font-weight: 400;
     line-height: 1.5;
 	width: 1.25em;
@@ -1627,14 +1634,15 @@ optgroup:disabled {
     color: var(--form-text-color);    
     background-color: var(--form-bg-color);
     border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
-    border-radius: calc(var(--border-radius) / 2);
+    border-radius: calc(var(--border-radius) / var(--border-radius-ratio));
 }
 
 .form-check-input + .form-check-label {
     cursor: pointer;
 	vertical-align: middle;
-	margin-left: 0.5rem;
+	margin-left: var(--form-padding-x);
 	margin-bottom: 0;	
+	font-size: var(--form-font-size);
 }
 
 .form-check .form-check-label {
@@ -1728,10 +1736,6 @@ optgroup:disabled {
 	cursor: not-allowed !important;
 }
 
-
-
-
-
 .progress {
     appearance: none;
     -webkit-appearance: none;
@@ -1740,7 +1744,7 @@ optgroup:disabled {
     display: flex;    
     overflow: hidden;    
     height: .75em;
-    font-size: 1rem;
+    font-size: var(--form-font-size);
     position: relative;
     width: 100%;
     color: var(--body-tertiary-text-color);
@@ -1813,7 +1817,7 @@ optgroup:disabled {
 	display: flex;
 	width: 100%;
 	height: .75em;	
-	font-size: 1rem;
+	font-size: var(--form-font-size);
 	color: var(--body-tertiary-text-color);
 	background: none;
 	background-color: var(--body-tertiary-bg-color);	
@@ -1895,16 +1899,15 @@ fix when focus on input, button border not visible
 }
 
 .input-group > .form-range {
-	padding: .375rem .75rem;
+	padding: var(--form-padding-y) var(--form-padding-x);
 	background-color: var(--form-bg-color);
 	border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
 }
 
 .input-group > .form-color {
-	padding: .375rem;
+	padding: var(--form-padding-y);
 	background-color: var(--form-bg-color);
-	border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
-	border-radius: var(--border-radius);
+	border: var(--form-border-width) var(--form-border-style) var(--form-border-color);	
 }
 
 .input-group > .form-control:focus,
@@ -1914,6 +1917,8 @@ fix when focus on input, button border not visible
 }
 
 .input-group .btn {
+	font-size: var(--form-font-size);
+	padding: var(--form-padding-y) var(--form-padding-x);
     position: relative;
     z-index: 2;
 }
@@ -1926,9 +1931,9 @@ fix when focus on input, button border not visible
 .input-group > .form-check {
     display: flex;
     align-items: center;
-    padding: .375rem .75rem;
+    padding: var(--form-padding-y) var(--form-padding-x);
     margin: 0;
-    font-size: 1rem;
+    font-size: var(--form-font-size);
     font-weight: 400;
     line-height: 1.5;    
     text-align: center;
@@ -1938,98 +1943,6 @@ fix when focus on input, button border not visible
     border: var(--form-border-width) solid var(--form-border-color);
     border-radius: var(--border-radius);
 }
-
-.input-group-merge {
-	border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
-	background-color: var(--form-bg-color);
-	border-radius: var(--border-radius);
-	gap: .75rem;
-	padding: .375rem .75rem;
-}
-
-.input-group-merge:has(:is(.btn, .form-check-input, .form-color)):not(:has(:is(.form-control, .form-select, .form-range))) {
-	width: fit-content;
-}
-
-.input-group-merge:has(:is(.btn, .form-color, .form-control[type="file"]):first-child) {
-	padding-left: .375rem;
-}
-
-.input-group-merge:has(:is(.btn, .form-color):last-child) {
-	padding-right: .375rem;
-}
-
-.input-group-merge > .form-control,
-.input-group-merge > .form-select,
-.input-group-merge > .form-check,
-.input-group-merge > .form-range,
-.input-group-merge > .input-group-text {
-	padding: 0;
-	border: none;
-	border-radius: 0;
-}
-
-.input-group-merge > textarea.form-control {
-	min-height: 1.5em;
-}
-
-.input-group-merge > .form-control[type="file"] {	
-	--file-selector-btn-margin: 0;
-	--file-selector-btn-border-width: var(--form-border-width);
-	--file-selector-btn-border-radius: var(--border-radius); 
-}
-
-.input-group-merge > .form-select {
-	background-position: right center;
-}
-
-.input-group-merge > .form-color {
-	padding: 0;
-	width: 1.5em;
-	height: 1.5em;
-	align-self: center;	
-	background-color: transparent;
-	border: none;
-	border-radius: 0 !important;
-}
-
-.input-group-merge > .btn {    
-    align-self: center;
-    border-radius: var(--border-radius) !important;   
-}
-
-.input-group-merge > .input-group-text,
-.input-group-merge > .form-check {	
-	background-color: var(--form-bg-color);
-}
-
-.input-group-merge:focus-within {
-	color: var(--form-focus-text-color);
-	background-color: var(--form-focus-bg-color);
-	border-color: var(--form-focus-border-color);
-	outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);	
-	outline-offset: var(--focus-outline-offset);
-}
-
-.input-group-merge:focus-within > .form-control,
-.input-group-merge:focus-within > .form-select,
-.input-group-merge:focus-within > .input-group-text {
-	color: var(--form-focus-text-color);
-	background-color: var(--form-focus-bg-color);
-	border-color: var(--form-focus-border-color);	
-	outline: 0;
-}
-
-.input-group-merge:has(:not(.is-empty):not(:placeholder-shown):user-valid):not(:has(:user-invalid)) {
-	border-color: var(--success-bg-color);
-}
-
-.input-group-merge:has(:user-invalid) {
-	border-color: var(--danger-bg-color);
-}
-
-
-
 
 .input-group > .dropdown-toggle:nth-last-child(n+3),
 .input-group > .form-floating:not(:last-child) > .form-control,
@@ -2047,7 +1960,7 @@ fix when focus on input, button border not visible
     border-bottom-right-radius: 0;
 }
 
-.input-group:not(.input-group-merge) > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     margin-left: calc(var(--form-border-width) * -1);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -2074,6 +1987,117 @@ fix when focus on input, button border not visible
 .btn-toolbar .input-group {
     width: auto;
 }
+
+
+
+
+.input-group-merge {
+	border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
+	background-color: var(--form-bg-color);
+	border-radius: var(--border-radius);
+	gap: var(--form-padding-x);
+	padding: var(--form-padding-y) var(--form-padding-x);
+}
+
+.input-group-merge:has(:is(.btn, .form-check-input, .form-color)):not(:has(:is(.form-control, .form-select, .form-range))) {
+	width: fit-content;
+}
+
+.input-group-merge:has(:is(.btn, .form-color, .form-control[type="file"]):first-child) {
+	padding-left: var(--form-padding-y);
+}
+
+.input-group-merge:has(:is(.btn, .form-color):last-child) {
+	padding-right: var(--form-padding-y);
+}
+
+
+
+.input-group-merge > .form-control,
+.input-group-merge > .form-select,
+.input-group-merge > .form-check,
+.input-group-merge > .form-range,
+.input-group-merge > .input-group-text,
+.input-group-merge > .input-group-text > .form-check {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+	border-radius: 0 !important;
+}
+
+.input-group-merge > .form-control {
+	min-height: 1.5em !important;
+}
+
+.input-group-merge > .form-control[type="file"] {	
+	--file-selector-btn-margin: 0 !important;
+	--file-selector-btn-border-width: var(--form-border-width);
+	--file-selector-btn-border-radius: var(--border-radius); 
+}
+
+.input-group-merge.input-group-sm > .form-control[type="file"] {	
+	--file-selector-btn-border-radius: var(--border-radius-sm); 
+}
+
+.input-group-merge.input-group-lg > .form-control[type="file"] {	
+	--file-selector-btn-border-radius: var(--border-radius-lg); 
+}
+
+.input-group-merge > .form-select {
+	background-position: right center;
+}
+
+.input-group-merge > .form-color {
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 1.5em !important;
+	height: 1.5em !important;
+	align-self: center;	
+	background-color: transparent;
+	border: none !important;
+	border-radius: 0 !important;
+}
+
+.input-group-merge > .btn { 
+	margin: 0 !important;   
+    align-self: center;
+    border-radius: var(--border-radius) !important;   
+}
+
+.input-group-merge > .input-group-text,
+.input-group-merge > .form-check {	
+	background-color: var(--form-bg-color);
+}
+
+.input-group-merge:focus-within {
+	color: var(--form-focus-text-color);
+	background-color: var(--form-focus-bg-color);
+	border-color: var(--form-focus-border-color);
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);	
+	outline-offset: var(--focus-outline-offset);
+}
+
+.input-group-merge:focus-within > .form-control,
+.input-group-merge:focus-within > .form-select,
+.input-group-merge:focus-within > .input-group-text {
+	color: var(--form-focus-text-color);
+	background-color: var(--form-focus-bg-color);
+	border-color: var(--form-focus-border-color);	
+	outline: 0;
+}
+
+.input-group-merge:has(.form-control:not(.is-empty):not(:placeholder-shown):user-valid):not(:has(:user-invalid)),
+.input-group-merge:has(.form-select:user-valid > option:checked:not([value=""])),
+.input-group-merge:has(.form-check-input:required:user-valid) {
+	border-color: var(--success-bg-color);
+}
+
+.input-group-merge:has(:user-invalid) {
+	border-color: var(--danger-bg-color);
+}
+
+
+
 
 
 
@@ -2201,187 +2225,45 @@ fix when focus on input, button border not visible
 	padding-right: 0 !important;
 }
 
+.form-sm,
 .form-label-sm,
-.form-check-label-sm,
-.form-sm .form-label,
-.form-sm .form-check-label,
-.form-check-sm .form-check-label,
-.input-group-sm .form-check-label {
-	font-size: .875rem;
-}
-
-.form-sm .input-group-text,
-.input-group-sm .input-group-text,
-.input-group-sm .form-check {
-	padding: .25rem .5rem;
-    font-size: .875rem;
-    border-radius: var(--border-radius-sm);
-}
-
+.input-group-sm,
 .form-control-sm,
-textarea.form-control-sm,
-.form-sm .form-control,
-.input-group-sm .form-control {
-    min-height: calc(1.5em + .5rem + calc(var(--form-border-width) * 2));
-    padding: .25rem .5rem;
-    font-size: .875rem;
-    border-radius: var(--border-radius-sm);
-}
-
-.form-control-sm[type="file"],
-.form-sm .form-control[type="file"],
-.input-group-sm .form-control[type="file"] {
-    --file-selector-btn-padding: .25rem .5rem;
-    --file-selector-btn-margin: -.25rem -.5rem;
-    --file-selector-btn-margin-end: .5rem;
-}
-
 .form-select-sm,
-.form-sm .form-select,
-.input-group-sm .form-select {
-	padding: .25rem 2.4rem .25rem .5rem;	
-    font-size: .875rem;
-    border-radius: var(--border-radius-sm);
-}
-
-.form-range-sm,
-.form-sm .form-range,
-.input-group-sm .form-range {
-	font-size: .875rem;
-	border-radius: var(--border-radius-sm);
-	--range-track-border-radius: var(--border-radius-sm);	
-	--range-thumb-border-radius: calc(var(--border-radius-sm) / 1.5);	
-}
-
 .form-color-sm,
-.form-sm .form-color,
-.input-group-sm .form-color {
-    font-size: .875rem;    
-    width: calc(1.5em + .5rem + calc(var(--form-border-width) * 2));
-    height: calc(1.5em + .5rem + calc(var(--form-border-width) * 2));    
-    --color-swatch-border-radius: var(--border-radius-sm);
-}
-
+.form-range-sm,
+.form-check-sm,
 .form-check-input-sm,
-.form-sm .form-check-input,
-.form-check-sm .form-check-input,
-.input-group-sm .form-check-input {
-	font-size: .875rem;
-	border-radius: calc(var(--border-radius-sm) / 1.5);
-}
-
+.form-check-input-sm + .form-check-label,
+.form-check-label-sm,
 .progress-sm,
-.form-sm .progress,
-.input-group-sm .progress {    
-    font-size: .875rem;
-    border-radius: var(--border-radius-sm);
+.meter-sm {
+	--form-font-size: .875rem;
+	--form-padding-y: .25rem;
+	--form-padding-x: .5rem;
+	--border-radius: var(--border-radius-sm);
+	--border-radius-ratio: 1.5;
 }
 
-.meter-sm,
-.form-sm .meter,
-.input-group-sm .meter {	
-	font-size: .875rem;	
-	border-radius: var(--border-radius-sm);
-	--meter-bar-border-radius: var(--border-radius-sm);
-}
-
-
-
+.form-lg,
 .form-label-lg,
-.form-check-label-lg,
-.form-lg .form-label,
-.form-lg .form-check-label,
-.form-check-lg .form-check-label,
-.input-group-lg .form-check-label {
-	font-size: 1.25rem;
-}
-
-.form-lg .input-group-text,
-.input-group-lg .input-group-text,
-.input-group-lg .form-check {
-	padding: .5rem 1rem;
-    font-size: 1.25rem;
-    border-radius: var(--border-radius-lg);
-}
-
+.input-group-lg,
 .form-control-lg,
-textarea.form-control-lg,
-.form-lg .form-control,
-.input-group-lg .form-control {
-    min-height: calc(1.5em + 1rem + calc(var(--form-border-width) * 2));
-    padding: .5rem 1rem;
-    font-size: 1.25rem;
-    border-radius: var(--border-radius-lg);
-}
-
-.form-control-lg[type="file"],
-.form-lg .form-control[type="file"],
-.input-group-lg .form-control[type="file"] {
-    --file-selector-btn-padding: .5rem 1rem;
-    --file-selector-btn-margin: -.5rem -1rem;
-    --file-selector-btn-margin-end: 1rem;
-}
-
 .form-select-lg,
-.form-lg .form-select,
-.input-group-lg .form-select {
-	padding: .5rem 2.8rem .5rem 1rem;	
-    font-size: 1.25rem;
-    border-radius: var(--border-radius-lg);
-}
-
-.form-range-lg,
-.form-lg .form-range,
-.input-group-lg .form-range {
-	font-size: 1.25rem;
-	border-radius: var(--border-radius-lg);
-	--range-track-border-radius: var(--border-radius-lg);
-	--range-thumb-border-radius: calc(var(--border-radius-lg) / 2.5);
-}
-
 .form-color-lg,
-.form-lg .form-color,
-.input-group-lg .form-color {
-    font-size: 1.25rem;    
-    width: calc(1.5em + 1rem + calc(var(--form-border-width) * 2));
-    height: calc(1.5em + 1rem + calc(var(--form-border-width) * 2));
-    --color-swatch-border-radius: var(--border-radius-lg);
-}
-
+.form-range-lg,
+.form-check-lg,
 .form-check-input-lg,
-.form-lg .form-check-input,
-.form-check-lg .form-check-input,
-.input-group-lg .form-check-input {
-	font-size: 1.25rem;
-	border-radius: calc(var(--border-radius-lg) / 2.5);
-}
-
+.form-check-input-lg + .form-check-label,
+.form-check-label-lg,
 .progress-lg,
-.form-lg .progress,
-.input-group-lg .progress {    
-    font-size: 1.25rem;
-    border-radius: var(--border-radius-lg);    
+.meter-lg {
+	--form-font-size: 1.25rem;
+	--form-padding-y: .5rem;
+	--form-padding-x: 1rem;
+	--border-radius: var(--border-radius-lg);
+	--border-radius-ratio: 2.5;
 }
-
-.meter-lg,
-.form-lg .meter,
-.input-group-lg .meter {	
-	font-size: 1.25rem;
-	border-radius: var(--border-radius-lg);
-	--meter-bar-border-radius: var(--border-radius-lg);
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
