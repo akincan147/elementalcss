@@ -101,7 +101,7 @@ The .link-underline and underline colors have been removed as they are no longer
 
 
 .form-control-plaintext
-.form-control-color
+
 
 details {
     display: block;
@@ -111,11 +111,6 @@ summary {
     display: list-item;
 }
 
-
-
-
-
-
 .form-check-inline .form-check-input ~ .valid-feedback {
   margin-left: 0.5em;
 }
@@ -123,53 +118,42 @@ summary {
 
 
 
+.form-label
+.form-control
+.form-control[type="file"]
+.form-select
+.form-check
+.form-color
+.form-range
+.progress
+.meter
+
+.form-floating
+.input-group
+.input-group-merge
 
 
 
+.form-control {
+    /* 1. Reset / Vendor */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 
+    /* 2. Layout & Box */
+    display: block;
+    width: 100%;
+    padding: var(--form-padding-y) var(--form-padding-x);
+    border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
+    border-radius: var(--border-radius);
+    background-clip: padding-box;
 
-.form-control.is-valid,
-.form-select.is-valid,
-.form-check-input.is-valid,
-.form-control:user-valid,
-.was-validated .form-control:valid,
-.was-validated .form-select:valid,
-.was-validated .form-check-input:valid {
-    border-color: var(--success-bg-color);
+    /* 3. Visual */
+    background-color: var(--form-bg-color);
+    color: var(--form-text-color);
+
+    /* 4. Typography */
+    font-size: var(--form-font-size);
+    font-weight: 400;
+    line-height: 1.5;
 }
-
-.form-control.is-invalid,
-.form-select.is-invalid,
-.form-check-input.is-invalid,
-.form-control:user-invalid,
-.was-validated .form-control:invalid,
-.was-validated .form-select:invalid,
-.was-validated .form-check-input:invalid {
-    border-color: var(--danger-bg-color);
-}
-
-.form-control.is-valid:focus,
-.form-select.is-valid:focus,
-.form-check-input.is-valid:focus,
-.was-validated .form-control:valid:focus,
-.was-validated .form-select:valid:focus,
-.was-validated .form-check-input:valid:focus {
-    outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--success-bg-color), transparent var(--focus-outline-alpha,25%));
-    outline-offset: var(--focus-outline-offset);
-}
-
-.form-control.is-invalid:focus,
-.form-select.is-invalid:focus,
-.form-check-input.is-invalid:focus,
-.was-validated .form-control:invalid:focus,
-.was-validated .form-select:invalid:focus,
-.was-validated .form-check-input:invalid:focus {
-    outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--danger-bg-color), transparent var(--focus-outline-alpha,25%));
-    outline-offset: var(--focus-outline-offset);
-}
-
-
-
-
-
-

@@ -153,6 +153,8 @@
 	--form-focus-bg-color: #ffffff;
 	--form-focus-text-color: #000000;
 	--form-focus-border-color: #0073e5;	
+	--form-floating-padding-y: 1rem;
+	--form-floating-padding-x: .75rem;
 
     --primary-bg-color: #0073e5;
     --primary-bg-color-subtle: #afd7ff;
@@ -1274,51 +1276,15 @@ tbody > tr.active > * {
     border-radius: var(--border-radius);
 }
 
+textarea.form-control {
+	min-height: calc(1.5em + var(--form-padding-x) + calc(var(--form-border-width) * 2));
+}
+
 .form-control[type="date"]:not(:focus):not(:user-invalid).is-empty,
 .form-control[type="time"]:not(:focus):not(:user-invalid).is-empty,
 .form-control[type="datetime-local"]:not(:focus):not(:user-invalid).is-empty,
 .form-control[type="file"]:not(:focus):not(:user-invalid).is-empty {
 	color: var(--muted-text-color);
-}
-
-.form-control:focus,
-.form-select:focus {
-    color: var(--form-focus-text-color);
-    background-color: var(--form-focus-bg-color);
-    border-color: var(--form-focus-border-color);
-    outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
-    outline-offset: var(--focus-outline-offset);
-}
-
-textarea.form-control {
-	min-height: calc(1.5em + var(--form-padding-x) + calc(var(--form-border-width) * 2));
-}
-
-.form-select {	
-	appearance: none;
-	-webkit-appearance: none;
-    -moz-appearance: none;    
-	display: block;
-	width: 100%; 
-	padding: var(--form-padding-y) calc(var(--form-padding-x) * 2 + 1em) var(--form-padding-y) var(--form-padding-x);
-    font-size: var(--form-font-size);
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--form-text-color);    
-    background-color: var(--form-bg-color);
-    background-clip: padding-box;
-    background-image: var(--select-bg-image);
-    background-repeat: no-repeat;
-    background-position: right var(--form-padding-x) center;
-    background-size: 1em 1em;
-    border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
-    border-radius: var(--border-radius);	
-}
-
-.form-select[multiple],
-.form-select[size]:not([size="1"]) {
-    padding-right: var(--form-padding-x);
-    background-image: none;
 }
 
 .form-control[type="number"] {
@@ -1409,6 +1375,169 @@ textarea.form-control {
 	color: var(--file-selector-btn-active-text-color);
 	background-color: var(--file-selector-btn-active-bg-color);
 	border-color: var(--file-selector-btn-active-border-color);	
+}
+
+.form-select {	
+	appearance: none;
+	-webkit-appearance: none;
+    -moz-appearance: none;    
+	display: block;
+	width: 100%; 
+	padding: var(--form-padding-y) calc(var(--form-padding-x) * 2 + 1em) var(--form-padding-y) var(--form-padding-x);
+    font-size: var(--form-font-size);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--form-text-color);    
+    background-color: var(--form-bg-color);
+    background-clip: padding-box;
+    background-image: var(--select-bg-image);
+    background-repeat: no-repeat;
+    background-position: right var(--form-padding-x) center;
+    background-size: 1em 1em;
+    border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
+    border-radius: var(--border-radius);	
+}
+
+.form-select[multiple],
+.form-select[size]:not([size="1"]) {
+    padding-right: var(--form-padding-x);
+    background-image: none;
+}
+
+.form-check {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--form-padding-x);
+}
+
+.form-check-reverse {
+	flex-direction: row-reverse !important;
+}
+
+.form-check-input {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;			
+	-webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+    cursor: pointer;
+    vertical-align: middle;    
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transform: scale(1);
+	font-size: var(--form-font-size);
+    font-weight: 400;
+    line-height: 1.5;
+	width: 1.25em;
+	height: 1.25em;
+	margin: 0;
+	padding: 0;
+    color: var(--form-text-color);    
+    background-color: var(--form-bg-color);
+    border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
+    border-radius: calc(var(--border-radius) / var(--border-radius-ratio));
+}
+
+.form-check-input + .form-check-label {
+    cursor: pointer;
+	vertical-align: middle;
+	margin-left: var(--form-padding-x);
+	margin-bottom: 0;	
+	font-size: var(--form-font-size);
+}
+
+.form-check .form-check-label {
+	margin: 0;
+}
+
+.form-check-input[type="checkbox"]:active:not(:checked):not(:indeterminate):not(:disabled),
+.form-check-input[type="radio"]:active:not(:checked):not(:disabled) {
+	background-color: var(--form-focus-bg-color);
+}
+
+.form-check-input:focus {
+	color: var(--form-focus-text-color);
+    background-color: var(--form-focus-bg-color);
+    border-color: var(--form-focus-border-color);
+    outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+}
+
+.form-check-input::before {	
+	content: "";
+}
+
+.form-check-input:checked {
+	color: var(--primary-text-color);
+	background-color: var(--primary-bg-color);
+	border-color: var(--primary-border-color);	
+}
+
+.form-check-input[type="checkbox"]:checked::before {		
+	width: 0.375em;
+	height: 0.625em;
+	border: solid var(--primary-text-color);
+	border-width: 0 0.143em 0.143em 0;
+	margin-top: -0.188em;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);	
+}
+
+.form-check-input[type="checkbox"][role="switch"] {
+	position: relative;  
+	width: 2.75em;
+}
+
+.form-check-input[type="checkbox"][role="switch"]::before {
+	position: absolute;
+	left: 0.188em;
+	transform: none;  
+	width: 0.75em;
+	height: 0.75em;
+	margin: 0;
+	background: var(--muted-text-color);
+	border: var(--form-border-width) solid var(--muted-text-color);
+	border-radius: inherit;	
+	transition: left .15s ease-in-out;
+}
+
+.form-check-input[type="checkbox"][role="switch"]:checked::before {
+	left: calc(100% - 0.75em - 0.188em);
+	background: var(--primary-text-color);
+	border: var(--form-border-width) solid var(--primary-text-color);
+}
+
+.form-check-input[type="radio"]:checked::before {		
+	width: 0.5em;
+	height: 0.5em;
+	background-color: var(--primary-text-color);
+	border-radius: inherit;
+}
+
+.form-check-input[type="checkbox"]:indeterminate {
+    background-color: var(--primary-bg-color);
+    border-color: var(--primary-border-color);
+}
+
+.form-check-input[type="checkbox"]:indeterminate::before {
+    content: "";
+    display: block;
+    width: 0.625em;
+    height: 0.125em; 
+    background-color: var(--primary-text-color);    
+    margin-top: 0;
+    transform: none;
+    -webkit-transform: none;
+	-ms-transform: none;	
+}
+
+.form-check-input:disabled + .form-check-label {
+	opacity: .5 !important;
+	cursor: not-allowed !important;
 }
 
 .form-color {	
@@ -1579,6 +1708,15 @@ textarea.form-control {
 	display: none;
 }
 
+.form-control:focus,
+.form-select:focus {
+    color: var(--form-focus-text-color);
+    background-color: var(--form-focus-bg-color);
+    border-color: var(--form-focus-border-color);
+    outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+}
+
 .form-control:read-only:not(:disabled):not([type="file"]) {
 	padding-left: 0;
 	padding-right: 0;
@@ -1593,147 +1731,12 @@ textarea.form-control {
 
 .form-control:disabled,
 .form-select:disabled,
+.form-check-input:disabled,
 .form-color:disabled,
 .form-range:disabled,
 optgroup:disabled {
 	opacity: .5;
 	cursor: not-allowed;
-}
-
-.form-check {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: var(--form-padding-x);
-}
-
-.form-check-reverse {
-	flex-direction: row-reverse !important;
-}
-
-.form-check-input {
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;			
-	-webkit-print-color-adjust: exact;
-    color-adjust: exact;
-    print-color-adjust: exact;
-    cursor: pointer;
-    vertical-align: middle;    
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	transform: scale(1);
-	font-size: var(--form-font-size);
-    font-weight: 400;
-    line-height: 1.5;
-	width: 1.25em;
-	height: 1.25em;
-	margin: 0;
-	padding: 0;
-    color: var(--form-text-color);    
-    background-color: var(--form-bg-color);
-    border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
-    border-radius: calc(var(--border-radius) / var(--border-radius-ratio));
-}
-
-.form-check-input + .form-check-label {
-    cursor: pointer;
-	vertical-align: middle;
-	margin-left: var(--form-padding-x);
-	margin-bottom: 0;	
-	font-size: var(--form-font-size);
-}
-
-.form-check .form-check-label {
-	margin: 0;
-}
-
-.form-check-input[type="checkbox"]:active:not(:checked):not(:indeterminate):not(:disabled),
-.form-check-input[type="radio"]:active:not(:checked):not(:disabled) {
-	background-color: var(--form-focus-bg-color);
-}
-
-.form-check-input:focus {
-	color: var(--form-focus-text-color);
-    background-color: var(--form-focus-bg-color);
-    border-color: var(--form-focus-border-color);
-    outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
-    outline-offset: var(--focus-outline-offset);
-}
-
-.form-check-input::before {	
-	content: "";
-}
-
-.form-check-input:checked {
-	color: var(--primary-text-color);
-	background-color: var(--primary-bg-color);
-	border-color: var(--primary-border-color);	
-}
-
-.form-check-input[type="checkbox"]:checked::before {		
-	width: 0.375em;
-	height: 0.625em;
-	border: solid var(--primary-text-color);
-	border-width: 0 0.143em 0.143em 0;
-	margin-top: -0.188em;
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);	
-}
-
-.form-check-input[type="checkbox"][role="switch"] {
-	position: relative;  
-	width: 2.75em;
-}
-
-.form-check-input[type="checkbox"][role="switch"]::before {
-	position: absolute;
-	left: 0.188em;
-	transform: none;  
-	width: 0.75em;
-	height: 0.75em;
-	margin: 0;
-	background: var(--muted-text-color);
-	border: var(--form-border-width) solid var(--muted-text-color);
-	border-radius: inherit;	
-	transition: left .15s ease-in-out;
-}
-
-.form-check-input[type="checkbox"][role="switch"]:checked::before {
-	left: calc(100% - 0.75em - 0.188em);
-	background: var(--primary-text-color);
-	border: var(--form-border-width) solid var(--primary-text-color);
-}
-
-.form-check-input[type="radio"]:checked::before {		
-	width: 0.5em;
-	height: 0.5em;
-	background-color: var(--primary-text-color);
-	border-radius: inherit;
-}
-
-.form-check-input[type="checkbox"]:indeterminate {
-    background-color: var(--primary-bg-color);
-    border-color: var(--primary-border-color);
-}
-
-.form-check-input[type="checkbox"]:indeterminate::before {
-    content: "";
-    display: block;
-    width: 0.625em;
-    height: 0.125em; 
-    background-color: var(--primary-text-color);    
-    margin-top: 0;
-    transform: none;
-    -webkit-transform: none;
-	-ms-transform: none;	
-}
-
-.form-check-input:disabled + .form-check-label {
-	opacity: .5 !important;
-	cursor: not-allowed !important;
 }
 
 .progress {
@@ -1867,7 +1870,105 @@ optgroup:disabled {
 
 
 
+.form-floating {
+	position: relative;
+	--form-floating-label-translateX: 0.15rem;
+}
 
+.form-floating > .form-control,
+.form-floating > .form-control-plaintext,
+.form-floating > .form-select {
+	height: calc(1.5em + calc(var(--form-floating-padding-y) * 2) + calc(var(--form-border-width) * 2));	
+	min-height: calc(1.5em + calc(var(--form-floating-padding-y) * 2) + calc(var(--form-border-width) * 2));
+}
+
+.form-floating > .form-label {
+	position: absolute;
+	margin: 0;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	max-width: 100%;
+	height: 100%;
+	padding: var(--form-floating-padding-y) var(--form-floating-padding-x);
+	overflow: hidden;
+	color: var(--muted-text-color);
+	text-align: start;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	pointer-events: none;
+	border: var(--form-border-width) solid transparent;
+	transform-origin: 0 0;
+	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.form-floating > .form-label {
+		transition: none;
+	}
+}
+
+.form-floating > .form-control,
+.form-floating > .form-control-plaintext {
+	padding: var(--form-floating-padding-y) var(--form-floating-padding-x);
+}
+
+.form-floating > .form-control::placeholder,
+.form-floating > .form-control-plaintext::placeholder {
+	color: transparent;
+}
+
+.form-floating > .form-control:focus, 
+.form-floating > .form-control:not(:placeholder-shown),
+.form-floating > .form-control-plaintext:focus,
+.form-floating > .form-control-plaintext:not(:placeholder-shown) {
+	padding-top: calc(var(--form-floating-padding-y) * 1.5);
+	padding-bottom: calc(var(--form-floating-padding-y) / 2);
+}
+
+.form-floating > .form-control:-webkit-autofill,
+.form-floating > .form-control-plaintext:-webkit-autofill {
+	padding-top: calc(var(--form-floating-padding-y) * 1.5);
+	padding-bottom: calc(var(--form-floating-padding-y) / 2);
+}
+
+.form-floating > .form-select {
+	padding-top: calc(var(--form-floating-padding-y) * 1.5);
+	padding-bottom: calc(var(--form-floating-padding-y) / 2);
+	padding-left: var(--form-floating-padding-x);
+}
+
+.form-floating > .form-control:focus ~ .form-label,
+.form-floating > .form-control:not(:placeholder-shown) ~ .form-label,
+.form-floating > .form-control-plaintext ~ .form-label,
+.form-floating > .form-select ~ .form-label {
+	transform: scale(.85) translateY(calc(var(--form-floating-padding-y) * -0.5)) translateX(var(--form-floating-label-translateX));
+}
+
+.form-floating > .form-control:-webkit-autofill ~ .form-label {
+	transform: scale(.85) translateY(calc(var(--form-floating-padding-y) * -0.5)) translateX(var(--form-floating-label-translateX));
+}
+
+.form-floating > textarea:focus ~ .form-label::after,
+.form-floating > textarea:not(:placeholder-shown) ~ .form-label::after {
+	content: "";
+	position: absolute;	
+	left: 0;
+	right: 0;
+	height: 1.5em;
+	background-color: var(--form-bg-color);
+	border-radius: var(--border-radius);
+	z-index: -1;
+}
+
+.form-floating > .form-control-plaintext ~ .form-label {
+	border-width: var(--form-border-width) 0;
+}
+
+.form-floating > :disabled ~ .form-label,
+.form-floating > .form-control:disabled ~ .form-label {
+	opacity: .5;
+}
 
 
 /* 
@@ -1952,14 +2053,6 @@ fix when focus on input, button border not visible
     border-bottom-right-radius: 0;
 }
 
-.input-group > .dropdown-toggle:nth-last-child(n+4),
-.input-group > .form-floating:nth-last-child(n+3) > .form-control,
-.input-group > .form-floating:nth-last-child(n+3) > .form-select,
-.input-group > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
 .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     margin-left: calc(var(--form-border-width) * -1);
     border-top-left-radius: 0;
@@ -1984,34 +2077,51 @@ fix when focus on input, button border not visible
     z-index: 4;
 }
 
-.btn-toolbar .input-group {
-    width: auto;
-}
+
 
 
 
 
 .input-group-merge {
-	border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
-	background-color: var(--form-bg-color);
-	border-radius: var(--border-radius);
-	gap: var(--form-padding-x);
-	padding: var(--form-padding-y) var(--form-padding-x);
+    border: var(--form-border-width) var(--form-border-style) var(--form-border-color);
+    background-color: var(--form-bg-color);
+    border-radius: var(--border-radius);
+    gap: var(--form-padding-x);
+    padding: var(--form-padding-y) var(--form-padding-x);
 }
 
 .input-group-merge:has(:is(.btn, .form-check-input, .form-color)):not(:has(:is(.form-control, .form-select, .form-range))) {
-	width: fit-content;
+    width: fit-content;
 }
 
-.input-group-merge:has(:is(.btn, .form-color, .form-control[type="file"]):first-child) {
-	padding-left: var(--form-padding-y);
+.input-group-merge:has(:is(.btn, .form-color, .form-control[type="file"]):first-child):not(:has(.form-floating)) {
+    padding-left: var(--form-padding-y);
 }
 
-.input-group-merge:has(:is(.btn, .form-color):last-child) {
-	padding-right: var(--form-padding-y);
+.input-group-merge:has(:is(.btn, .form-color):last-child):not(:has(.form-floating)) {
+    padding-right: var(--form-padding-y);
 }
 
+.input-group-merge:has(.form-floating) {
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
+.input-group-merge:has(textarea.form-control) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.input-group-merge:has(textarea.form-control:last-child),
+.input-group-merge:has(.form-floating:last-child > textarea.form-control) {
+    padding-right: 0;
+}
+
+.input-group-merge > .input-group-text,
+.input-group-merge > .form-check {  
+    background-color: var(--form-bg-color);
+}
 
 .input-group-merge > .form-control,
 .input-group-merge > .form-select,
@@ -2019,82 +2129,113 @@ fix when focus on input, button border not visible
 .input-group-merge > .form-range,
 .input-group-merge > .input-group-text,
 .input-group-merge > .input-group-text > .form-check {
-	margin: 0 !important;
-	padding: 0 !important;
-	border: none !important;
-	border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
 }
 
 .input-group-merge > .form-control {
-	min-height: 1.5em !important;
+    min-height: 1.5em !important;
 }
 
-.input-group-merge > .form-control[type="file"] {	
-	--file-selector-btn-margin: 0 !important;
-	--file-selector-btn-border-width: var(--form-border-width);
-	--file-selector-btn-border-radius: var(--border-radius); 
+.input-group-merge > textarea.form-control {
+    padding-top: var(--form-padding-y) !important;
+    padding-bottom: var(--form-padding-y) !important;
+    padding-right: var(--form-padding-x) !important;
+    min-height: calc(1.5em + var(--form-padding-x)) !important;
 }
 
-.input-group-merge.input-group-sm > .form-control[type="file"] {	
-	--file-selector-btn-border-radius: var(--border-radius-sm); 
+.input-group-merge > .form-floating > textarea.form-control {	
+	padding-right: var(--form-padding-x) !important;
 }
 
-.input-group-merge.input-group-lg > .form-control[type="file"] {	
-	--file-selector-btn-border-radius: var(--border-radius-lg); 
+.input-group-merge > textarea.form-control:last-child {       
+    border-top-right-radius: var(--border-radius) !important;
+    border-bottom-right-radius: var(--border-radius) !important;
 }
 
-.input-group-merge > .form-select {
-	background-position: right center;
+.input-group-merge > .form-control[type="file"] {   
+    --file-selector-btn-margin: 0 !important;
+    --file-selector-btn-border-width: var(--form-border-width);
+    --file-selector-btn-border-radius: var(--border-radius); 
+}
+
+.input-group-merge .form-select {
+    padding-right: calc(var(--form-padding-x) + 1em) !important;
+    background-position: right center;
 }
 
 .input-group-merge > .form-color {
-	margin: 0 !important;
-	padding: 0 !important;
-	width: 1.5em !important;
-	height: 1.5em !important;
-	align-self: center;	
-	background-color: transparent;
-	border: none !important;
-	border-radius: 0 !important;
+    align-self: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1.5em !important;
+    height: 1.5em !important;       
+    background-color: transparent;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.input-group-merge > .form-floating {    
+    --form-floating-padding-x: 0;
+    --form-floating-label-translateX: 0rem;
+    --form-border-width: 0px;
 }
 
 .input-group-merge > .btn { 
-	margin: 0 !important;   
     align-self: center;
+    margin: 0 !important;       
     border-radius: var(--border-radius) !important;   
 }
 
-.input-group-merge > .input-group-text,
-.input-group-merge > .form-check {	
-	background-color: var(--form-bg-color);
-}
-
 .input-group-merge:focus-within {
-	color: var(--form-focus-text-color);
-	background-color: var(--form-focus-bg-color);
-	border-color: var(--form-focus-border-color);
-	outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);	
-	outline-offset: var(--focus-outline-offset);
+    color: var(--form-focus-text-color);
+    background-color: var(--form-focus-bg-color);
+    border-color: var(--form-focus-border-color);
+    outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);  
+    outline-offset: var(--focus-outline-offset);
 }
 
 .input-group-merge:focus-within > .form-control,
 .input-group-merge:focus-within > .form-select,
 .input-group-merge:focus-within > .input-group-text {
-	color: var(--form-focus-text-color);
-	background-color: var(--form-focus-bg-color);
-	border-color: var(--form-focus-border-color);	
-	outline: 0;
+    color: var(--form-focus-text-color);
+    background-color: var(--form-focus-bg-color);
+    border-color: var(--form-focus-border-color);   
+    outline: 0;
 }
 
 .input-group-merge:has(.form-control:not(.is-empty):not(:placeholder-shown):user-valid):not(:has(:user-invalid)),
 .input-group-merge:has(.form-select:user-valid > option:checked:not([value=""])),
 .input-group-merge:has(.form-check-input:required:user-valid) {
-	border-color: var(--success-bg-color);
+    border-color: var(--success-bg-color);
 }
 
 .input-group-merge:has(:user-invalid) {
-	border-color: var(--danger-bg-color);
+    border-color: var(--danger-bg-color);
 }
+
+
+.input-group-merge:has(:disabled):not(:has(:enabled)) {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.input-group-merge:has(:disabled):not(:has(:enabled)) :disabled {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2236,11 +2377,14 @@ fix when focus on input, button border not visible
 .form-check-input-sm,
 .form-check-input-sm + .form-check-label,
 .form-check-label-sm,
+.form-floating-sm,
 .progress-sm,
 .meter-sm {
 	--form-font-size: .875rem;
 	--form-padding-y: .25rem;
 	--form-padding-x: .5rem;
+	--form-floating-padding-y: .875rem;
+	--form-floating-padding-x: .5rem;
 	--border-radius: var(--border-radius-sm);
 	--border-radius-ratio: 1.5;
 }
@@ -2256,11 +2400,14 @@ fix when focus on input, button border not visible
 .form-check-input-lg,
 .form-check-input-lg + .form-check-label,
 .form-check-label-lg,
+.form-floating-lg,
 .progress-lg,
 .meter-lg {
 	--form-font-size: 1.25rem;
 	--form-padding-y: .5rem;
 	--form-padding-x: 1rem;
+	--form-floating-padding-y: 1.25rem;
+	--form-floating-padding-x: 1rem;
 	--border-radius: var(--border-radius-lg);
 	--border-radius-ratio: 2.5;
 }
