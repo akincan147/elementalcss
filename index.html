@@ -432,35 +432,12 @@
 						    // Trigger the check after clearing
 						    fileInput.dispatchEvent(new Event('change', { bubbles: true }));
 						});
-					</script>
-
-					<br>
-
-					<div class="row">
-						<div class="col-auto">
-							<div class="form-floating">						
-								<textarea class="form-control" placeholder="asdas"></textarea>
-								<label class="form-label" for="ffinput">Form Floating</label>
-							</div>
-						</div>
-						<div class="col">
-							<div class="input-group input-group-merge">
-								<span class="input-group-text">							
-									#
-								</span>
-								<div class="form-floating">						
-									<textarea class="form-control" placeholder="asdas"></textarea>
-								<label class="form-label" for="ffinput">Form Floating</label>
-								</div>
-								<button class="btn">Button</button>
-							</div>	
-						</div>
-					</div>
+					</script>					
 
 					<br>
 
 					<label class="form-label" for="color">Color</label>
-					<input class="form-color" type="color" id="color" name="color" optional>	
+					<input class="form-color form-color-sm" type="color" id="color" name="color" optional>	
 
 					<br>
 
@@ -469,7 +446,7 @@
 					<br>
 
 					<label class="form-label" for="color">Color</label>
-					<input class="form-color" type="color" id="color" name="color">	
+					<input class="form-color form-color-lg" type="color" id="color" name="color">	
 
 					<br>
 					
@@ -477,17 +454,14 @@
 						<input class="btn-check" type="checkbox" id="btn-check" name="btn-check" value="checkbox">
 						<label class="" for="btn-check" type="button" tabindex="0">Checkbox 0</label>
 					</div>
-					<br>
 					<div>
 						<input class="btn-check" type="checkbox" id="btn-check1" name="btn-check1" value="checkbox">
 						<label class="" for="btn-check1" type="button" tabindex="0">Checkbox 1</label>
 					</div>
-					<br>
 					<div>
 						<input class="btn-check" type="checkbox" id="btn-check2" name="btn-check2" value="checkbox">
 						<label class="btn-danger" for="btn-check2" type="button" tabindex="0">Checkbox 2</label>
 					</div>
-					<br>
 					<div>
 						<input class="btn-check" type="checkbox" id="btn-check3" name="btn-check3" value="checkbox">
 						<label class="btn-danger" for="btn-check3" type="button" tabindex="0">Checkbox 3</label>
@@ -496,23 +470,20 @@
 					<br>
 
 
-
+					<h4 class="mb-3">Checkboxes</h4>
 
 
 					<input class="form-check-input" type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox" value="indeterminate-checkbox">  
-					<label class="form-check-label" for="indeterminate-checkbox">Indeterminate Checkbox</label>		  			
-
+					<label class="form-check-label" for="indeterminate-checkbox">Indeterminate Checkbox</label>	
 
 		  			<br>
-
 
 		  			<input class="form-check-input" type="checkbox" id="checkbox">  
 					<label class="form-check-label" for="checkbox">Checkbox 0</label>
 
 					<br>
 
-
-					<div class="form-check">
+					<div class="form-check form-check-sm mb-3">
 			  			<input class="form-check-input" type="checkbox" id="checkbox1" required>  
 			  			<label class="form-check-label" for="checkbox1">Checkbox 1</label>			  				
 					</div>	
@@ -525,17 +496,15 @@
 				      	</div>
 					</div>
 
-					<div class="form-check">
+					<div class="form-check mb-3">
 			  			<input class="form-check-input" type="checkbox" id="checkbox2" required>
 			  			<label class="form-check-label" for="checkbox2">Checkbox 2</label>			  			
 					</div>
 
-					<div class="form-check">
+					<div class="form-check form-check-lg mb-3">
 			  			<input class="form-check-input" type="checkbox" id="checkbox3">  
 			  			<label class="form-check-label" for="checkbox3">Checkbox 3</label>
-					</div>	
-
-		  			<br>
+					</div>
 
 		  			<input class="form-check-input" type="radio" id="radio" name="radio" value="radio">
 					<label class="form-check-label" for="radio">Radio</label>	
@@ -547,25 +516,35 @@
 
 					<br>
 
-				    <input class="form-control" type="text" placeholder="large">
-				    <br>
-				    <input class="form-control" type="text" placeholder="default">
-				    <br>
-				    <input class="form-control" type="text" placeholder="small">
-				    <br>
+					<h4 class="mb-3">Form Size and Form Floating</h4>
 
-
-
-
-
-				    <br>
+				    <input class="form-control form-control-sm mb-3" type="text" placeholder="large">
+				  
+				    <input class="form-control mb-3" type="text" placeholder="default">
 				    
-				    <div class="input-group input-group-merge mb-3">
-						<span class="input-group-text">Text</span>
-						<span class="input-group-text">Text</span>
+				    <input class="form-control form-control-lg mb-3" type="text" placeholder="small">
+
+				    <div class="form-floating form-floating-sm mb-3">						
+						<textarea id="ffinput" class="form-control" type="text" placeholder="name@example.com"></textarea>
+						<label class="form-label" for="ffinput">Form Floating</label>
+					</div>
+					<div class="form-floating mb-3">						
+						<textarea id="ffinput" class="form-control" type="text" placeholder="name@example.com"></textarea>
+						<label class="form-label" for="ffinput">Form Floating</label>
+					</div>
+					<div class="form-floating form-floating-lg mb-3">						
+						<textarea id="ffinput" class="form-control" type="text" placeholder="name@example.com"></textarea>
+						<label class="form-label" for="ffinput">Form Floating</label>
+					</div>
+
+				    
+					<h4 class="mb-3">Input Group</h4>
+
+				    <div class="input-group mb-3">
 						<span class="input-group-text">Text</span>
 						<input class="form-control" type="text" placeholder="text" required>
-						<span class="input-group-text">Text</span>						
+						<span class="input-group-text">Lorem Ipsum Doler Sit Amet</span>
+						<input class="form-control" type="text" placeholder="text" required>												
 					</div>
 					<div class="feedback-group">
 						<div class="valid-feedback">
@@ -661,20 +640,7 @@
 						<input class="form-control" type="text">
 						<input class="form-control" type="text" required>
 						<button class="btn" type="button">Button</button>
-					</div>
-
-					<div class="form-floating form-floating-sm mb-3">						
-						<textarea id="ffinput" class="form-control" type="text" placeholder="name@example.com"></textarea>
-						<label class="form-label" for="ffinput">Form Floating</label>
-					</div>
-					<div class="form-floating mb-3">						
-						<textarea id="ffinput" class="form-control" type="text" placeholder="name@example.com"></textarea>
-						<label class="form-label" for="ffinput">Form Floating</label>
-					</div>
-					<div class="form-floating form-floating-lg mb-3">						
-						<textarea id="ffinput" class="form-control" type="text" placeholder="name@example.com"></textarea>
-						<label class="form-label" for="ffinput">Form Floating</label>
-					</div>
+					</div>					
 
 					<div class="input-group input-group-merge mb-3">
 						<span class="input-group-text">							
@@ -708,6 +674,27 @@
 		  					<input class="form-check-input" type="checkbox" role="switch"/>
 		  					<label class="form-check-label" for="checkbox2">Switch</label>
 						</div>	
+					</div>
+
+					<div class="row">
+						<div class="col-auto">
+							<div class="form-floating">						
+								<textarea class="form-control" placeholder="asdas"></textarea>
+								<label class="form-label" for="ffinput">Form Floating</label>
+							</div>
+						</div>
+						<div class="col">
+							<div class="input-group input-group-merge">
+								<span class="input-group-text">							
+									#
+								</span>
+								<div class="form-floating">						
+									<textarea class="form-control" placeholder="asdas"></textarea>
+								<label class="form-label" for="ffinput">Form Floating</label>
+								</div>
+								<button class="btn">Button</button>
+							</div>	
+						</div>
 					</div>
 								
 				</fieldset>
