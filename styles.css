@@ -135,7 +135,7 @@
 	--tab-outline-color: #0073e5;
 	--tab-outline-offset: 2px;
 
-	--focus-outline-width: 0px;
+	--focus-outline-width: 1px;
 	--focus-outline-class-width: 1px;
 	--focus-outline-style: solid;
 	--focus-outline-color: #0073e5;
@@ -1255,14 +1255,7 @@ tbody > tr.active > * {
 
 
 
-/* 
 
-fix layout break on input-group
-fix button size in input-group-merge
-fix outline border effect issues
-fix when focus on button, input border not visible
-
-*/
 
 
 .form-label {
@@ -1547,8 +1540,8 @@ textarea.form-control {
 }
 
 .form-check-input:disabled + .form-check-label {
-	opacity: .5 !important;
-	cursor: not-allowed !important;
+	opacity: .5;
+	cursor: not-allowed;
 }
 
 .form-color {	
@@ -1579,6 +1572,12 @@ textarea.form-control {
 	border: none;
 	border-radius: var(--color-swatch-border-radius);
 	box-shadow: var(--color-swatch-box-shadow);
+}
+
+.form-color:focus {
+    border-color: var(--form-focus-border-color);
+    outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);   
 }
 
 .form-range {	
@@ -1747,6 +1746,117 @@ textarea.form-control {
 .form-range:disabled {
 	opacity: .5;
 	cursor: not-allowed;
+}
+
+.feedback-group {
+	width: 100%;
+}
+
+.valid-feedback {
+	display: none;
+	width: 100%;
+	margin-top: 0.25rem;
+	color: var(--success-bg-color);
+	font-size: 0.875em;	
+}
+
+.invalid-feedback {
+	display: none;
+	width: 100%;
+	margin-top: 0.25rem;
+	color: var(--danger-bg-color);
+	font-size: 0.875em;	
+}
+
+.valid-tooltip {
+	z-index: 5;
+	display: none;
+	position: absolute;
+	top: 100%;	
+	max-width: 100%;
+	margin-top: 0.1rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: var(--border-radius);
+	background-color: var(--success-bg-color);
+	color: #fff;	
+	font-size: 0.875rem;	
+}
+
+.invalid-tooltip {
+	z-index: 5;
+	display: none;
+	position: absolute;
+	top: 100%;	
+	max-width: 100%;
+	margin-top: 0.1rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: var(--border-radius);
+	background-color: var(--danger-bg-color);
+	color: #fff;
+	font-size: 0.875rem;	
+}
+
+.form-control:not(.is-empty):not(.is-empty):not(:placeholder-shown):user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.form-select:has(option:checked:not([value=""])):user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
+:is(.form-color, .form-range):user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.form-check-input:required:user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.form-check:has(.form-check-input:required:user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.input-group:has(.form-control:not(.is-empty):not(:placeholder-shown):user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.input-group:has(.form-select:user-valid > option:checked:not([value=""])) + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.input-group:has(:is(.form-color, .form-range):user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip),
+.input-group:has(.form-check-input:required:user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip) {
+	display: block;
+}
+
+:user-invalid + .feedback-group .invalid-feedback,
+:user-invalid + .feedback-group .invalid-tooltip,
+.input-group:has(:user-invalid) + .feedback-group .invalid-feedback,
+.input-group:has(:user-invalid) + .feedback-group .invalid-tooltip,
+.form-check:has(:user-invalid) + .feedback-group .invalid-feedback,
+.form-check:has(:user-invalid) + .feedback-group .invalid-tooltip {
+	display: block;
+}
+
+.form-control:not(.is-empty):not(:placeholder-shown):user-valid,
+.form-select:has(option:checked:not([value=""])):user-valid,
+.form-check-input:required:user-valid {
+	border-color: var(--success-bg-color);
+}
+
+.form-check-input:required:user-valid:checked {
+	background-color: var(--success-bg-color);
+}
+
+.form-check-input:required:user-valid + .form-check-label {
+	color: var(--success-bg-color);
+}
+
+.form-control:not(.is-empty):not(:placeholder-shown):user-valid:focus,
+.form-select:has(option:checked:not([value=""])):user-valid:focus,
+.form-check-input:required:user-valid:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--success-bg-color), transparent var(--focus-outline-alpha));
+    outline-offset: var(--focus-outline-offset);
+}
+
+.form-control:user-invalid,
+.form-select:user-invalid,
+.form-check-input:user-invalid {
+	border-color: var(--danger-bg-color);
+}
+
+.form-check-input:user-invalid:checked {
+	background-color: var(--danger-bg-color);
+}
+
+.form-check-input:user-invalid + .form-check-label {
+	color: var(--danger-bg-color);
+}
+
+.form-control:user-invalid:focus,
+.form-select:user-invalid:focus,
+.form-check-input:user-invalid:focus {
+	outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--danger-bg-color), transparent var(--focus-outline-alpha));
+    outline-offset: var(--focus-outline-offset);
 }
 
 .progress {
@@ -2101,8 +2211,8 @@ textarea.form-control {
 }
 
 .input-group-merge:has(textarea.form-control) {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .input-group-merge:has(textarea.form-control:last-child),
@@ -2165,7 +2275,7 @@ textarea.form-control {
     margin: 0 !important;
     padding: 0 !important;
     border: none !important;
-    border-radius: 0 !important;           
+    border-radius: var(--border-radius) !important;           
     background-color: transparent;    
 }
 
@@ -2191,9 +2301,11 @@ textarea.form-control {
 
 .input-group-merge:focus-within > .form-control,
 .input-group-merge:focus-within > .form-select,
-.input-group-merge:focus-within > .input-group-text {
+.input-group-merge:focus-within > .input-group-text,
+.input-group-merge:focus-within > .form-floating > .form-control,
+.input-group-merge:focus-within > .form-floating > .form-select {
 	border-color: var(--form-focus-border-color);   
-    outline: 0;    
+    outline: 0 !important;    
     background-color: var(--form-focus-bg-color);
     color: var(--form-focus-text-color);    
 }
@@ -2202,10 +2314,12 @@ textarea.form-control {
 .input-group-merge:has(.form-select:user-valid > option:checked:not([value=""])),
 .input-group-merge:has(.form-check-input:required:user-valid) {
     border-color: var(--success-bg-color);
+    outline-color: var(--success-bg-color);
 }
 
 .input-group-merge:has(:user-invalid) {
     border-color: var(--danger-bg-color);
+    outline-color: var(--danger-bg-color);
 }
 
 .input-group-merge:has(:disabled):not(:has(:enabled)) {
@@ -2215,117 +2329,6 @@ textarea.form-control {
 
 .input-group-merge:has(:disabled):not(:has(:enabled)) :disabled {
     opacity: 1;
-}
-
-.feedback-group {
-	width: 100%;
-}
-
-.valid-feedback {
-	display: none;
-	width: 100%;
-	margin-top: 0.25rem;
-	color: var(--success-bg-color);
-	font-size: 0.875em;	
-}
-
-.invalid-feedback {
-	display: none;
-	width: 100%;
-	margin-top: 0.25rem;
-	color: var(--danger-bg-color);
-	font-size: 0.875em;	
-}
-
-.valid-tooltip {
-	z-index: 5;
-	display: none;
-	position: absolute;
-	top: 100%;	
-	max-width: 100%;
-	margin-top: 0.1rem;
-	padding: 0.25rem 0.5rem;
-	border-radius: var(--border-radius);
-	background-color: var(--success-bg-color);
-	color: #fff;	
-	font-size: 0.875rem;	
-}
-
-.invalid-tooltip {
-	z-index: 5;
-	display: none;
-	position: absolute;
-	top: 100%;	
-	max-width: 100%;
-	margin-top: 0.1rem;
-	padding: 0.25rem 0.5rem;
-	border-radius: var(--border-radius);
-	background-color: var(--danger-bg-color);
-	color: #fff;
-	font-size: 0.875rem;	
-}
-
-.form-control:not(.is-empty):not(.is-empty):not(:placeholder-shown):user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
-.form-select:has(option:checked:not([value=""])):user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
-:is(.form-color, .form-range):user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
-.form-check-input:required:user-valid + .feedback-group :is(.valid-feedback, .valid-tooltip),
-.form-check:has(.form-check-input:required:user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip),
-.input-group:has(.form-control:not(.is-empty):not(:placeholder-shown):user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip),
-.input-group:has(.form-select:user-valid > option:checked:not([value=""])) + .feedback-group :is(.valid-feedback, .valid-tooltip),
-.input-group:has(:is(.form-color, .form-range):user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip),
-.input-group:has(.form-check-input:required:user-valid) + .feedback-group :is(.valid-feedback, .valid-tooltip) {
-	display: block;
-}
-
-:user-invalid + .feedback-group .invalid-feedback,
-:user-invalid + .feedback-group .invalid-tooltip,
-.input-group:has(:user-invalid) + .feedback-group .invalid-feedback,
-.input-group:has(:user-invalid) + .feedback-group .invalid-tooltip,
-.form-check:has(:user-invalid) + .feedback-group .invalid-feedback,
-.form-check:has(:user-invalid) + .feedback-group .invalid-tooltip {
-	display: block;
-}
-
-.form-control:not(.is-empty):not(:placeholder-shown):user-valid,
-.form-select:has(option:checked:not([value=""])):user-valid,
-.form-check-input:required:user-valid {
-	border-color: var(--success-bg-color);
-}
-
-.form-check-input:required:user-valid:checked {
-	background-color: var(--success-bg-color);
-}
-
-.form-check-input:required:user-valid + .form-check-label {
-	color: var(--success-bg-color);
-}
-
-.form-control:not(.is-empty):not(:placeholder-shown):user-valid:focus,
-.form-select:has(option:checked:not([value=""])):user-valid:focus,
-.form-check-input:required:user-valid:focus {
-	outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--success-bg-color), transparent var(--focus-outline-alpha));
-    outline-offset: var(--focus-outline-offset);
-}
-
-.form-control:user-invalid,
-.form-select:user-invalid,
-.form-check-input:user-invalid {
-	border-color: var(--danger-bg-color);
-}
-
-.form-check-input:user-invalid:checked {
-	background-color: var(--danger-bg-color);
-}
-
-.form-check-input:user-invalid + .form-check-label {
-	color: var(--danger-bg-color);
-}
-
-.form-control:user-invalid:focus,
-.form-select:user-invalid:focus,
-.form-check-input:user-invalid:focus {
-	outline: var(--focus-outline-width) var(--focus-outline-style) color-mix(in srgb, var(--danger-bg-color), transparent var(--focus-outline-alpha));
-    outline-offset: var(--focus-outline-offset);
 }
 
 .form-control-sm:read-only:not(:disabled):not([type="file"]),
@@ -2458,7 +2461,8 @@ textarea.form-control {
 }
 
 .btn:focus {
-	outline-color: var(--btn-outline-color);
+	outline: var(--focus-outline-width) var(--focus-outline-style) var(--btn-outline-color);
+    outline-offset: var(--focus-outline-offset);
 }
 
 .btn:disabled {
